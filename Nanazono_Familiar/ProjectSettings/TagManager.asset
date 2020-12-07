@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Jem
-  - Target
-  - ball
+
   layers:
   - Default
   - TransparentFX
