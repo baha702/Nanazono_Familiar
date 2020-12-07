@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Jem
   - Target
+  - ball
   layers:
   - Default
   - TransparentFX
