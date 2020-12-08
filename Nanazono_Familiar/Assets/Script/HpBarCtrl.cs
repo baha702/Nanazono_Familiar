@@ -16,7 +16,7 @@ public class HpBarCtrl : MonoBehaviour
         void Update()
         {
         // HP上昇
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             _hp += 1;
         }
