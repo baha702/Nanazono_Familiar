@@ -23,7 +23,7 @@ public class ScoreScript : MonoBehaviour
         score_text.text = "Jem:" + score_num;
     }
 
-    void OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider col)
     {
         //"Jem"のTagのついたオブジェクトを判定
         if (col.tag == "Jem")

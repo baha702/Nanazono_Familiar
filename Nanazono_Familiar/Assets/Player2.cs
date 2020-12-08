@@ -2,7 +2,7 @@
 using UnityEngine;
 
 // プレイヤー
-public class Player : MonoBehaviour
+public class Player2 : MonoBehaviour
 {
 
     [SerializeField] private Vector3 velocity;              // 移動方向
