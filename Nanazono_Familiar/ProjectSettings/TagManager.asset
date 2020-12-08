@@ -7,6 +7,8 @@ TagManager:
   - Jem
   - Target
   - ball
+  - Odr
+  - Enemy
   layers:
   - Default
   - TransparentFX
