@@ -1,4 +1,4 @@
-﻿// Player.cs
+﻿// Player2.cs
 using UnityEngine;
 
 // プレイヤー
