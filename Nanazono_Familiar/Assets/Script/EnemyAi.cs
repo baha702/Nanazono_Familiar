@@ -27,10 +27,10 @@ public class EnemyAi : MonoBehaviour
 			Mode = 0;//Modeを0にする
 		}
 
-		/*if (distance < 5)
+		if (distance < 5)
 		{//もしプレイヤーと敵の距離が5以下なら
 			Mode = 1;//Modeを1にする
-		}*/
+		}
 
 		switch (Mode)
 		{//Modeの切り替えは

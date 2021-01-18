@@ -501,6 +501,66 @@ PrefabInstance:
       objectReference: {fileID: 1781730559}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbfdfb01bb1cfc941b135b201fbc0b35, type: 3}
+--- !u!1 &1024653401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3710027502039125033, guid: fbfdfb01bb1cfc941b135b201fbc0b35, type: 3}
+  m_PrefabInstance: {fileID: 466212780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1024653402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024653401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 167923245, guid: 4b8a0ea4af60242df9f805b43de33d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fontData:
+  - ttfFile: {fileID: 4900000, guid: 076cbda6401961342bb17ab1a23cf473, type: 3}
+    fontName: kurobara gothic black
+  m_defaultFont: 0
+  m_defaultMaterial: {fileID: 0}
+  m_defaultEdgeMaterial: {fileID: 0}
+  m_useEdgeMaterial: 0
+  m_defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  m_computeTangents: 0
+  m_defaultResolution: 5
+  m_defaultSize: 2
+  m_defaultDepth: 0.25
+  m_defaultLetterSpacing: 1
+  m_defaultLineSpacing: 1
+  m_defaultLineWidth: 0
+  m_tabStop: 0
+  m_wordWrap: 1
+  m_defaultJustification: 0
+  m_verticalLayout: 0
+  m_includeBackface: 1
+  m_texturePerLetter: 1
+  m_anchor: 0
+  m_zAnchor: 0
+  m_colliderType: 0
+  m_addRigidbodies: 1
+  m_physicsMaterial: {fileID: 0}
+  m_smoothingAngle: 50
+--- !u!114 &1024653403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024653401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348514a7604367248918e77abb8d0e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textObject: {fileID: 0}
+  textMaterial: {fileID: 0}
+  inputText: 
+  testText: 
 --- !u!1 &1781730559 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5709702214946785610, guid: 2702d37d8d6ba54418e6ef38838c89a5, type: 3}
