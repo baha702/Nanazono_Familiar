@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     public GameObject Player;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
         PlayerTransform = transform.parent;
         CameraTransform = GetComponent<Transform>();
+       
 
     }
 
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerTransform.transform.position += -dir1 * speed * Time.deltaTime;
         }
-
+       
     }
+   
 }

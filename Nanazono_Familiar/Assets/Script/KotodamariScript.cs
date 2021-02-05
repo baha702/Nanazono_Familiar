@@ -12,6 +12,7 @@ public class KotodamariScript: MonoBehaviour
     public Material textMaterial;
     public string inputText;
     public string testText;
+   
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class KotodamariScript: MonoBehaviour
 
         testText = "test";
         textObject = FlyingText.GetObject("スタート", new Vector3(-3, 5, 4), Quaternion.identity);
+
 
     }
 
@@ -43,7 +45,7 @@ public class KotodamariScript: MonoBehaviour
             textObject = FlyingText.GetObject(inputText, random, Quaternion.identity);
         }
         inputText = testText;
-
+       
     }
 
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
