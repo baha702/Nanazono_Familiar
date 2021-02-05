@@ -7,7 +7,7 @@ public class Player2 : MonoBehaviour
 
     [SerializeField] private Vector3 velocity;              // 移動方向
     [SerializeField] private float moveSpeed = 5.0f;        // 移動速度
-
+   
     void Update()
     {
         // WASD
@@ -31,6 +31,7 @@ public class Player2 : MonoBehaviour
             // 移動方向ベクトル(velocity)の追加
             transform.position += velocity;
         }
+       
 
     }
 }
