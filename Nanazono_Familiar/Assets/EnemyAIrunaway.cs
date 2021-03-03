@@ -5,19 +5,17 @@ using UnityEngine.AI;
 
 //オブジェクトにNavMeshAgentコンポーネントを設置
 [RequireComponent(typeof(NavMeshAgent))]
-
-public class EnemyAI : MonoBehaviour
+public class EnemyAIrunaway : MonoBehaviour
 {
     public Transform[] points;
     [SerializeField] int destPoint = 0;
     private NavMeshAgent agent;
-
     Vector3 playerPos;
     GameObject player;
     float distance;
-    [SerializeField] float trackingRange = 3f;
+    [SerializeField] float runawayRange = 3f;
     [SerializeField] float quitRange = 5f;
-    [SerializeField] bool tracking = false;
+    [SerializeField] bool runaway = false;
 
     void Start()
     {
@@ -57,11 +55,11 @@ public class EnemyAI : MonoBehaviour
         distance = Vector3.Distance(this.transform.position, playerPos);
 
 
-        if (tracking)
+        if (runaway)
         {
             //追跡の時、quitRangeより距離が離れたら中止
             if (distance > quitRange)
-                tracking = false;
+                runaway = false;
 
             //Playerを目標とする
             agent.destination = playerPos;
@@ -69,8 +67,8 @@ public class EnemyAI : MonoBehaviour
         else
         {
             //PlayerがtrackingRangeより近づいたら追跡開始
-            if (distance < trackingRange)
-                tracking = true;
+            if (distance < runawayRange)
+                runaway = true;
 
 
             // エージェントが現目標地点に近づいてきたら、
@@ -84,7 +82,7 @@ public class EnemyAI : MonoBehaviour
     {
         //trackingRangeの範囲を赤いワイヤーフレームで示す
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, trackingRange);
+        Gizmos.DrawWireSphere(transform.position, runawayRange);
 
         //quitRangeの範囲を青いワイヤーフレームで示す
         Gizmos.color = Color.blue;
