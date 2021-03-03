@@ -9,6 +9,7 @@ public class KotodamariScript: MonoBehaviour
 
     DictationRecognizer dictationRecognizer;
     public GameObject textObject;
+    
     public GameObject PlayerObject;
     Vector3 PlayerPos;
     [SerializeField]
@@ -25,8 +26,7 @@ public class KotodamariScript: MonoBehaviour
         bulletSpeed = 10.0f;
         flag = 0;
         KotodamaPos = 2.0f;
-        PlayerPos = PlayerObject.transform.position;
-        PlayerPos.y += KotodamaPos;
+
         dictationRecognizer = new DictationRecognizer();
 
         //ディクテーションを開始
@@ -38,6 +38,8 @@ public class KotodamariScript: MonoBehaviour
 
 
     }
+
+   
 
     void Update()
     {
@@ -65,14 +67,20 @@ public class KotodamariScript: MonoBehaviour
 
             if (inputText != testText)
             {
-                textObject = FlyingText.GetObject(inputText, PlayerPos, Quaternion.identity) ;
+                PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
+                PlayerPos.y += KotodamaPos;
+
+                textObject = FlyingText.GetObject(inputText, PlayerPos, Quaternion.identity) ;//FlyingTextを生成
                 textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
                 textObject.tag = "flyingText";
+
             }
             inputText = testText;
         }
         
     }
+
+    
 
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
