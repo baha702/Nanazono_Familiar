@@ -7,7 +7,7 @@ TagManager:
   - Jem
   - Target
   - Hantei
-  - Enemy
+
   layers:
   - Default
   - TransparentFX

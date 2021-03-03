@@ -9,13 +9,24 @@ public class KotodamariScript: MonoBehaviour
 
     DictationRecognizer dictationRecognizer;
     public GameObject textObject;
+    
+    public GameObject PlayerObject;
+    Vector3 PlayerPos;
+    [SerializeField]
+    public float bulletSpeed;
     public Material textMaterial;
     public string inputText;
     public string testText;
-   
+    public int flag;
+    [SerializeField]
+    public float KotodamaPos;
 
     void Start()
     {
+        bulletSpeed = 10.0f;
+        flag = 0;
+        KotodamaPos = 2.0f;
+
         dictationRecognizer = new DictationRecognizer();
 
         //ディクテーションを開始
@@ -23,30 +34,53 @@ public class KotodamariScript: MonoBehaviour
         Debug.Log("音声認識開始");
 
         testText = "test";
-        textObject = FlyingText.GetObject("スタート", new Vector3(-3, 5, 4), Quaternion.identity);
+        //textObject = FlyingText.GetObject("スタート", new Vector3(-3, 5, 4), Quaternion.identity);
 
 
     }
+
+   
 
     void Update()
     {
-
-        dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
-
-        dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;//DictationRecognizer_DictationHypothesis処理を行う
-
-        dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;//DictationRecognizer_DictationComplete処理を行う
-
-        dictationRecognizer.DictationError += DictationRecognizer_DictationError;//DictationRecognizer_DictationError処理を行う
-
-        if (inputText != testText)
+        if (Input.GetMouseButtonDown(0))
         {
-            Vector3 random = new Vector3(Random.Range(-12.0f, 6.0f), 4, Random.Range(1.6f, 6.0f));
-            textObject = FlyingText.GetObject(inputText, random, Quaternion.identity);
+            flag = 1;
+            Debug.Log("音声認識スタート");
         }
-        inputText = testText;
-       
+        if (Input.GetMouseButtonDown(1))
+        {
+            flag = 0;
+            Debug.Log("音声認識フィニッシュ");
+        }
+
+
+        if (flag == 1)
+        {
+            dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
+
+            dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;//DictationRecognizer_DictationHypothesis処理を行う
+
+            dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;//DictationRecognizer_DictationComplete処理を行う
+
+            dictationRecognizer.DictationError += DictationRecognizer_DictationError;//DictationRecognizer_DictationError処理を行う
+
+            if (inputText != testText)
+            {
+                PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
+                PlayerPos.y += KotodamaPos;
+
+                textObject = FlyingText.GetObject(inputText, PlayerPos, Quaternion.identity) ;//FlyingTextを生成
+                textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+                textObject.tag = "flyingText";
+
+            }
+            inputText = testText;
+        }
+        
     }
+
+    
 
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
