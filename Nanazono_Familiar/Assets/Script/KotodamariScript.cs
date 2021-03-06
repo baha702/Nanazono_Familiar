@@ -11,22 +11,24 @@ public class KotodamariScript: MonoBehaviour
     public GameObject textObject;
     
     public GameObject PlayerObject;
+    public GameObject CameraObject;
     Vector3 PlayerPos;
+    public float CameraPos;
     [SerializeField]
     public float bulletSpeed;
     public Material textMaterial;
     public string inputText;
     public string testText;
-    public int flag;
+    public bool flag;
     [SerializeField]
     public float KotodamaPos;
 
     void Start()
     {
-        bulletSpeed = 10.0f;
-        flag = 0;
-        KotodamaPos = 2.0f;
-
+        bulletSpeed = 30.0f;
+        flag = false;
+        KotodamaPos = 1.0f;
+        
         dictationRecognizer = new DictationRecognizer();
 
         //ディクテーションを開始
@@ -45,17 +47,17 @@ public class KotodamariScript: MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            flag = 1;
+            flag = true;
             Debug.Log("音声認識スタート");
         }
         if (Input.GetMouseButtonDown(1))
         {
-            flag = 0;
+            flag = false;
             Debug.Log("音声認識フィニッシュ");
         }
 
 
-        if (flag == 1)
+        if (flag == true)
         {
             dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
 
@@ -68,14 +70,28 @@ public class KotodamariScript: MonoBehaviour
             if (inputText != testText)
             {
                 PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
+                PlayerPos.x -= KotodamaPos;
                 PlayerPos.y += KotodamaPos;
-
+                CameraPos = CameraObject.transform.localEulerAngles.y;
                 textObject = FlyingText.GetObject(inputText, PlayerPos, Quaternion.identity) ;//FlyingTextを生成
+                //textObject.transform.Rotate(0, 180, 0) ;//PlayerControllerのX.rotateを参照
                 textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
                 textObject.tag = "flyingText";
 
             }
             inputText = testText;
+        }
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
+            PlayerPos.x += KotodamaPos;
+            PlayerPos.y += KotodamaPos;
+            CameraPos=CameraObject.transform.localEulerAngles.y;
+            textObject = FlyingText.GetObject("QQQQQQ", PlayerPos, Quaternion.identity);//FlyingTextを生成
+            textObject.transform.Rotate(0, CameraPos, 0);//PlayerControllerのX.rotateを参照
+            textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+            textObject.tag = "flyingText";
         }
         
     }

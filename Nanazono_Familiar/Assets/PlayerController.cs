@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Transform PlayerTransform;
     private Transform CameraTransform;
+    
     // Use this for initialization
     void Start()
     {
