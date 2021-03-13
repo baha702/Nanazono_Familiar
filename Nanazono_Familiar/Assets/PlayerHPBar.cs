@@ -40,7 +40,7 @@ public class PlayerHPBar : MonoBehaviour
             //(float)をつけてfloatの変数として振舞わせる。
             slider.value = (float)currentHp / (float)maxHp; ;
             Debug.Log("slider.value : " + slider.value);
-            if (currentHp == -1)
+            if (currentHp == 0)
             {
                 SceneManager.LoadScene("GameOver");
             }
