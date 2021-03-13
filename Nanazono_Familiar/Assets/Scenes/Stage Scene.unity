@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 26337720}
+  - component: {fileID: 26337721}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -153,6 +154,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &26337721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26337719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fd10f47e2c3194ba0a96b72f99082a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1868942428}
+  Ruijido: 0
 --- !u!1 &136151035
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,12 +632,14 @@ MonoBehaviour:
   textObject: {fileID: 0}
   PlayerObject: {fileID: 1024653401}
   CameraObject: {fileID: 0}
+  PlayerPos: {x: 0, y: 0, z: 0}
   CameraPos: 0
   bulletSpeed: 0
   textMaterial: {fileID: 0}
   inputText: 
   testText: 
   flag: 0
+  Levenflag: 0
   KotodamaPos: 0
 --- !u!1 &1202278141
 GameObject:
@@ -915,12 +932,14 @@ MonoBehaviour:
   textObject: {fileID: 0}
   PlayerObject: {fileID: 2120130907}
   CameraObject: {fileID: 2120130907}
+  PlayerPos: {x: 0, y: 0, z: 0}
   CameraPos: 0
   bulletSpeed: 0
   textMaterial: {fileID: 0}
   inputText: 
   testText: 
   flag: 0
+  Levenflag: 0
   KotodamaPos: 0
 --- !u!114 &1868942429
 MonoBehaviour:

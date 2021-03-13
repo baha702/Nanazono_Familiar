@@ -9,17 +9,20 @@ public class KotodamariScript: MonoBehaviour
 
     DictationRecognizer dictationRecognizer;
     public GameObject textObject;
-    
     public GameObject PlayerObject;
     public GameObject CameraObject;
-    Vector3 PlayerPos;
+
+    public Vector3 PlayerPos;
     public float CameraPos;
+
     [SerializeField]
     public float bulletSpeed;
     public Material textMaterial;
     public string inputText;
     public string testText;
+
     public bool flag;
+    public bool Levenflag;
     [SerializeField]
     public float KotodamaPos;
 
@@ -77,6 +80,7 @@ public class KotodamariScript: MonoBehaviour
                 //textObject.transform.Rotate(0, 180, 0) ;//PlayerControllerのX.rotateを参照
                 textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
                 textObject.tag = "flyingText";
+                Levenflag = true;
 
             }
             inputText = testText;
@@ -103,13 +107,14 @@ public class KotodamariScript: MonoBehaviour
     {
         Debug.Log("認識した音声：" + text);
         inputText = text;
+        
 
     }
 
     //DictationHypothesis：音声入力中に発生するイベント
     private void DictationRecognizer_DictationHypothesis(string text)
     {
-        Debug.Log("音声認識中：" + text);
+        //Debug.Log("音声認識中：" + text);
     }
 
     //DictationComplete：音声認識セッションを終了したときにトリガされるイベント
