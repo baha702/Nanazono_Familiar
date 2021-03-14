@@ -8,12 +8,12 @@ public class KotodamariScript: MonoBehaviour
 {
 
     DictationRecognizer dictationRecognizer;
-    public GameObject textObject;
+    GameObject textObject;
     public GameObject PlayerObject;
     public GameObject CameraObject;
 
     public Vector3 PlayerPos;
-    public float CameraPos;
+    public float PlayerAndle;
 
     [SerializeField]
     public float bulletSpeed;
@@ -75,9 +75,9 @@ public class KotodamariScript: MonoBehaviour
                 PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
                 PlayerPos.x -= KotodamaPos;
                 PlayerPos.y += KotodamaPos;
-                CameraPos = CameraObject.transform.localEulerAngles.y;
+                PlayerAndle = PlayerObject.transform.localEulerAngles.y;
                 textObject = FlyingText.GetObject(inputText, PlayerPos, Quaternion.identity) ;//FlyingTextを生成
-                //textObject.transform.Rotate(0, 180, 0) ;//PlayerControllerのX.rotateを参照
+                textObject.transform.Rotate(0, PlayerAndle, 0) ;//PlayerControllerのY.rotateを参照
                 textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
                 textObject.tag = "flyingText";
                 Levenflag = true;
@@ -89,11 +89,11 @@ public class KotodamariScript: MonoBehaviour
         if (Input.GetKey(KeyCode.Q))
         {
             PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-            PlayerPos.x += KotodamaPos;
+            PlayerPos.x -= KotodamaPos;
             PlayerPos.y += KotodamaPos;
-            CameraPos=CameraObject.transform.localEulerAngles.y;
+            PlayerAndle=PlayerObject.transform.localEulerAngles.y;
             textObject = FlyingText.GetObject("QQQQQQ", PlayerPos, Quaternion.identity);//FlyingTextを生成
-            textObject.transform.Rotate(0, CameraPos, 0);//PlayerControllerのX.rotateを参照
+            textObject.transform.Rotate(0, PlayerAndle, 0);//PlayerControllerのY.rotateを参照
             textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
             textObject.tag = "flyingText";
         }

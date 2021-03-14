@@ -10,14 +10,14 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Transform PlayerTransform;
     private Transform CameraTransform;
-    
+
     // Use this for initialization
     void Start()
     {
 
         PlayerTransform = transform.parent;
         CameraTransform = GetComponent<Transform>();
-       
+
 
     }
 
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerTransform.transform.position += -dir1 * speed * Time.deltaTime;
         }
-       
+
     }
-   
+
 }
