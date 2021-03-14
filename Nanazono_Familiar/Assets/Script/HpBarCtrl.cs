@@ -20,7 +20,7 @@ public class HpBarCtrl : MonoBehaviour
     }
 
     // HP上昇
-    float _hp = 100;
+    float _hp = 20;
     void Update()
     {
         
