@@ -23,8 +23,7 @@ public class HpBarCtrl : MonoBehaviour
     float _hp = 20;
     void Update()
     {
-        
-        Debug.Log(_hp);
+
       if (_hp < _slider.minValue)
       {
         // 最大を超えたら0に戻す
@@ -40,7 +39,8 @@ public class HpBarCtrl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("flyingText"))
         {
-            Debug.Log("ダメージ");
+            
+            Debug.Log(_hp);
             AllDamage = EikyouPower * Ruizido;
             _hp -= AllDamage;
             //Damageflag = true;
