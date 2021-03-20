@@ -10,7 +10,8 @@ public class KotodamariScript: MonoBehaviour
     DictationRecognizer dictationRecognizer;
     GameObject textObject;
     public GameObject PlayerObject;
-   
+    public GameObject CameraObject;
+
     public Vector3 PlayerPos;
     public float PlayerAndle;
 
@@ -23,15 +24,13 @@ public class KotodamariScript: MonoBehaviour
     public bool flag;
     public bool Levenflag;
     [SerializeField]
-    public float KotodamaPosX;
-    public float KotodamaPosY;
+    public float KotodamaPos;
 
     void Start()
     {
         bulletSpeed = 30.0f;
         flag = false;
-        KotodamaPosX = 2.0f;
-        KotodamaPosY = 2.3f;
+        KotodamaPos = 1.0f;
         
         dictationRecognizer = new DictationRecognizer();
 
@@ -73,11 +72,10 @@ public class KotodamariScript: MonoBehaviour
 
             if (inputText != testText)
             {
-               /* PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-                PlayerPos.x -= KotodamaPosX;
-                PlayerPos.y += KotodamaPosY;*/
+                PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
+                PlayerPos.x -= KotodamaPos;
+                PlayerPos.y += KotodamaPos;
                 PlayerAndle = PlayerObject.transform.localEulerAngles.y;
-                KotodamaPos();
                 textObject = FlyingText.GetObject(inputText, PlayerPos, Quaternion.identity) ;//FlyingTextを生成
                 textObject.transform.Rotate(0, PlayerAndle, 0) ;//PlayerControllerのY.rotateを参照
                 textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
@@ -90,48 +88,16 @@ public class KotodamariScript: MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q))
         {
-            //PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-            //PlayerPos.x -= KotodamaPosX;
-            //PlayerPos.y += KotodamaPosY;
+            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
+            PlayerPos.x -= KotodamaPos;
+            PlayerPos.y += KotodamaPos;
             PlayerAndle=PlayerObject.transform.localEulerAngles.y;
-            KotodamaPos();
-            textObject = FlyingText.GetObject("QQQQQ", PlayerPos, Quaternion.identity);//FlyingTextを生成
+            textObject = FlyingText.GetObject("QQQQQQ", PlayerPos, Quaternion.identity);//FlyingTextを生成
             textObject.transform.Rotate(0, PlayerAndle, 0);//PlayerControllerのY.rotateを参照
             textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
             textObject.tag = "flyingText";
         }
         
-    }
-
-    private void KotodamaPos()
-    {
-        if (315<=PlayerAndle && PlayerAndle<=360 || 0<=PlayerAndle && PlayerAndle<=45)
-        {
-            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-            PlayerPos.x -= KotodamaPosX;
-            PlayerPos.y += KotodamaPosY;
-        }
-        if (270 <= PlayerAndle && PlayerAndle <= 315 || 225 <= PlayerAndle && PlayerAndle <= 270)
-        {
-            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-            PlayerPos.x -= KotodamaPosX;
-            PlayerPos.z -= KotodamaPosX;
-            PlayerPos.y += KotodamaPosY;
-        }
-        if (135 <= PlayerAndle && PlayerAndle <= 180 || 180 <= PlayerAndle && PlayerAndle <= 225)
-        {
-            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-            PlayerPos.x += KotodamaPosX;
-            PlayerPos.x += KotodamaPosX;
-            PlayerPos.z += KotodamaPosX;
-            PlayerPos.y += KotodamaPosY;
-        }
-        if (45 <= PlayerAndle && PlayerAndle <= 90 || 90 <= PlayerAndle && PlayerAndle <= 135)
-        {
-            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-            PlayerPos.x += KotodamaPosX;
-            PlayerPos.y += KotodamaPosY;
-        }
     }
 
     
