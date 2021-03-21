@@ -1,0 +1,9 @@
+diff a/Nanazono_Familiar/Assets/Scenes/Enemy Move.unity b/Nanazono_Familiar/Assets/Scenes/Enemy Move.unity	(rejected hunks)
+@@ -318,7 +318,6 @@
+   m_Name: 
+   m_EditorClassIdentifier: 
+   PlayerObject: {fileID: 280501123}
+-  CameraObject: {fileID: 609822765}
+   PlayerPos: {x: 0, y: 0, z: 0}
+   PlayerAndle: 0
+   bulletSpeed: 0
