@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class KotodamaTextData : MonoBehaviour
 {
-    public KotodamariScript kotodamari;
     
     // Start is called before the first frame update
     void Start()
@@ -15,9 +14,14 @@ public class KotodamaTextData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject FlyingObject;
-        FlyingObject = GameObject.Find("TextPrefab");
-        //FlyingText.UpdateObject(FlyingObject, kotodamari.inputText);
-        
+       /* //QAっていう名前のオブジェクトがあったら
+        if (GameObject.Find("QA") != null)
+        {
+            GameObject q = GameObject.Find("QA");
+            //QAの子のAという名前のオブジェクトを探して変数childAに入れる
+            GameObject childA = q.transform.Find("A").gameObject;
+            childA.GetComponent<BoxCollider>().isTrigger = true;
+        }*/
+
     }
 }

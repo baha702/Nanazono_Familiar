@@ -8,15 +8,15 @@ public class HpBarCtrl : MonoBehaviour
     public GameObject EnemyObject;
     public bool Damageflag;
     public float EikyouPower;
-    public float Ruizido;
     public float AllDamage;
+    public LevenshteinScript leven;
     void Start()
     {
         // スライダーを取得する
         _slider = GameObject.Find("HPBar").GetComponent<Slider>();
         Damageflag = false;
         EikyouPower = 0.5f;
-        Ruizido = 2.0f;
+        
     }
 
     // HP上昇
@@ -35,13 +35,13 @@ public class HpBarCtrl : MonoBehaviour
         _slider.value = _hp;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (other.gameObject.CompareTag("flyingText"))
+        if (collider.gameObject.CompareTag("flyingText"))
         {
             
             Debug.Log(_hp);
-            AllDamage = EikyouPower * Ruizido;
+            AllDamage = EikyouPower * leven.Ruijido;
             _hp -= AllDamage;
             //Damageflag = true;
         }

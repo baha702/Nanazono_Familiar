@@ -8,12 +8,12 @@ public class KotodamariScript: MonoBehaviour
 {
 
     DictationRecognizer dictationRecognizer;
-    GameObject textObject;
+    private GameObject textObject;
     public GameObject PlayerObject;
     public GameObject CameraObject;
 
     public Vector3 PlayerPos;
-    public float PlayerAndle;
+    private float PlayerAndle;
 
     [SerializeField]
     public float bulletSpeed;
@@ -28,9 +28,9 @@ public class KotodamariScript: MonoBehaviour
 
     void Start()
     {
-        bulletSpeed = 30.0f;
+        bulletSpeed = 20.0f;
         flag = false;
-        KotodamaPos = 1.0f;
+        KotodamaPos = 2.0f;
         
         dictationRecognizer = new DictationRecognizer();
 
@@ -76,28 +76,65 @@ public class KotodamariScript: MonoBehaviour
                 PlayerPos.x -= KotodamaPos;
                 PlayerPos.y += KotodamaPos;
                 PlayerAndle = PlayerObject.transform.localEulerAngles.y;
-                textObject = FlyingText.GetObject(inputText, PlayerPos, Quaternion.identity) ;//FlyingTextを生成
-                textObject.transform.Rotate(0, PlayerAndle, 0) ;//PlayerControllerのY.rotateを参照
-                textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+                textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
+                textObject.name = "FlyingText";
+                Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
+                Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
+                textObject.transform.Rotate(0, PlayerAndle, 0);//PlayerControllerのY.rotateを参照
+                foreach (var TextChild in rigidbodies)
+                {
+                    TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
+                    TextChild.tag = "flyingText";
+                }
                 textObject.tag = "flyingText";
+
                 Levenflag = true;
 
             }
             inputText = testText;
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
+            PlayerPos.x -= KotodamaPos;
+            PlayerPos.y += KotodamaPos*2;
+            PlayerAndle=PlayerObject.transform.localEulerAngles.y;
+            textObject = FlyingText.GetObjects("ト", PlayerPos, Quaternion.identity);//FlyingTextを生成
+            textObject.name = "FlyingText";
+            Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
+            Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
+            textObject.transform.Rotate(0, PlayerAndle, 0);//PlayerControllerのY.rotateを参照
+            foreach (var TextChild in rigidbodies)
+            {
+                TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
+                TextChild.tag = "flyingText";
+            }
+            textObject.tag = "flyingText";
+            
+        }
+        /*if (Input.GetKeyDown(KeyCode.E))
         {
             PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
             PlayerPos.x -= KotodamaPos;
             PlayerPos.y += KotodamaPos;
-            PlayerAndle=PlayerObject.transform.localEulerAngles.y;
-            textObject = FlyingText.GetObject("QQQQQQ", PlayerPos, Quaternion.identity);//FlyingTextを生成
+            PlayerAndle = PlayerObject.transform.localEulerAngles.y;
+            textObject = FlyingText.GetObjects("EAEEE", PlayerPos, Quaternion.identity);//FlyingTextを生成
+            textObject.name = "EA";
+            //Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
+            Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
             textObject.transform.Rotate(0, PlayerAndle, 0);//PlayerControllerのY.rotateを参照
-            textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+            //textObject.transform.Translate(0,0,30 * Time.deltaTime);
+            //textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+            foreach(var rb in rigidbodies)
+            {
+                rb.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
+                rb.tag = "flyingText";
+            }
+            //textObject.GetComponent<Rigidbody>().AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Acceleration);
             textObject.tag = "flyingText";
-        }
-        
+        }*/
+
     }
 
     
