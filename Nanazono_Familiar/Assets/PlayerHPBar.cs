@@ -46,5 +46,4 @@ public class PlayerHPBar : MonoBehaviour
             }
         }
     }   
-
-}
+ }
