@@ -18,14 +18,12 @@ public class FlyingTextDestroyScript : MonoBehaviour
       
     }
 
-   
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("flyingText"))
+        if(other.gameObject.CompareTag("flyingText"))
         {
             Destroy(other.gameObject);
-            Debug.Log("当たってます");
+            Destroy(GameObject.Find("FlyingText"));
         }
     }
 }

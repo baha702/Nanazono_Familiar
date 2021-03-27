@@ -5,12 +5,13 @@ using UnityEngine;
 public class LevenshteinScript : MonoBehaviour
 {
     public KotodamariScript text;
+    public string enemyName;
     public float Ruijido;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        enemyName = "ジョンソン";
     }
 
     // Update is called once per frame
@@ -18,19 +19,15 @@ public class LevenshteinScript : MonoBehaviour
     {
         if (text.Levenflag == true)
         {
-            LevenshteinDistance();
+            //LevenshteinDistance(text.inputText, enemyName);
+            Ruijido = LevenshteinRate(text.inputText, enemyName);
+            Debug.Log(Ruijido);
             text.Levenflag = false;
         }
     }
 
-    public void LevenshteinDistance()
+    public static int LevenshteinDistance(string str1, string str2)
     {
-        string str1;
-        str1 = text.inputText;
-        string str2;
-        str2 = "りんごあめ";
-        float kekka;
-        
         int n1 = 0;
         int n2 = str2.Length + 2;
         int[] d = new int[n2 << 1];
@@ -66,9 +63,11 @@ public class LevenshteinScript : MonoBehaviour
             n2 = d[n2 + 1];
         }
 
-        kekka = d[d.Length - n2 - 2];
-        Debug.Log(kekka+"結果");
+        return d[d.Length - n2 - 2];
+    }
 
+    public static float LevenshteinRate(string str1, string str2)
+    {
         int len1 = (str1 != null) ? str1.Length : 0;
         int len2 = (str2 != null) ? str2.Length : 0;
 
@@ -79,13 +78,12 @@ public class LevenshteinScript : MonoBehaviour
             len2 = tmp;
         }
 
-        if(len1 == 0)
+        if (len1 == 0)
         {
-            float a;
-            a = (len2 == 0) ? 0.0f : 1.0f;
+            return (len2 == 0) ? 0.0f : 1.0f;
         }
 
-       Ruijido= kekka/ (float)len2;
-        Debug.Log(Ruijido+"類似度");
+        return LevenshteinDistance(str1, str2) / (float)len2;
     }
+
 }
