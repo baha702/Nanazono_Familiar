@@ -45,5 +45,5 @@ public class PlayerHPBar : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
             }
         }
-    }
+   }
 }
