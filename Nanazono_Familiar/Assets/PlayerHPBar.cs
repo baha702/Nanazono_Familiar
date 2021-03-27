@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerHPBar : MonoBehaviour
 {
     //最大HPと現在のHP。
-    int maxHp = 5;
+    int maxHp = 1;
     int currentHp;
     //Sliderを入れる
     public Slider slider;
