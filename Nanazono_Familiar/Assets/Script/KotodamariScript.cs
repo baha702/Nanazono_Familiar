@@ -13,7 +13,7 @@ public class KotodamariScript: MonoBehaviour
     public GameObject CameraObject;
 
     public Vector3 PlayerPos;
-    private float PlayerAndle;
+    private float PlayerAngleX,PlayerAngleY;
 
     [SerializeField]
     public float bulletSpeed;
@@ -28,9 +28,9 @@ public class KotodamariScript: MonoBehaviour
 
     void Start()
     {
-        bulletSpeed = 20.0f;
+        bulletSpeed = 40.0f;
         flag = false;
-        KotodamaPos = 2.0f;
+        KotodamaPos = 1.5f;
         
         dictationRecognizer = new DictationRecognizer();
 
@@ -75,12 +75,13 @@ public class KotodamariScript: MonoBehaviour
                 PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
                 PlayerPos.x -= KotodamaPos;
                 PlayerPos.y += KotodamaPos;
-                PlayerAndle = PlayerObject.transform.localEulerAngles.y;
+                PlayerAngleX = PlayerObject.transform.localEulerAngles.x;
+                PlayerAngleY = PlayerObject.transform.localEulerAngles.y;
                 textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
                 textObject.name = "FlyingText";
                 Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
                 Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
-                textObject.transform.Rotate(0, PlayerAndle, 0);//PlayerControllerのY.rotateを参照
+                textObject.transform.Rotate(0, PlayerAngleY, 0);//PlayerControllerのY.rotateを参照
                 foreach (var TextChild in rigidbodies)
                 {
                     TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
@@ -97,14 +98,15 @@ public class KotodamariScript: MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-            PlayerPos.x -= KotodamaPos;
-            PlayerPos.y += KotodamaPos*2;
-            PlayerAndle=PlayerObject.transform.localEulerAngles.y;
-            textObject = FlyingText.GetObjects("ト", PlayerPos, Quaternion.identity);//FlyingTextを生成
+            PlayerPos.x -= KotodamaPos*2;
+            PlayerPos.y += KotodamaPos;
+            PlayerAngleX = PlayerObject.transform.localEulerAngles.x;
+            PlayerAngleY = PlayerObject.transform.localEulerAngles.y;
+            textObject = FlyingText.GetObjects("トマ二", PlayerPos, Quaternion.identity);//FlyingTextを生成
             textObject.name = "FlyingText";
             Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
             Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
-            textObject.transform.Rotate(0, PlayerAndle, 0);//PlayerControllerのY.rotateを参照
+            textObject.transform.Rotate(0, PlayerAngleY, 0);//PlayerControllerのY.rotateを参照
             foreach (var TextChild in rigidbodies)
             {
                 TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
@@ -112,6 +114,26 @@ public class KotodamariScript: MonoBehaviour
             }
             textObject.tag = "flyingText";
             
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
+            PlayerPos.x -= KotodamaPos * 2;
+            PlayerPos.y += KotodamaPos;
+            PlayerAngleX = PlayerObject.transform.localEulerAngles.x;
+            PlayerAngleY = PlayerObject.transform.localEulerAngles.y;
+            textObject = FlyingText.GetObjects("ムニエル", PlayerPos, Quaternion.identity);//FlyingTextを生成
+            textObject.name = "FlyingText";
+            Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
+            Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
+            textObject.transform.Rotate(0, PlayerAngleY, 0);//PlayerControllerのY.rotateを参照
+            foreach (var TextChild in rigidbodies)
+            {
+                TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
+                TextChild.tag = "flyingText";
+            }
+            textObject.tag = "flyingText";
+
         }
         /*if (Input.GetKeyDown(KeyCode.E))
         {
