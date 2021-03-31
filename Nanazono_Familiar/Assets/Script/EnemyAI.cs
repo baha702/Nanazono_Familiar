@@ -19,6 +19,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float quitRange = 5f;
     [SerializeField] bool tracking = false;
 
+    EnemyBorn enemyBorn;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -52,9 +54,11 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        //Playerとこのオブジェクトの距離を測る
-        playerPos = player.transform.position;
-        distance = Vector3.Distance(this.transform.position, playerPos);
+        
+            //Playerとこのオブジェクトの距離を測る
+            playerPos = player.transform.position;
+            distance = Vector3.Distance(this.transform.position, playerPos);
+        
 
 
         if (tracking)

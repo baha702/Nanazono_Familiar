@@ -24,14 +24,15 @@ public class KotodamariScript: MonoBehaviour
     public bool flag;
     public bool Levenflag;
     [SerializeField]
-    public float KotodamaPos;
+    public float KotodamaPosX,KotodamaPosY;
 
     void Start()
     {
         bulletSpeed = 40.0f;
         flag = false;
-        KotodamaPos = 1.5f;
-        
+        KotodamaPosX = 2.5f;
+        KotodamaPosY = 1.5f;
+
         dictationRecognizer = new DictationRecognizer();
 
         //ディクテーションを開始
@@ -73,8 +74,8 @@ public class KotodamariScript: MonoBehaviour
             if (inputText != testText)
             {
                 PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-                PlayerPos.x -= KotodamaPos;
-                PlayerPos.y += KotodamaPos;
+                PlayerPos.z -= KotodamaPosX;
+                PlayerPos.y += KotodamaPosY;
                 PlayerAngleX = PlayerObject.transform.localEulerAngles.x;
                 PlayerAngleY = PlayerObject.transform.localEulerAngles.y;
                 textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
@@ -98,8 +99,8 @@ public class KotodamariScript: MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-            PlayerPos.x -= KotodamaPos*2;
-            PlayerPos.y += KotodamaPos;
+            PlayerPos.z -= KotodamaPosX;
+            PlayerPos.y += KotodamaPosY;
             PlayerAngleX = PlayerObject.transform.localEulerAngles.x;
             PlayerAngleY = PlayerObject.transform.localEulerAngles.y;
             textObject = FlyingText.GetObjects("トマ二", PlayerPos, Quaternion.identity);//FlyingTextを生成
@@ -118,8 +119,8 @@ public class KotodamariScript: MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-            PlayerPos.x -= KotodamaPos * 2;
-            PlayerPos.y += KotodamaPos;
+            PlayerPos.z -= KotodamaPosX;
+            PlayerPos.y += KotodamaPosY;
             PlayerAngleX = PlayerObject.transform.localEulerAngles.x;
             PlayerAngleY = PlayerObject.transform.localEulerAngles.y;
             textObject = FlyingText.GetObjects("ムニエル", PlayerPos, Quaternion.identity);//FlyingTextを生成
