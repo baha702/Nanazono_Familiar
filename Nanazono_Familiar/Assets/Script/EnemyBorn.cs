@@ -51,6 +51,7 @@ public class EnemyBorn : MonoBehaviour
 		var randomRotationY = Random.value * 360f;
 
 		GameObject.Instantiate(enemys[randomValue], transform.position, Quaternion.Euler(0f, randomRotationY, 0f));
+		enemys[randomValue].gameObject.SetActive(true);
 
 		numberOfEnemys++;
 		elapsedTime = 0f;
