@@ -23,6 +23,7 @@ public class FlyingTextDestroyScript : MonoBehaviour
         if(other.gameObject.CompareTag("flyingText"))
         {
             Destroy(other.gameObject);
+            Destroy(GameObject.FindGameObjectWithTag("flyingText").gameObject);
             Destroy(GameObject.Find("FlyingText"));
         }
     }
