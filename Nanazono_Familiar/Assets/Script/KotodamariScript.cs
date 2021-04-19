@@ -11,6 +11,7 @@ public class KotodamariScript: MonoBehaviour
     private GameObject textObject;
     public GameObject PlayerObject;
     public GameObject CameraObject;
+    GameObject DestroyFlyObject;
 
     public Vector3 PlayerPos;
     private float PlayerAngleX,PlayerAngleY;
@@ -22,6 +23,7 @@ public class KotodamariScript: MonoBehaviour
     public string testText;
 
     public bool flag;
+    private bool iscalledOnce;
     public bool Levenflag;
     [SerializeField]
     public float KotodamaPosX,KotodamaPosY;
@@ -30,7 +32,7 @@ public class KotodamariScript: MonoBehaviour
     {
         bulletSpeed = 40.0f;
         flag = false;
-        KotodamaPosX = 2.5f;
+        KotodamaPosX = 0.5f;
         KotodamaPosY = 1.5f;
 
         dictationRecognizer = new DictationRecognizer();
@@ -40,60 +42,53 @@ public class KotodamariScript: MonoBehaviour
         Debug.Log("音声認識開始");
 
         testText = "test";
-        //textObject = FlyingText.GetObject("スタート", new Vector3(-3, 5, 4), Quaternion.identity);
-
-
     }
 
    
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+
+        if (Input.GetMouseButton(0))
         {
-            flag = true;
-            Debug.Log("音声認識スタート");
+            iscalledOnce = true;
         }
-        if (Input.GetMouseButtonDown(1))
-        {
-            flag = false;
-            Debug.Log("音声認識フィニッシュ");
-        }
+            if (iscalledOnce == true)
+            { 
 
+                dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
 
-        if (flag == true)
-        {
-            dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
+                dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;//DictationRecognizer_DictationHypothesis処理を行う
 
-            dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;//DictationRecognizer_DictationHypothesis処理を行う
+                dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;//DictationRecognizer_DictationComplete処理を行う
 
-            dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;//DictationRecognizer_DictationComplete処理を行う
+                dictationRecognizer.DictationError += DictationRecognizer_DictationError;//DictationRecognizer_DictationError処理を行う
 
-            dictationRecognizer.DictationError += DictationRecognizer_DictationError;//DictationRecognizer_DictationError処理を行う
-
-            if (inputText != testText)
-            {
-                PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-                PlayerPos.z -= KotodamaPosX;
-                PlayerPos.y += KotodamaPosY;
-                PlayerAngleX = PlayerObject.transform.localEulerAngles.x;
-                PlayerAngleY = PlayerObject.transform.localEulerAngles.y;
-                textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
-                textObject.name = "FlyingText";
-                Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
-                Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
-                textObject.transform.Rotate(0, PlayerAngleY, 0);//PlayerControllerのY.rotateを参照
-                foreach (var TextChild in rigidbodies)
+                if (inputText != testText)
                 {
-                    TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
-                    TextChild.tag = "flyingText";
+                    KotodamaPos();
+                    textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
+                    textObject.name = "FlyingText";
+                    Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
+                    Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
+                    textObject.transform.Rotate(0, PlayerAngleY, 0);//PlayerControllerのY.rotateを参照
+                    foreach (var TextChild in rigidbodies)
+                    {
+                        TextChild.useGravity = false;
+                        TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
+                        TextChild.tag = "flyingText";
+                    }
+                    textObject.tag = "flyingText";
+
+                    Levenflag = true;
+
                 }
-                textObject.tag = "flyingText";
-
-                Levenflag = true;
-
+                inputText = testText;
             }
-            inputText = testText;
+
+        if (Input.GetMouseButton(1))
+        {
+            iscalledOnce = false;  
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -103,18 +98,21 @@ public class KotodamariScript: MonoBehaviour
             PlayerPos.y += KotodamaPosY;
             PlayerAngleX = PlayerObject.transform.localEulerAngles.x;
             PlayerAngleY = PlayerObject.transform.localEulerAngles.y;
-            textObject = FlyingText.GetObjects("トマ二", PlayerPos, Quaternion.identity);//FlyingTextを生成
+            textObject = FlyingText.GetObjects("トマ", PlayerPos, Quaternion.identity);//FlyingTextを生成
             textObject.name = "FlyingText";
             Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
             Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
             textObject.transform.Rotate(0, PlayerAngleY, 0);//PlayerControllerのY.rotateを参照
             foreach (var TextChild in rigidbodies)
             {
+                TextChild.useGravity = false;
                 TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
                 TextChild.tag = "flyingText";
             }
             textObject.tag = "flyingText";
-            
+            DestroyFlyObject = textObject;
+            StartCoroutine("Coroutine");
+
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -130,37 +128,41 @@ public class KotodamariScript: MonoBehaviour
             textObject.transform.Rotate(0, PlayerAngleY, 0);//PlayerControllerのY.rotateを参照
             foreach (var TextChild in rigidbodies)
             {
+                TextChild.useGravity = false;
                 TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
                 TextChild.tag = "flyingText";
+                
             }
             textObject.tag = "flyingText";
 
+            StartCoroutine("Coroutine");
         }
-        /*if (Input.GetKeyDown(KeyCode.E))
-        {
-            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-            PlayerPos.x -= KotodamaPos;
-            PlayerPos.y += KotodamaPos;
-            PlayerAndle = PlayerObject.transform.localEulerAngles.y;
-            textObject = FlyingText.GetObjects("EAEEE", PlayerPos, Quaternion.identity);//FlyingTextを生成
-            textObject.name = "EA";
-            //Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
-            Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
-            textObject.transform.Rotate(0, PlayerAndle, 0);//PlayerControllerのY.rotateを参照
-            //textObject.transform.Translate(0,0,30 * Time.deltaTime);
-            //textObject.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
-            foreach(var rb in rigidbodies)
-            {
-                rb.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
-                rb.tag = "flyingText";
-            }
-            //textObject.GetComponent<Rigidbody>().AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Acceleration);
-            textObject.tag = "flyingText";
-        }*/
-
+        
     }
 
-    
+    private void KotodamaPos()
+    {
+        PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
+        PlayerPos.y += KotodamaPosY;
+        PlayerAngleX = PlayerObject.transform.localEulerAngles.x;
+        PlayerAngleY = PlayerObject.transform.localEulerAngles.y;
+        for(int i=1; i < inputText.Length; i++)
+        {
+            Debug.Log(inputText.Length);
+            PlayerPos.z -= KotodamaPosX;
+        }
+    }
+    private IEnumerator Coroutine()
+    {
+        //１秒待機
+        yield return new WaitForSeconds(10.0f);
+
+        Destroy(GameObject.FindGameObjectWithTag("flyingText").gameObject);
+        Destroy(DestroyFlyObject.gameObject);
+
+        //コルーチンを終了
+        yield break;
+    }
 
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
