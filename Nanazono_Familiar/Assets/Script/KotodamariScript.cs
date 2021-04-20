@@ -27,6 +27,7 @@ public class KotodamariScript: MonoBehaviour
     public bool Levenflag;
     [SerializeField]
     public float KotodamaPosX,KotodamaPosY;
+    EffectController effect;
 
     void Start()
     {
@@ -52,9 +53,11 @@ public class KotodamariScript: MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             iscalledOnce = true;
+            
         }
             if (iscalledOnce == true)
-            { 
+            {
+                
 
                 dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
 
@@ -66,6 +69,7 @@ public class KotodamariScript: MonoBehaviour
 
                 if (inputText != testText)
                 {
+                    
                     KotodamaPos();
                     textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
                     textObject.name = "FlyingText";
@@ -80,6 +84,7 @@ public class KotodamariScript: MonoBehaviour
                     }
                     textObject.tag = "flyingText";
 
+                    
                     Levenflag = true;
 
                 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NameJudge : MonoBehaviour
 {
@@ -10,20 +11,19 @@ public class NameJudge : MonoBehaviour
     public string enemystr2;
     public int strLength;
     private int strFlag;
+    public TextMeshProUGUI TextName;
+    bool OnceCall1,OnceCall2;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (Destroyflag1==true && Destroyflag2==true)
-        {
-            StartCoroutine("Coroutine");
-        }*/
+        
         if (strFlag >= strLength)
         {
             StartCoroutine("Coroutine");
@@ -49,7 +49,7 @@ public class NameJudge : MonoBehaviour
             GameObject JudgeText = GameObject.Find("FlyingText");
             if (GameObject.Find(str1) != null)
             {
-                GameObject childA = JudgeText.transform.Find(str1).gameObject;//FlyingTextの子の「ト」という名前のオブジェクトを探して変数childAに入れる
+                GameObject childA = JudgeText.transform.Find(str1).gameObject;//FlyingTextの子の「str1」という名前のオブジェクトを探して変数childAに入れる
                 childA.GetComponent<BoxCollider>().isTrigger = true;
                 Debug.Log(str1);
                 Destroy(enemyObject);
@@ -58,11 +58,38 @@ public class NameJudge : MonoBehaviour
             }
         }
     }
+    private void TextMeshJudge(string str1,string str2)
+    {
+        if (GameObject.Find("FlyingText") != null)
+        {
+            GameObject JudgeText = GameObject.Find("FlyingText");
+            if (GameObject.Find(str1) != null)
+            {
+                TextName.text = string.Format("<color=blue>{0}</color>{0}",str1,str2);
+                if (OnceCall1==false)
+                {
+                    strFlag++;
+                    OnceCall1 = true;
+                }
+               
+            }
+            if(GameObject.Find(str2) != null)
+            {
+                TextName.text = string.Format("{0}<color=blue>{0}</color>", str1, str2);
+                if (OnceCall2 == false)
+                {
+                    strFlag++;
+                    OnceCall2 = true;
+                }
+            }
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        JudgeName(enemystr1,enemyName1);
-        JudgeName(enemystr2,enemyName2);
+        TextMeshJudge(enemystr1,enemystr2);
+        //JudgeName(enemystr1,enemyName1);
+        //JudgeName(enemystr2,enemyName2);
 
         /*if (GameObject.Find("FlyingText") != null)
         {

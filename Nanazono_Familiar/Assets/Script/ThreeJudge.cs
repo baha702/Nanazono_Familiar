@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ThreeJudge : MonoBehaviour
 {
-    public GameObject enemyName1, enemyName3;
-    public string enemystr1, enemystr3;
-    public GameObject enemyName2;
-    public string enemystr2;
+    public GameObject enemyName1, enemyName2, enemyName3;
+    public string enemystr1, enemystr2, enemystr3;
     public int strLength;
     private int strFlag;
+    public TextMeshProUGUI TextName;
+    bool OnceCall1, OnceCall2, OnceCall3;
 
     // Start is called before the first frame update
     void Start()
@@ -58,15 +59,52 @@ public class ThreeJudge : MonoBehaviour
             }
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void TextMeshJudge(string str1, string str2, string str3)
     {
-        JudgeName(enemystr1, enemyName1);
+        if (GameObject.Find("FlyingText") != null)
+        {
+            GameObject JudgeText = GameObject.Find("FlyingText");
+            if (GameObject.Find(str1) != null)
+            {
+                TextName.text = string.Format("<color=blue>{0}</color>{0}{0}", str1, str2, str3);
+                if (OnceCall1 == false)
+                {
+                    strFlag++;
+                    OnceCall1 = true;
+                }
+
+            }
+            if (GameObject.Find(str2) != null)
+            {
+                TextName.text = string.Format("{0}<color=blue>{0}</color>{0}", str1, str2, str3);
+                if (OnceCall2 == false)
+                {
+                    strFlag++;
+                    OnceCall2 = true;
+                }
+            }
+            if (GameObject.Find(str3) != null)
+            {
+                TextName.text = string.Format("{0}{0}<color=blue>{0}</color>", str1, str2, str3);
+                if (OnceCall3 == false)
+                {
+                    strFlag++;
+                    OnceCall3 = true;
+                }
+
+            }
+        }
+    }
+
+     private void OnCollisionEnter(Collision collision)
+     {
+        TextMeshJudge(enemystr1, enemystr2, enemystr3);
+        /*JudgeName(enemystr1, enemyName1);
         JudgeName(enemystr2, enemyName2);
-        JudgeName(enemystr3, enemyName3);
+        JudgeName(enemystr3, enemyName3);*/
        
 
 
-    }
+     }
 }
 
