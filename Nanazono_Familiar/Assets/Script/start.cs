@@ -17,6 +17,6 @@ public class start : MonoBehaviour
     }
     public void Button()
     {
-        SceneManager.LoadScene("Enemy Move");
+        SceneManager.LoadScene("Nepuri-gu"); 
     }
 }
