@@ -5225,6 +5225,7 @@ NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
   m_GameObject: {fileID: 950558384}
   m_Enabled: 1
   m_AgentTypeID: 0
@@ -7924,6 +7925,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700550187}
   m_CullTransparentMesh: 0
+
 --- !u!1001 &1711135554
 PrefabInstance:
   m_ObjectHideFlags: 0
