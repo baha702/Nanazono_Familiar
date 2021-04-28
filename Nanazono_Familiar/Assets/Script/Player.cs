@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class player : MonoBehaviour
 {
     private CharacterController characterController;//①CharacterController型の変数
     private Vector3 Velocity;//①キャラクターコントローラーを動かすためのVector3型の変数
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void update()
     {
         float X_Rotation = Input.GetAxis("Mouse X");//①X_RotationにマウスのX軸の動きを代入する
         float Y_Rotation = Input.GetAxis("Mouse Y");//①Y_RotationにマウスのY軸の動きを代入する

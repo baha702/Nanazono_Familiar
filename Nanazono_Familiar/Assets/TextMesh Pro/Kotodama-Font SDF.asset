@@ -1807,7 +1807,15 @@ Material:
     - _FaceTex:
         m_Texture: {fileID: 2800000, guid: 5d77c11db6fb53745aa47edbea773513, type: 3}
         m_Scale: {x: 1, y: 1}
+<<<<<<< HEAD
         m_Offset: {x: 0, y: -0.6209956}
+=======
+<<<<<<< HEAD
+        m_Offset: {x: 0, y: -0.002}
+=======
+        m_Offset: {x: 0, y: -0.70099455}
+>>>>>>> 4021e3138c2f7501627d6be8e22726127a6f1698
+>>>>>>> 949bc01fb17e5b697b35415b37fc12d1da0c2838
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
