@@ -1096,7 +1096,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146683342}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -1.03}
+  m_LocalPosition: {x: 0, y: 0, z: -1.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2115112226}
@@ -3326,7 +3326,7 @@ MonoBehaviour:
   enemys:
   - {fileID: 950558384}
   appearNextTime: 17
-  maxNumOfEnemys: 1
+  maxNumOfEnemys: 2
 --- !u!1 &609660428
 GameObject:
   m_ObjectHideFlags: 0
@@ -5262,28 +5262,6 @@ MonoBehaviour:
   TMPstr2: {fileID: 1332505878}
   TMPstr3: {fileID: 146683344}
   blueMaterial: {fileID: 2100000, guid: a41a3f203aae5fd4aad1aa06c86039b4, type: 2}
---- !u!195 &950558393
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950558384}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.50243366
-  m_Speed: 2
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.6134902
-  m_BaseOffset: 0.3067451
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &993000927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6946,7 +6924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1289d17b1c6e2084b939d13926179963, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1289d17b1c6e2084b939d13926179963, type: 3}
       propertyPath: m_TagString
@@ -7712,7 +7690,7 @@ MonoBehaviour:
   enemys:
   - {fileID: 1615502027}
   appearNextTime: 6
-  maxNumOfEnemys: 1
+  maxNumOfEnemys: 2
 --- !u!1 &1691706485 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 365f1606dcaef0e4fb92b2923687c881, type: 3}
@@ -8592,7 +8570,7 @@ MonoBehaviour:
   enemys:
   - {fileID: 1691706485}
   appearNextTime: 10
-  maxNumOfEnemys: 1
+  maxNumOfEnemys: 2
 --- !u!1 &1823581722
 GameObject:
   m_ObjectHideFlags: 0
