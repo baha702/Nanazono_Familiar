@@ -5,11 +5,12 @@ using TMPro;
 
 public class FiveJudge : MonoBehaviour
 {
-        public GameObject enemyName1, enemyName2,enemyName3, enemyName4,enemyName5;
+        //public GameObject enemyName1, enemyName2,enemyName3, enemyName4,enemyName5;
         public string enemystr1, enemystr2,enemystr3, enemystr4,enemystr5;
         public int strLength;
         private int strFlag;
-        public TextMeshProUGUI TextName;
+        public TextMeshProUGUI TMPstr1, TMPstr2,TMPstr3,TMPstr4,TMPstr5;
+        public Material blueMaterial;
         bool OnceCall1, OnceCall2,OnceCall3,OnceCall4,OnceCall5;
 
     // Start is called before the first frame update
@@ -66,7 +67,8 @@ public class FiveJudge : MonoBehaviour
             GameObject JudgeText = GameObject.Find("FlyingText");
             if (GameObject.Find(str1) != null)
             {
-                TextName.text = string.Format("<color=blue>{0}</color>{0}{0}{0}{0}", str1, str2,str3,str4,str5);
+                TMPstr1.text = string.Format(str1);
+                TMPstr1.fontSharedMaterial = blueMaterial;
                 if (OnceCall1 == false)
                 {
                     strFlag++;
@@ -76,7 +78,8 @@ public class FiveJudge : MonoBehaviour
             }
             if (GameObject.Find(str2) != null)
             {
-                TextName.text = string.Format("{0}<color=blue>{0}</color>{0}{0}{0}", str1, str2, str3, str4, str5);
+                TMPstr2.text = string.Format(str2);
+                TMPstr2.fontSharedMaterial = blueMaterial;
                 if (OnceCall2 == false)
                 {
                     strFlag++;
@@ -85,34 +88,37 @@ public class FiveJudge : MonoBehaviour
             }
             if (GameObject.Find(str3) != null)
             {
-                TextName.text = string.Format("{0}{0}<color=blue>{0}</color>{0}{0}", str1, str2, str3, str4, str5);
-                if (OnceCall3 == false)
+                TMPstr3.text = string.Format(str3);
+                TMPstr3.fontSharedMaterial = blueMaterial;
+                if (OnceCall1 == false)
                 {
                     strFlag++;
-                    OnceCall3 = true;
+                    OnceCall1 = true;
                 }
 
             }
             if (GameObject.Find(str4) != null)
             {
-                TextName.text = string.Format("{0}{0}{0}<color=blue>{0}</color>{0}", str1, str2, str3, str4, str5);
-                if (OnceCall4 == false)
+                TMPstr4.text = string.Format(str4);
+                TMPstr4.fontSharedMaterial = blueMaterial;
+                if (OnceCall2 == false)
                 {
                     strFlag++;
-                    OnceCall4 = true;
+                    OnceCall2 = true;
                 }
-
             }
             if (GameObject.Find(str5) != null)
             {
-                TextName.text = string.Format("{0}{0}{0}{0}<color=blue>{0}</color>", str1, str2, str3, str4, str5);
-                if (OnceCall5 == false)
+                TMPstr5.text = string.Format(str5);
+                TMPstr5.fontSharedMaterial = blueMaterial;
+                if (OnceCall1 == false)
                 {
                     strFlag++;
-                    OnceCall5 = true;
+                    OnceCall1 = true;
                 }
 
             }
+            
         }
     }
 

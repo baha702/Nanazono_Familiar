@@ -5,15 +5,17 @@ using TMPro;
 
 public class NameJudge : MonoBehaviour
 {
-    public GameObject enemyName1;
+    GameObject enemyName1;
     public string enemystr1;     
-    public GameObject enemyName2;
+    GameObject enemyName2;
     public string enemystr2;
     public int strLength;
     private int strFlag;
     public TextMeshProUGUI TextName;
     bool OnceCall1,OnceCall2;
-
+    [SerializeField] TextMeshProUGUI[] enemyNames;
+    public TextMeshProUGUI TMPstr1,TMPstr2;
+    public Material blueMaterial;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +67,8 @@ public class NameJudge : MonoBehaviour
             GameObject JudgeText = GameObject.Find("FlyingText");
             if (GameObject.Find(str1) != null)
             {
-                TextName.text = string.Format("<color=blue>{0}</color>{0}",str1,str2);
+                TMPstr1.text = string.Format(str1);
+                TMPstr1.fontSharedMaterial = blueMaterial;
                 if (OnceCall1==false)
                 {
                     strFlag++;
@@ -75,13 +78,33 @@ public class NameJudge : MonoBehaviour
             }
             if(GameObject.Find(str2) != null)
             {
-                TextName.text = string.Format("{0}<color=blue>{0}</color>", str1, str2);
+                TMPstr2.text = string.Format(str2);
+                TMPstr2.fontSharedMaterial = blueMaterial;
                 if (OnceCall2 == false)
                 {
                     strFlag++;
                     OnceCall2 = true;
                 }
             }
+        }
+    }
+    private void aaaa(string str1)
+    {
+        
+        if (GameObject.Find("FlyingText") != null)
+        {
+            GameObject JudgeText = GameObject.Find("FlyingText");
+            if (GameObject.Find(str1) != null)
+            {
+                TextName.text = string.Format("<color=blue>{0}</color>", str1);
+                if (OnceCall1 == false)
+                {
+                    strFlag++;
+                    OnceCall1 = true;
+                }
+
+            }
+            
         }
     }
 
