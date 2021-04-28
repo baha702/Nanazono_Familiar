@@ -9,7 +9,6 @@ public class HpBarCtrl : MonoBehaviour
     public bool Damageflag;
     public float EikyouPower;
     public float AllDamage;
-    public LevenshteinScript leven;
     void Start()
     {
         // スライダーを取得する
@@ -41,7 +40,7 @@ public class HpBarCtrl : MonoBehaviour
         {
             
             Debug.Log(_hp);
-            AllDamage = EikyouPower * leven.Ruijido;
+            AllDamage = EikyouPower * 3;
             _hp -= AllDamage;
             //Damageflag = true;
         }
