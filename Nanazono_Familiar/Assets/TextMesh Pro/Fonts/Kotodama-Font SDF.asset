@@ -2024,7 +2024,15 @@ Material:
     - _FaceTex:
         m_Texture: {fileID: 2800000, guid: 5d77c11db6fb53745aa47edbea773513, type: 3}
         m_Scale: {x: 1, y: 1}
+<<<<<<< HEAD
         m_Offset: {x: 0, y: -0.55199647}
+=======
+<<<<<<< HEAD
+        m_Offset: {x: 0, y: -0.002}
+=======
+        m_Offset: {x: 0, y: -0.28599986}
+>>>>>>> 1bcecee4d4e5b92f8a071290d14ee946a1fd16b6
+>>>>>>> 707e9011e07e07b18b9e2f4f44b2e69ffd70ae2f
     - _MainTex:
         m_Texture: {fileID: -6530407263871625114}
         m_Scale: {x: 1, y: 1}
