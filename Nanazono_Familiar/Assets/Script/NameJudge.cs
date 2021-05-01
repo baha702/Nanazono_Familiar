@@ -39,6 +39,8 @@ public class NameJudge : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         Destroy(this.gameObject);
+        TMPstr1.text = string.Format(enemystr1);
+        TMPstr2.text = string.Format(enemystr2);
 
         //コルーチンを終了
         yield break;

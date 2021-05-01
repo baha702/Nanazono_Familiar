@@ -5,7 +5,7 @@ using TMPro;
 
 public class FiveJudge : MonoBehaviour
 {
-        //public GameObject enemyName1, enemyName2,enemyName3, enemyName4,enemyName5;
+         //public GameObject enemyName1, enemyName2,enemyName3, enemyName4,enemyName5;
         public string enemystr1, enemystr2,enemystr3, enemystr4,enemystr5;
         public int strLength;
         private int strFlag;
@@ -28,8 +28,9 @@ public class FiveJudge : MonoBehaviour
             }*/
             if (strFlag >= strLength)
             {
-                StartCoroutine("Coroutine");
-            }
+                StartCoroutine("Coroutine"); 
+            
+        }
         }
 
 
@@ -39,9 +40,14 @@ public class FiveJudge : MonoBehaviour
             yield return new WaitForSeconds(2.0f);
 
             Destroy(this.gameObject);
+        TMPstr1.text = string.Format(enemystr1);
+        TMPstr2.text = string.Format(enemystr2);
+        TMPstr3.text = string.Format(enemystr3);
+        TMPstr4.text = string.Format(enemystr4);
+        TMPstr5.text = string.Format(enemystr5);
 
-            //コルーチンを終了
-            yield break;
+        //コルーチンを終了
+        yield break;
         }
 
         private void JudgeName(string str1, GameObject enemyObject)
@@ -90,10 +96,10 @@ public class FiveJudge : MonoBehaviour
             {
                 TMPstr3.text = string.Format(str3);
                 TMPstr3.fontSharedMaterial = blueMaterial;
-                if (OnceCall1 == false)
+                if (OnceCall3 == false)
                 {
                     strFlag++;
-                    OnceCall1 = true;
+                    OnceCall3 = true;
                 }
 
             }
@@ -101,20 +107,20 @@ public class FiveJudge : MonoBehaviour
             {
                 TMPstr4.text = string.Format(str4);
                 TMPstr4.fontSharedMaterial = blueMaterial;
-                if (OnceCall2 == false)
+                if (OnceCall4 == false)
                 {
                     strFlag++;
-                    OnceCall2 = true;
+                    OnceCall4 = true;
                 }
             }
             if (GameObject.Find(str5) != null)
             {
                 TMPstr5.text = string.Format(str5);
                 TMPstr5.fontSharedMaterial = blueMaterial;
-                if (OnceCall1 == false)
+                if (OnceCall5 == false)
                 {
                     strFlag++;
-                    OnceCall1 = true;
+                    OnceCall5 = true;
                 }
 
             }
