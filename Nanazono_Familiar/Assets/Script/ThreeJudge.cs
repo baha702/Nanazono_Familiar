@@ -29,6 +29,7 @@ public class ThreeJudge : MonoBehaviour
         if (strFlag >= strLength)
         {
             StartCoroutine("Coroutine");
+            
         }
     }
 
@@ -39,6 +40,9 @@ public class ThreeJudge : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         Destroy(this.gameObject);
+        TMPstr1.text = string.Format(enemystr1);
+        TMPstr2.text = string.Format(enemystr2);
+        TMPstr3.text = string.Format(enemystr3);
 
         //コルーチンを終了
         yield break;
@@ -90,10 +94,10 @@ public class ThreeJudge : MonoBehaviour
             {
                 TMPstr3.text = string.Format(str3);
                 TMPstr3.fontSharedMaterial = blueMaterial;
-                if (OnceCall1 == false)
+                if (OnceCall3 == false)
                 {
                     strFlag++;
-                    OnceCall1 = true;
+                    OnceCall3 = true;
                 }
 
             }

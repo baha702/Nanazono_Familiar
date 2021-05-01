@@ -34,8 +34,8 @@ public class KotodamariScript: MonoBehaviour
         flag = false;
         KotodamaPosY = 1.5f;
         KotodamaPosZ = 0.5f;
-        DebugText1 = "トマ";
-        DebugText2 = "ムニエル";
+        //DebugText1 = "トマ";
+        //DebugText2 = "ムニエル";
 
         dictationRecognizer = new DictationRecognizer();
 

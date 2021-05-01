@@ -23,9 +23,11 @@ public class EffectController : MonoBehaviour
     void Update()
     {
         Vector3 PlayerPos = PlayerObject.gameObject.transform.position;
-        ChargeEffect.gameObject.transform.position = Input.mousePosition;
+        ChargeEffect.gameObject.transform.position = PlayerPos;
         PlayerPos.x -= 5;
-        if (ChargeBool==true)
+        GameObject.Instantiate(ChargeEffect, PlayerPos, Quaternion.identity);
+        Destroy(this.gameObject);
+        /*if (ChargeBool==true)
         {
             ChargeEffect.gameObject.SetActive(true);
             flag1 = true;
@@ -39,6 +41,6 @@ public class EffectController : MonoBehaviour
         if(ExpBool==true)
         {
             GameObject.Instantiate(ExeprodeEffect, PlayerPos, Quaternion.identity);
-        }
+        }*/
     }
 }
