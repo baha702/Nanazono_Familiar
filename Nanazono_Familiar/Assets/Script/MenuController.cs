@@ -5,13 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
-{
-    //　ゲーム再開ボタン
+{  
+    //　タイトルキー
     [SerializeField]
-    private GameObject ReStartButton;
-    //　タイトルボタン
-    [SerializeField]
-    private GameObject TitleBitton;
+    private GameObject TitleKey;
     //　ポーズした時に表示するUI
     [SerializeField]
     private GameObject MenuUI;
@@ -38,27 +35,6 @@ public class MenuController : MonoBehaviour
     public void StopGame()
     {
         Time.timeScale = 0f;
-        ReStartButton.SetActive(true);
-        TitleBitton.SetActive(true);
-    }
-
-    public void ReStartGame()
-    {
-        if (Input.GetKeyDown("r"))
-        {
-            TitleBitton.SetActive(false);
-            ReStartButton.SetActive(false);
-            Time.timeScale = 1f;
-        }
-    }
-    public void TitleButton()
-    {
-        if (Input.GetKeyDown("t"))
-        {
-            {
-                SceneManager.LoadScene("Start");
-            }
-
-        }
+        TitleKey.SetActive(true);
     }
 }
