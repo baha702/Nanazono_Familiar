@@ -11,8 +11,6 @@ public class KotodamariScript: MonoBehaviour
     private GameObject textObject;
     public GameObject PlayerObject;
     public GameObject CameraObject;
-    public GameObject ChargeEffect;
-    public GameObject ExeprodeEffect;
 
     public Vector3 PlayerPos;
     private float CameraAngleX,CameraAngleY;
@@ -32,10 +30,13 @@ public class KotodamariScript: MonoBehaviour
 
     void Start()
     {
+        bulletSpeed = 40.0f;
         bulletSpeed = 20.0f;
         flag = false;
         KotodamaPosY = 1.5f;
         KotodamaPosZ = 0.5f;
+        //DebugText1 = "トマ";
+        //DebugText2 = "ムニエル";
 
         dictationRecognizer = new DictationRecognizer();
 
@@ -58,8 +59,7 @@ public class KotodamariScript: MonoBehaviour
         }
             if (iscalledOnce == true)
             {
-
-                ChargeEffect.gameObject.SetActive(true);
+                
 
                 dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
 
@@ -72,9 +72,7 @@ public class KotodamariScript: MonoBehaviour
                 if (inputText != testText)
                 {
                     
-                    ChargeEffect.gameObject.SetActive(false);
                     KotodamaPos(inputText);
-                    GameObject.Instantiate(ExeprodeEffect, PlayerPos, Quaternion.identity);
                     textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
                     textObject.name = "FlyingText";
                     Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
@@ -87,8 +85,6 @@ public class KotodamariScript: MonoBehaviour
                         TextChild.tag = "flyingText";
                     }
                     textObject.tag = "flyingText";
-                    ChargeEffect.gameObject.SetActive(false);
-                    Destroy(ExeprodeEffect);
                     Destroy(textObject, 10.0f);
                 }
                 inputText = testText;

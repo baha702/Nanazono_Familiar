@@ -37,6 +37,8 @@ public class NameJudge : MonoBehaviour
     {
         //１秒待機
         yield return new WaitForSeconds(2.0f);
+
+        Destroy(this.gameObject);
         this.gameObject.SetActive(false);
         TMPstr1.text = string.Format(enemystr1);
         TMPstr2.text = string.Format(enemystr2);
