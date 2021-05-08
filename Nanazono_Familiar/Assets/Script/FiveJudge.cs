@@ -39,12 +39,13 @@ public class FiveJudge : MonoBehaviour
             //１秒待機
             yield return new WaitForSeconds(2.0f);
 
+            this.gameObject.SetActive(false);
+            TMPstr1.text = string.Format(enemystr1);
+            TMPstr2.text = string.Format(enemystr2);
+            TMPstr3.text = string.Format(enemystr3);
+            TMPstr4.text = string.Format(enemystr4);
+            TMPstr5.text = string.Format(enemystr5);
             Destroy(this.gameObject);
-        TMPstr1.text = string.Format(enemystr1);
-        TMPstr2.text = string.Format(enemystr2);
-        TMPstr3.text = string.Format(enemystr3);
-        TMPstr4.text = string.Format(enemystr4);
-        TMPstr5.text = string.Format(enemystr5);
 
         //コルーチンを終了
         yield break;

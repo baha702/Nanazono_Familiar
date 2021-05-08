@@ -13,6 +13,7 @@ public class EffectController : MonoBehaviour
     public bool ChargeBool;
     public bool ExpBool;
     bool flag1;
+    KotodamariScript kotodamascript;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +23,8 @@ public class EffectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 PlayerPos = PlayerObject.gameObject.transform.position;
-        ChargeEffect.gameObject.transform.position = PlayerPos;
-        PlayerPos.x -= 5;
-        GameObject.Instantiate(ChargeEffect, PlayerPos, Quaternion.identity);
-        Destroy(this.gameObject);
-        /*if (ChargeBool==true)
+        
+        if (ChargeBool==true)
         {
             ChargeEffect.gameObject.SetActive(true);
             flag1 = true;
@@ -40,7 +37,8 @@ public class EffectController : MonoBehaviour
         }
         if(ExpBool==true)
         {
-            GameObject.Instantiate(ExeprodeEffect, PlayerPos, Quaternion.identity);
-        }*/
+            GameObject.Instantiate(ExeprodeEffect, kotodamascript.PlayerPos, Quaternion.identity);
+            Destroy(ExeprodeEffect,5);
+        }
     }
 }
