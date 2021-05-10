@@ -1,0 +1,10 @@
+diff a/Nanazono_Familiar/Assets/Script/NameJudge.cs b/Nanazono_Familiar/Assets/Script/NameJudge.cs	(rejected hunks)
+@@ -37,8 +37,6 @@
+     {
+         //１秒待機
+         yield return new WaitForSeconds(2.0f);
+-
+-        Destroy(this.gameObject);
+         this.gameObject.SetActive(false);
+         TMPstr1.text = string.Format(enemystr1);
+         TMPstr2.text = string.Format(enemystr2);

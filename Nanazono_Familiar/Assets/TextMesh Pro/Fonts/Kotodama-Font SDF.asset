@@ -30,7 +30,15 @@ Material:
     - _FaceTex:
         m_Texture: {fileID: 2800000, guid: 5d77c11db6fb53745aa47edbea773513, type: 3}
         m_Scale: {x: 1, y: 1}
+<<<<<<< HEAD
         m_Offset: {x: 0, y: -0.667995}
+=======
+<<<<<<< HEAD
+        m_Offset: {x: 0, y: -0.8829922}
+=======
+        m_Offset: {x: 0, y: -0.5049971}
+>>>>>>> d70cb570b307f14f3ac34abf1adcf3b7d8819975
+>>>>>>> 5fa73eff64085d21ba8d5629aa521b51c5c343b7
     - _MainTex:
         m_Texture: {fileID: 3060870599722623175}
         m_Scale: {x: 1, y: 1}

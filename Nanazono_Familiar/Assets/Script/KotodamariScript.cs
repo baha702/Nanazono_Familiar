@@ -31,6 +31,7 @@ public class KotodamariScript: MonoBehaviour
     void Start()
     {
         bulletSpeed = 40.0f;
+        bulletSpeed = 20.0f;
         flag = false;
         KotodamaPosY = 1.5f;
         KotodamaPosZ = 0.5f;

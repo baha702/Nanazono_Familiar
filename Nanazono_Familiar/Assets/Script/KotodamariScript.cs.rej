@@ -1,39 +1,35 @@
 diff a/Nanazono_Familiar/Assets/Script/KotodamariScript.cs b/Nanazono_Familiar/Assets/Script/KotodamariScript.cs	(rejected hunks)
-@@ -103,6 +103,37 @@
-         
-     }
+@@ -30,12 +32,10 @@
  
-+    private void KotodamaPos()
-+    {
-+        if (315<=PlayerAndle && PlayerAndle<=360 || 0<=PlayerAndle && PlayerAndle<=45)
-+        {
-+            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-+            PlayerPos.x -= KotodamaPosX;
-+            PlayerPos.y += KotodamaPosY;
-+        }
-+        if (270 <= PlayerAndle && PlayerAndle <= 315 || 225 <= PlayerAndle && PlayerAndle <= 270)
-+        {
-+            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-+            PlayerPos.x -= KotodamaPosX;
-+            PlayerPos.z -= KotodamaPosX;
-+            PlayerPos.y += KotodamaPosY;
-+        }
-+        if (135 <= PlayerAndle && PlayerAndle <= 180 || 180 <= PlayerAndle && PlayerAndle <= 225)
-+        {
-+            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-+            PlayerPos.x += KotodamaPosX;
-+            PlayerPos.x += KotodamaPosX;
-+            PlayerPos.z += KotodamaPosX;
-+            PlayerPos.y += KotodamaPosY;
-+        }
-+        if (45 <= PlayerAndle && PlayerAndle <= 90 || 90 <= PlayerAndle && PlayerAndle <= 135)
-+        {
-+            PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
-+            PlayerPos.x += KotodamaPosX;
-+            PlayerPos.y += KotodamaPosY;
-+        }
-+    }
+     void Start()
+     {
+-        bulletSpeed = 40.0f;
++        bulletSpeed = 20.0f;
+         flag = false;
+         KotodamaPosY = 1.5f;
+         KotodamaPosZ = 0.5f;
+-        //DebugText1 = "トマ";
+-        //DebugText2 = "ムニエル";
+ 
+         dictationRecognizer = new DictationRecognizer();
+ 
+@@ -58,7 +58,8 @@
+         }
+             if (iscalledOnce == true)
+             {
+-                
 +
-     
++                ChargeEffect.gameObject.SetActive(true);
  
-     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
+                 dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
+ 
+@@ -71,7 +72,9 @@
+                 if (inputText != testText)
+                 {
+                     
++                    ChargeEffect.gameObject.SetActive(false);
+                     KotodamaPos(inputText);
++                    GameObject.Instantiate(ExeprodeEffect, PlayerPos, Quaternion.identity);
+                     textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
+                     textObject.name = "FlyingText";
+                     Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
