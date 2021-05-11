@@ -22,10 +22,7 @@ public class ThreeJudge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Destroyflag1==true && Destroyflag2==true)
-        {
-            StartCoroutine("Coroutine");
-        }*/
+        
         if (strFlag >= strLength)
         {
             StartCoroutine("Coroutine");
@@ -43,7 +40,7 @@ public class ThreeJudge : MonoBehaviour
         TMPstr1.text = string.Format(enemystr1);
         TMPstr2.text = string.Format(enemystr2);
         TMPstr3.text = string.Format(enemystr3);
-        Destroy(this.gameObject);
+        Destroy(this.gameObject,5);
         //コルーチンを終了
         yield break;
     }

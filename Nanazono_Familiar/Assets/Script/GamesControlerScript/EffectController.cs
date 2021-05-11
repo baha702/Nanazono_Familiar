@@ -7,12 +7,11 @@ public class EffectController : MonoBehaviour
     public GameObject PlayerObject;
     public GameObject ChargeEffect;
     public GameObject ExeprodeEffect;
-    public GameObject MainCamera;
-    public GameObject CursorObject;
 
-    public bool ChargeBool;
-    public bool ExpBool;
+    bool ChargeBool;
+    bool ExpBool;
     bool flag1;
+
     KotodamariScript kotodamascript;
     // Start is called before the first frame update
     void Start()
@@ -24,17 +23,15 @@ public class EffectController : MonoBehaviour
     void Update()
     {
         
-        if (ChargeBool==true)
+        if (true)
         {
             ChargeEffect.gameObject.SetActive(true);
-            flag1 = true;
         }
-        if (flag1==true)
+        else
         {
-            ChargeEffect.gameObject.SetActive(false);
-            flag1 = false;
-            ChargeBool = true;
+            //ChargeEffect.gameObject.SetActive(false);
         }
+
         if(ExpBool==true)
         {
             GameObject.Instantiate(ExeprodeEffect, kotodamascript.PlayerPos, Quaternion.identity);

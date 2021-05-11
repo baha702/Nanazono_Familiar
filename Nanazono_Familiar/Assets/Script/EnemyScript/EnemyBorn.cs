@@ -7,7 +7,7 @@ public class EnemyBorn : MonoBehaviour
 	// Start is called before the first frame update
 	// Start is called before the first frame update
 	//　出現させる敵を入れておく
-	[SerializeField] GameObject[] enemys;
+	[SerializeField] public GameObject[] enemys;
 	//　次に敵が出現するまでの時間
 	[SerializeField] float appearNextTime;
 	//　この場所から出現する敵の数
@@ -52,7 +52,7 @@ public class EnemyBorn : MonoBehaviour
 
 		GameObject.Instantiate(enemys[randomValue], transform.position, Quaternion.Euler(0f, randomRotationY, 0f));
 		enemys[randomValue].gameObject.SetActive(true);
-
+		
 		
 
 		numberOfEnemys++;
