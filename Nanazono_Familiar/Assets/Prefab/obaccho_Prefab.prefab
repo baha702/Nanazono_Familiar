@@ -172,8 +172,8 @@ MonoBehaviour:
   enemyTMP:
   - {fileID: 2167957384611934345}
   - {fileID: 2167957385361677124}
-  blueMaterial: {fileID: 2100000, guid: 90e6de1b4ec9b2c449f4977e85c64235, type: 2}
-  redMaterial: {fileID: -2289253442251259276, guid: ec1ca2a8dd4dd0e44922768265d0fd8b, type: 2}
+  blueMaterial: {fileID: -6510626163237118021, guid: af500a65666ad7642b857963c2d6804a, type: 2}
+  redMaterial: {fileID: 2100000, guid: 90e6de1b4ec9b2c449f4977e85c64235, type: 2}
 --- !u!1 &2167957384412223029
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,8 +341,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30E1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec1ca2a8dd4dd0e44922768265d0fd8b, type: 2}
-  m_sharedMaterial: {fileID: -2289253442251259276, guid: ec1ca2a8dd4dd0e44922768265d0fd8b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: af500a65666ad7642b857963c2d6804a, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 90e6de1b4ec9b2c449f4977e85c64235, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -475,8 +475,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30EA"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec1ca2a8dd4dd0e44922768265d0fd8b, type: 2}
-  m_sharedMaterial: {fileID: -2289253442251259276, guid: ec1ca2a8dd4dd0e44922768265d0fd8b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: af500a65666ad7642b857963c2d6804a, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 90e6de1b4ec9b2c449f4977e85c64235, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

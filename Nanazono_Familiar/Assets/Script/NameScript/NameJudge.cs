@@ -70,9 +70,9 @@ public class NameJudge : MonoBehaviour
             NameJudges(enemyStr[i],enemyTMP[i]);
         }
 
-        if (GameObject.Find("Target"))
+        /*if (GameObject.Find("Target"))
         {
             StartCoroutine("Coroutine");
-        }
+        }*/
     }
 }

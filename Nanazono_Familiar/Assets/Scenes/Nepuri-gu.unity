@@ -4253,7 +4253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6b614c0d4ee4a4dabd2bb9632f2fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: -2289253442251259276, guid: ec1ca2a8dd4dd0e44922768265d0fd8b, type: 2}
+  mat: {fileID: -6510626163237118021, guid: af500a65666ad7642b857963c2d6804a, type: 2}
   speed: -0.001
 --- !u!4 &731626096
 Transform:
@@ -10114,6 +10114,10 @@ PrefabInstance:
     - target: {fileID: 6088839434255568902, guid: c73c6ac37e3aad54b9f69ae5c2ef298b, type: 3}
       propertyPath: m_Name
       value: demobon_test
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394705635526350688, guid: c73c6ac37e3aad54b9f69ae5c2ef298b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6860169258626828988, guid: c73c6ac37e3aad54b9f69ae5c2ef298b, type: 3}
       propertyPath: m_LocalPosition.x
