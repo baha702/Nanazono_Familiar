@@ -8,6 +8,7 @@ public class KotodamariScript: MonoBehaviour
 {
 
     public DictationRecognizer dictationRecognizer;
+
     private GameObject textObject;
     public GameObject PlayerObject;
     public GameObject CameraObject;
@@ -29,6 +30,8 @@ public class KotodamariScript: MonoBehaviour
     [SerializeField]
     public float KotodamaPosY,KotodamaPosZ;
 
+    TitleKey titlekey;
+
     void Start()
     {
         bulletSpeed = 40.0f;
@@ -37,10 +40,8 @@ public class KotodamariScript: MonoBehaviour
         KotodamaPosY = 1.5f;
         KotodamaPosZ = 0.7f;
 
-        dictationRecognizer = new DictationRecognizer();
+        iscalledOnce = true;
 
-        //ディクテーションを開始
-        dictationRecognizer.Start();
         Debug.Log("音声認識開始");
 
         testText = "test";
@@ -50,49 +51,50 @@ public class KotodamariScript: MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetMouseButton(0))
-        {
-            iscalledOnce = true;
-            
-        }
-            if (iscalledOnce == true)
+         if (Input.GetMouseButton(0))
+         {
+            if (iscalledOnce==true)
             {
-                
-
-                dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
-
-                dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;//DictationRecognizer_DictationHypothesis処理を行う
-
-                dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;//DictationRecognizer_DictationComplete処理を行う
-
-                dictationRecognizer.DictationError += DictationRecognizer_DictationError;//DictationRecognizer_DictationError処理を行う
-
-                if (inputText != testText)
-                {
-                    StartCoroutine("Coroutine");
-                    KotodamaPos(inputText);
-                    textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
-                    textObject.name = "FlyingText";
-                    Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
-                    Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
-                    textObject.transform.Rotate(CameraAngleX, CameraAngleY - 90, 0);//PlayerControllerのY.rotateを参照
-                    foreach (var TextChild in rigidbodies)
-                    {
-                        TextChild.useGravity = false;
-                        TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
-                        TextChild.tag = "flyingText";
-                    }
-                    textObject.tag = "flyingText";
-                Destroy(textObject, 10.0f);
-                }
-                inputText = testText;
+                dictationRecognizer = new DictationRecognizer();
+                //ディクテーションを開始
+                dictationRecognizer.Start();
+                iscalledOnce = false;
             }
+            dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
 
-        if (Input.GetMouseButton(1))
+            dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;//DictationRecognizer_DictationHypothesis処理を行う
+
+            dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;//DictationRecognizer_DictationComplete処理を行う
+
+            dictationRecognizer.DictationError += DictationRecognizer_DictationError;//DictationRecognizer_DictationError処理を行う
+
+            if (inputText != testText)
+            {
+               StartCoroutine("Coroutine");
+               KotodamaPos(inputText);
+               textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
+               textObject.name = "FlyingText";
+               Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
+               Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
+               textObject.transform.Rotate(CameraAngleX, CameraAngleY - 90, 0);//PlayerControllerのY.rotateを参照
+               foreach (var TextChild in rigidbodies)
+               {
+                 TextChild.useGravity = false;
+                 TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
+                 TextChild.tag = "flyingText";
+               }
+               textObject.tag = "flyingText";
+               Destroy(textObject, 10.0f);
+            }
+                inputText = testText;
+         }
+        if (Input.GetMouseButtonDown(0)&& dictationRecognizer.Status == SpeechSystemStatus.Running)
         {
-            iscalledOnce = false;  
+            Debug.Log("音声認識終了");
+            dictationRecognizer.Dispose();
+            iscalledOnce = true;
         }
+
 
         if (Input.GetKeyDown(KeyCode.Q))
         {

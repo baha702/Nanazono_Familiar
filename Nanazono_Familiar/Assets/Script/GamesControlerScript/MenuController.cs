@@ -13,6 +13,11 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private GameObject MenuUI;
 
+    void Start()
+    {
+        Time.timeScale = 1f;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown("w"))
