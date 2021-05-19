@@ -7,10 +7,12 @@ using UnityEngine.Windows.Speech;   //Windowsの音声認識で使用
 public class KotodamariScript: MonoBehaviour
 {
 
-    DictationRecognizer dictationRecognizer;
+    public DictationRecognizer dictationRecognizer;
     private GameObject textObject;
     public GameObject PlayerObject;
     public GameObject CameraObject;
+    public GameObject ChargeEffect;
+    public GameObject ExprodeEffect;
 
     public Vector3 PlayerPos;
     private float CameraAngleX,CameraAngleY;
@@ -26,7 +28,6 @@ public class KotodamariScript: MonoBehaviour
     private bool iscalledOnce;
     [SerializeField]
     public float KotodamaPosY,KotodamaPosZ;
-    EffectController effect;
 
     void Start()
     {
@@ -34,7 +35,7 @@ public class KotodamariScript: MonoBehaviour
         bulletSpeed = 20.0f;
         flag = false;
         KotodamaPosY = 1.5f;
-        KotodamaPosZ = 0.5f;
+        KotodamaPosZ = 0.7f;
 
         dictationRecognizer = new DictationRecognizer();
 
@@ -69,7 +70,7 @@ public class KotodamariScript: MonoBehaviour
 
                 if (inputText != testText)
                 {
-                    
+                    StartCoroutine("Coroutine");
                     KotodamaPos(inputText);
                     textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
                     textObject.name = "FlyingText";
@@ -83,7 +84,7 @@ public class KotodamariScript: MonoBehaviour
                         TextChild.tag = "flyingText";
                     }
                     textObject.tag = "flyingText";
-                    Destroy(textObject, 10.0f);
+                Destroy(textObject, 10.0f);
                 }
                 inputText = testText;
             }
@@ -137,22 +138,24 @@ public class KotodamariScript: MonoBehaviour
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
     {
+        ChargeEffect.gameObject.SetActive(false);
+        ExprodeEffect.gameObject.SetActive(true);
         Debug.Log("認識した音声：" + text);
         inputText = text;
-        
-
     }
 
     //DictationHypothesis：音声入力中に発生するイベント
     private void DictationRecognizer_DictationHypothesis(string text)
     {
+        ChargeEffect.gameObject.SetActive(true);
         //Debug.Log("音声認識中：" + text);
     }
 
     //DictationComplete：音声認識セッションを終了したときにトリガされるイベント
     private void DictationRecognizer_DictationComplete(DictationCompletionCause cause)
     {
-        Debug.Log("音声認識完了");
+        
+        //Debug.Log("音声認識完了");
     }
 
     //DictationError：音声認識セッションにエラーが発生したときにトリガされるイベント
@@ -161,5 +164,17 @@ public class KotodamariScript: MonoBehaviour
         Debug.Log("音声認識エラー");
     }
 
+    private IEnumerator Coroutine()
+    {
+        //１秒待機
+        yield return new WaitForSeconds(2.0f);
 
+        if (ExprodeEffect.gameObject.activeSelf)
+        {
+            ExprodeEffect.gameObject.SetActive(false);
+        }
+
+        //コルーチンを終了
+        yield break;
+    }
 }
