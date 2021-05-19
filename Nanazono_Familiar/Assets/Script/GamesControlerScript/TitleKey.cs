@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows.Speech;
 
 public class TitleKey : MonoBehaviour
 {
     //　タイトルキー
     [SerializeField]
     private GameObject Title;
+    KotodamariScript kotodamariDictation;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,8 @@ public class TitleKey : MonoBehaviour
     {
         if (Input.GetKeyDown("t"))
         {
-            {
-                SceneManager.LoadScene("Start");
-            }
+            SceneManager.LoadScene("Start");
+            
 
         }
     }
