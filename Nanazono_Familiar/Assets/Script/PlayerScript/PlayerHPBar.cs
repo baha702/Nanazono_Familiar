@@ -27,7 +27,7 @@ public class PlayerHPBar : MonoBehaviour
         //Enemyタグのオブジェクトに触れると発動
         if (collider.gameObject.tag == "Enemy")
         {
-            //ダメージは1～100の中でランダムに決める。
+            //ダメージは1。
             int damage = 1;
             Debug.Log("damage : " + damage);
 
@@ -38,7 +38,7 @@ public class PlayerHPBar : MonoBehaviour
             //最大HPにおける現在のHPをSliderに反映。
             //int同士の割り算は小数点以下は0になるので、
             //(float)をつけてfloatの変数として振舞わせる。
-            slider.value = (float)currentHp / (float)maxHp; ;
+            slider.value = (float)currentHp / maxHp; ;
             Debug.Log("slider.value : " + slider.value);
             if (currentHp == 0)
             {
