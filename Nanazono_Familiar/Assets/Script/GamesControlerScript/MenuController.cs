@@ -20,7 +20,7 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             //　ポーズUIのアクティブ、非アクティブを切り替え
             MenuUI.SetActive(!MenuUI.activeSelf);
