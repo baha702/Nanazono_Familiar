@@ -10,13 +10,12 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Transform PlayerTransform;
     private Transform CameraTransform;
-    [SerializeField] float ANGLE_LIMIT_UP = 45f;
-    [SerializeField] float ANGLE_LIMIT_DOWN = -45f;
-    [SerializeField] float ANGLE_LIMIT_RIGHT = 60f;
-    [SerializeField] float ANGLE_LIMIT_LEFT = 60f;
+   
     [SerializeField] GameObject targetObj;
     Vector3 targetPos;
     Vector3 roteuler;
+    float angleH;
+    float angleV;
 
     // Use this for initialization
     void Start()
@@ -31,62 +30,44 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
-
-        //float X_Rotation = Input.GetAxis("Mouse X");
-        //float Y_Rotation = Input.GetAxis("Mouse Y");
-        // PlayerTransform.transform.Rotate(0, X_Rotation, 0);
-        //CameraTransform.transform.Rotate(-Y_Rotation, 0, 0);
-        rotateCameraAngle();
-
-        float angleDir = PlayerTransform.transform.eulerAngles.y * (Mathf.PI / 180.0f);
-        Vector3 dir1 = new Vector3(Mathf.Sin(angleDir), 0, Mathf.Cos(angleDir));
-        Vector3 dir2 = new Vector3(-Mathf.Cos(angleDir), 0, Mathf.Sin(angleDir));
-     
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            PlayerTransform.transform.position += dir1 * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            PlayerTransform.transform.position += dir2 * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            PlayerTransform.transform.position += -dir2 * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            PlayerTransform.transform.position += -dir1 * speed * Time.deltaTime;
-        }
-
-    }
-
-    private void rotateCameraAngle()
     {
+
         // targetの移動量分、自分（カメラ）も移動する
         transform.position += targetObj.transform.position - targetPos;
         targetPos = targetObj.transform.position;
-
-        // マウスの右クリックを押している間
-        // if (Input.GetMouseButton(2)) {
 
         // マウスの移動量
         float mouseInputX = Input.GetAxis("Mouse X");
         float mouseInputY = Input.GetAxis("Mouse Y");
 
+        // マウス移動量から求めた水平・垂直回転角
+        float deltaAngleH = mouseInputX * Time.deltaTime * 300f;
+        float deltaAngleV = -mouseInputY * Time.deltaTime * 300f;
+
+        // 角度を積算する
+        angleH += deltaAngleH;
+        angleV += deltaAngleV;
+
+        // 積算角度を制限内にクランプする
+        float clampedAngleH = Mathf.Clamp(angleH, -60, 60);
+        float clampedAngleV = Mathf.Clamp(angleV, -45, 45);
+
+        // クランプ前の積算角からクランプ後の積算角を引いて、どれだけ制限範囲を超えたかを求める
+        // もし制限範囲内なら差は0になるが、マイナス側に越えればマイナスの、プラス側ならプラスの角度差が得られる
+        float overshootH = angleH - clampedAngleH;
+        float overshootV = angleV - clampedAngleV;
+
+        // 角度差分だけ回転量を調整して、制限を超えないようにしてやる
+        // 積算角度も調整後の値に上書きする
+        deltaAngleH -= overshootH;
+        deltaAngleV -= overshootV;
+        angleH = clampedAngleH;
+        angleV = clampedAngleV;
+
         // targetの位置のY軸を中心に、回転（公転）する
-        transform.RotateAround(targetPos, Vector3.up, mouseInputX * Time.deltaTime * 300f);       
+        transform.RotateAround(targetPos, Vector3.up, deltaAngleH);
 
-        // カメラの垂直移動（※角度制限なし）
-        //transform.RotateAround(targetPos, transform.right, mouseInputY * Time.deltaTime * 300f);
-
-        //カメラの垂直移動(角度制限あり)
-        roteuler = new Vector3(Mathf.Clamp(roteuler.x - mouseInputY * Time.deltaTime * 200f,
-            ANGLE_LIMIT_DOWN, ANGLE_LIMIT_UP),
-            transform.localEulerAngles.y, 0f);
-        transform.localEulerAngles = roteuler;
-
-        }
+        // カメラの垂直移動
+        transform.RotateAround(targetPos, transform.right, deltaAngleV);
     }
+}

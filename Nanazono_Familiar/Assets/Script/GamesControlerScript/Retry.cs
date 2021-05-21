@@ -13,10 +13,11 @@ public class Retry : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void Button()
-    {
-        SceneManager.LoadScene("Nepuri-gu");
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene("NepScean");
+
+
+        }
     }
 }

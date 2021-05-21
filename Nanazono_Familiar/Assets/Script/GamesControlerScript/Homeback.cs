@@ -13,10 +13,11 @@ public class Homeback : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void Button()
-    {
-        SceneManager.LoadScene("Start");
-    }
+        if (Input.GetKeyDown("t"))
+        {
+            SceneManager.LoadScene("Start");
+
+
+        }
+    }  
 }
