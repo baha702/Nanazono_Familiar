@@ -17,9 +17,18 @@ public class Entity_NameList : ScriptableObject
 	public class Param
 	{
 		
-		public string kake;
-		public string yominikui;
-		public string boss;
+		public string kake2;
+		public string kake3;
+		public string kake4;
+		public string kake5;
+		public string kake6;
+		public string yominikui3;
+		public string yominikui4;
+		public string yominikui5;
+		public string boss10;
+		public string boss11;
+		public string boss12;
+		public string boss13;
 	}
 }
 

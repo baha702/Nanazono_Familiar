@@ -10,7 +10,7 @@ using NPOI.SS.UserModel;
 public class NameList_importer : AssetPostprocessor {
 	private static readonly string filePath = "Assets/Resources/NameList.xlsx";
 	private static readonly string exportPath = "Assets/Resources/NameList.asset";
-	private static readonly string[] sheetNames = { "NameList", };
+	private static readonly string[] sheetNames = { "Katakana", };
 	
 	static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
 	{
@@ -50,9 +50,18 @@ public class NameList_importer : AssetPostprocessor {
 						
 						Entity_NameList.Param p = new Entity_NameList.Param ();
 						
-					cell = row.GetCell(0); p.kake = (cell == null ? "" : cell.StringCellValue);
-					cell = row.GetCell(1); p.yominikui = (cell == null ? "" : cell.StringCellValue);
-					cell = row.GetCell(2); p.boss = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(0); p.kake2 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(1); p.kake3 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(2); p.kake4 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(3); p.kake5 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(4); p.kake6 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(5); p.yominikui3 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(6); p.yominikui4 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(7); p.yominikui5 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(8); p.boss10 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(9); p.boss11 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(10); p.boss12 = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(11); p.boss13 = (cell == null ? "" : cell.StringCellValue);
 						s.list.Add (p);
 					}
 					data.sheets.Add(s);
