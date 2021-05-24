@@ -166,9 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strLength: 2
-  enemyStr:
-  - "\u30E1"
-  - "\u30EA"
+  listnum: 0
   enemyTMP:
   - {fileID: 2167957384611934345}
   - {fileID: 2167957385361677124}
@@ -257,7 +255,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!114 &2167957384412223019
 MonoBehaviour:
   m_ObjectHideFlags: 0

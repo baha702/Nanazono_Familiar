@@ -27,6 +27,7 @@ public class KotodamariScript: MonoBehaviour
 
     public bool flag;
     private bool iscalledOnce;
+
     [SerializeField]
     public float KotodamaPosY,KotodamaPosZ;
 
@@ -91,7 +92,7 @@ public class KotodamariScript: MonoBehaviour
         if (Input.GetMouseButtonDown(0)&& dictationRecognizer.Status == SpeechSystemStatus.Running)
         {
             Debug.Log("音声認識終了");
-            dictationRecognizer.Dispose();
+            dictationRecognizer.Stop();
             iscalledOnce = true;
         }
 
@@ -115,7 +116,6 @@ public class KotodamariScript: MonoBehaviour
         CameraAngleY = CameraObject.transform.localEulerAngles.y;
         for(int i=1; i < str1.Length; i++)
         {
-            Debug.Log(str1.Length);
             PlayerPos.z -= KotodamaPosZ;
         }
     }
