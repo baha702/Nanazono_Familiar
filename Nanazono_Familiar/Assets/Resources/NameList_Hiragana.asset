@@ -23,10 +23,10 @@ MonoBehaviour:
       Hira_yominikui3: "\u30F4,\u3043,\u3060"
       Hira_yominikui4: "\u3042,\u304C,\u3054,\u3050"
       Hira_yominikui5: "\u304F,\u308C,\u3063,\u3064,\u3047"
-      Hira_boss10: "\u308C,\u3044,\u3082,\u3093,\u3069,\u3081,\u308B,\u305B,\u3067,\u3059"
+      Hira_boss10: 
       Hira_boss11: "\u304F,\u308C,\u3080,\u307E,\u304D,\u3057,\u307F,\u308A,\u3042,\u30FC,\u306E"
       Hira_boss12: "\u307F,\u3063,\u3057,\u3047,\u308B,\u3058,\u3047,\u3075,\u3041,\u30FC,\u305D,\u3093"
-      Hira_boss13: "\u3057,\u3083,\u30FC,\u308D,\u3063,\u3068,\u3042,\u3093,\u3058,\u3047,\u308A,\u30FC,\u304F"
+      Hira_boss13: 
     - Hira_kake2: "\u3084,\u306A"
       Hira_kake3: "\u3050,\u308C,\u3093"
       Hira_kake4: "\u3048,\u3044,\u307F,\u30FC"
@@ -38,7 +38,7 @@ MonoBehaviour:
       Hira_boss10: 
       Hira_boss11: "\u308A,\u3061,\u3083,\u30FC,\u3069,\u3089,\u3067,\u3043,\u308A,\u3042,\u3059"
       Hira_boss12: "\u3075,\u3047,\u308B,\u306A,\u3093,\u3069,\u307E,\u3050,\u3060,\u308C,\u30FC,\u306A"
-      Hira_boss13: "\u304D,\u3083,\u308D,\u3089,\u3044,\u306A,\u3048,\u3059,\u3066,\u3075,\u3041,\u306B,\u3042"
+      Hira_boss13: 
     - Hira_kake2: "\u308D,\u3044"
       Hira_kake3: "\u3051,\u3093,\u3068"
       Hira_kake4: "\u304B,\u30FC,\u305F,\u30FC"
@@ -73,7 +73,7 @@ MonoBehaviour:
       Hira_yominikui5: "\u3066,\u3066,\u3066,\u3063,\u308A"
       Hira_boss10: 
       Hira_boss11: "\u3076,\u308C,\u3044,\u305A,\u3067,\u3043,\u3042,\u3093,\u3058,\u3047,\u308D"
-      Hira_boss12: 
+      Hira_boss12: "\u3057,\u3083,\u30FC,\u308D,\u3063,\u3068,\u3042,\u3093,\u3058,\u3047,\u308A,\u30FC"
       Hira_boss13: 
     - Hira_kake2: "\u3055,\u3089"
       Hira_kake3: "\u3060,\u3089,\u3059"
@@ -85,7 +85,7 @@ MonoBehaviour:
       Hira_yominikui5: "\u3057,\u3057,\u3083,\u30FC,\u3057,\u3047"
       Hira_boss10: 
       Hira_boss11: "\u3075,\u308C,\u3069,\u308A,\u3063,\u304F,\u307F,\u3063,\u3057,\u3047,\u308B"
-      Hira_boss12: 
+      Hira_boss12: "\u304D,\u3083,\u308D,\u3089,\u3044,\u306A,\u3048,\u3059,\u3066,\u3075,\u3041,\u306B"
       Hira_boss13: 
     - Hira_kake2: "\u306E,\u3042"
       Hira_kake3: "\u306B,\u30FC,\u306A"
@@ -132,7 +132,7 @@ MonoBehaviour:
       Hira_yominikui4: "\u3057,\u3085,\u3061,\u3085"
       Hira_yominikui5: 
       Hira_boss10: 
-      Hira_boss11: 
+      Hira_boss11: "\u3069,\u308C,\u3044,\u3082,\u3093,\u3069,\u3081,\u308B,\u305B,\u3067,\u3059"
       Hira_boss12: 
       Hira_boss13: 
     - Hira_kake2: 
