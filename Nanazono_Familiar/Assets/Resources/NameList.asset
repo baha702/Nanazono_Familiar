@@ -23,10 +23,10 @@ MonoBehaviour:
       yominikui3: "\u30F4,\u30A3,\u30C0"
       yominikui4: "\u30A2,\u30AC,\u30B4,\u30B0"
       yominikui5: "\u30AF,\u30EC,\u30C3,\u30C4,\u30A7"
-      boss10: "\u30EC,\u30A4,\u30E2,\u30F3,\u30C9,\u30E1,\u30EB,\u30BB,\u30C7,\u30B9"
+      boss10: 
       boss11: "\u30AF,\u30EC,\u30E0,\u30DE,\u30AD,\u30B7,\u30DF,\u30EA,\u30A2,\u30FC,\u30CE"
       boss12: "\u30DF,\u30C3,\u30B7,\u30A7,\u30EB,\u30B8,\u30A7,\u30D5,\u30A1,\u30FC,\u30BD,\u30F3"
-      boss13: "\u30B7,\u30E3,\u30FC,\u30ED,\u30C3,\u30C8,\u30A2,\u30F3,\u30B8,\u30A7,\u30EA,\u30FC,\u30AF"
+      boss13: 
     - kake2: "\u30E4,\u30CA"
       kake3: "\u30B0,\u30EC,\u30F3"
       kake4: "\u30A8,\u30A4,\u30DF,\u30FC"
@@ -38,7 +38,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30EA,\u30C1,\u30E3,\u30FC,\u30C9,\u30E9,\u30C7,\u30A3,\u30EA,\u30A2,\u30B9"
       boss12: "\u30D5,\u30A7,\u30EB,\u30CA,\u30F3,\u30C9,\u30DE,\u30B0,\u30C0,\u30EC,\u30FC,\u30CA"
-      boss13: "\u30AD,\u30E3,\u30ED,\u30E9,\u30A4,\u30CA,\u30A8,\u30B9,\u30C6,\u30D5,\u30A1,\u30CB,\u30A2"
+      boss13: 
     - kake2: "\u30ED,\u30A4"
       kake3: "\u30B1,\u30F3,\u30C8"
       kake4: "\u30AB,\u30FC,\u30BF,\u30FC"
@@ -73,7 +73,7 @@ MonoBehaviour:
       yominikui5: "\u30C6,\u30C6,\u30C6,\u30C3,\u30EA"
       boss10: 
       boss11: "\u30D6,\u30EC,\u30A4,\u30BA,\u30C7,\u30A3,\u30A2,\u30F3,\u30B8,\u30A7,\u30ED"
-      boss12: 
+      boss12: "\u30B7,\u30E3,\u30FC,\u30ED,\u30C3,\u30C8,\u30A2,\u30F3,\u30B8,\u30A7,\u30EA,\u30FC"
       boss13: 
     - kake2: "\u30B5,\u30E9"
       kake3: "\u30C0,\u30E9,\u30B9"
@@ -85,7 +85,7 @@ MonoBehaviour:
       yominikui5: "\u30B7,\u30B7,\u30E3,\u30FC,\u30B7,\u30A7"
       boss10: 
       boss11: "\u30D5,\u30EC,\u30C9,\u30EA,\u30C3,\u30AF,\u30DF,\u30C3,\u30B7,\u30A7,\u30EB"
-      boss12: 
+      boss12: "\u30AD,\u30E3,\u30ED,\u30E9,\u30A4,\u30CA,\u30A8,\u30B9,\u30C6,\u30D5,\u30A1,\u30CB"
       boss13: 
     - kake2: "\u30CE,\u30A2"
       kake3: "\u30CB,\u30FC,\u30CA"
@@ -132,7 +132,7 @@ MonoBehaviour:
       yominikui4: "\u30B7,\u30E5,\u30C1,\u30E5"
       yominikui5: 
       boss10: 
-      boss11: 
+      boss11: "\u30C9,\u30EC,\u30A4,\u30E2,\u30F3,\u30C9,\u30E1,\u30EB,\u30BB,\u30C7,\u30B9"
       boss12: 
       boss13: 
     - kake2: 
