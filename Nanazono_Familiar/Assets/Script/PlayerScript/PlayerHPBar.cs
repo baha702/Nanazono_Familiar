@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class PlayerHPBar : MonoBehaviour
 {
     //最大HPと現在のHP。
-    int maxHp = 5;
-    int currentHp;
+    public float maxHp = 5;
+    public float currentHp;
     //Sliderを入れる
     public Slider slider;
 
@@ -22,7 +22,7 @@ public class PlayerHPBar : MonoBehaviour
     }
 
     //ColliderオブジェクトのIsTriggerにチェック入れること。
-    private void OnTriggerEnter(Collider collider)
+    public void OnTriggerEnter(Collider collider)
     {
         //Enemyタグのオブジェクトに触れると発動
         if (collider.gameObject.tag == "Enemy")
@@ -38,7 +38,9 @@ public class PlayerHPBar : MonoBehaviour
             //最大HPにおける現在のHPをSliderに反映。
             //int同士の割り算は小数点以下は0になるので、
             //(float)をつけてfloatの変数として振舞わせる。
-            slider.value = (float)currentHp / maxHp; ;
+            Debug.Log("currentHp:" + currentHp);
+            Debug.Log("maxHp:" + maxHp);
+            slider.value = currentHp / maxHp; 
             Debug.Log("slider.value : " + slider.value);
             if (currentHp == 0)
             {

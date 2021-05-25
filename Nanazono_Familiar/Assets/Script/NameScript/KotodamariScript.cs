@@ -42,7 +42,9 @@ public class KotodamariScript: MonoBehaviour
         KotodamaPosZ = 0.7f;
 
         iscalledOnce = true;
-
+        dictationRecognizer = new DictationRecognizer();
+        //ディクテーションを開始
+        dictationRecognizer.Start();
         Debug.Log("音声認識開始");
 
         testText = "test";
@@ -54,13 +56,11 @@ public class KotodamariScript: MonoBehaviour
     {
          if (Input.GetMouseButton(0))
          {
-            if (iscalledOnce==true)
-            {
-                dictationRecognizer = new DictationRecognizer();
-                //ディクテーションを開始
-                dictationRecognizer.Start();
+            
+            
+               
                 iscalledOnce = false;
-            }
+            
             dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
 
             dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;//DictationRecognizer_DictationHypothesis処理を行う
@@ -89,12 +89,12 @@ public class KotodamariScript: MonoBehaviour
             }
                 inputText = testText;
          }
-        if (Input.GetMouseButtonDown(0)&& dictationRecognizer.Status == SpeechSystemStatus.Running)
+       /* if (Input.GetMouseButtonDown(0)&& dictationRecognizer.Status == SpeechSystemStatus.Running)
         {
             Debug.Log("音声認識終了");
             dictationRecognizer.Stop();
             iscalledOnce = true;
-        }
+        }*/
 
 
         if (Input.GetKeyDown(KeyCode.Q))
