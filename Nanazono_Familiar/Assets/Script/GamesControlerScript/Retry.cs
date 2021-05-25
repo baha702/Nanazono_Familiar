@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows.Speech;
 public class Retry : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -16,7 +17,6 @@ public class Retry : MonoBehaviour
         if (Input.GetKeyDown("r"))
         {
             SceneManager.LoadScene("Nepuri-gu");
-
 
         }
     }

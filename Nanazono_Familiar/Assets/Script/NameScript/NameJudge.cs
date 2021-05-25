@@ -101,7 +101,6 @@ public class NameJudge : MonoBehaviour
                 }
 
             }
-            //NameJudges(ar[i], ar2[i], enemyTMP[i],i);
            
         }
     }

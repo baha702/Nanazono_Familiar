@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows.Speech;   //Windowsの音声認識で使用
+using UnityEngine.SceneManagement;
 
 
 public class KotodamariScript: MonoBehaviour
@@ -26,12 +27,14 @@ public class KotodamariScript: MonoBehaviour
     public string DebugText1, DebugText2;
 
     public bool flag;
-    private bool iscalledOnce;
+    public bool iscalledOnce;
+    public bool dictationflag;
 
     [SerializeField]
     public float KotodamaPosY,KotodamaPosZ;
 
     TitleKey titlekey;
+    
 
     void Start()
     {
@@ -41,12 +44,12 @@ public class KotodamariScript: MonoBehaviour
         KotodamaPosY = 1.5f;
         KotodamaPosZ = 0.7f;
 
-        iscalledOnce = true;
-        dictationRecognizer = new DictationRecognizer();
+        iscalledOnce = false;
+        /*dictationRecognizer = new DictationRecognizer();
         //ディクテーションを開始
-        dictationRecognizer.Start();
-        Debug.Log("音声認識開始");
-
+        dictationRecognizer.Start();*/
+        //Debug.Log("音声認識開始");
+        dictationRecognizer = new DictationRecognizer();
         testText = "test";
     }
 
@@ -54,48 +57,67 @@ public class KotodamariScript: MonoBehaviour
 
     void Update()
     {
-         if (Input.GetMouseButton(0))
-         {
-            
-            
-               
-                iscalledOnce = false;
-            
-            dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
 
-            dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;//DictationRecognizer_DictationHypothesis処理を行う
-
-            dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;//DictationRecognizer_DictationComplete処理を行う
-
-            dictationRecognizer.DictationError += DictationRecognizer_DictationError;//DictationRecognizer_DictationError処理を行う
-
-            if (inputText != testText)
-            {
-               StartCoroutine("Coroutine");
-               KotodamaPos(inputText);
-               textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
-               textObject.name = "FlyingText";
-               Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
-               Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
-               textObject.transform.Rotate(CameraAngleX, CameraAngleY - 90, 0);//PlayerControllerのY.rotateを参照
-               foreach (var TextChild in rigidbodies)
-               {
-                 TextChild.useGravity = false;
-                 TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
-                 TextChild.tag = "flyingText";
-               }
-               textObject.tag = "flyingText";
-               Destroy(textObject, 10.0f);
-            }
-                inputText = testText;
-         }
-       /* if (Input.GetMouseButtonDown(0)&& dictationRecognizer.Status == SpeechSystemStatus.Running)
+        /*if (Input.GetMouseButton(0))
         {
-            Debug.Log("音声認識終了");
-            dictationRecognizer.Stop();
             iscalledOnce = true;
+            Debug.Log("左クリック");
         }*/
+        if (Input.GetMouseButton(0))
+        {
+            if (dictationRecognizer.Status != SpeechSystemStatus.Running)
+            {
+               //ディクテーションを開始
+               dictationRecognizer.Start();
+                Debug.Log("音声認識開始");
+            }
+            
+        }
+            if (dictationRecognizer.Status == SpeechSystemStatus.Running)
+            {
 
+
+                dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;//DictationRecognizer_DictationResult処理を行う
+
+                dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;//DictationRecognizer_DictationHypothesis処理を行う
+
+                dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;//DictationRecognizer_DictationComplete処理を行う
+
+                dictationRecognizer.DictationError += DictationRecognizer_DictationError;//DictationRecognizer_DictationError処理を行う
+
+                if (inputText != testText)
+                {
+                    StartCoroutine("Coroutine");
+                    KotodamaPos(inputText);
+                    textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
+                    textObject.name = "FlyingText";
+                    Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
+                    Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
+                    textObject.transform.Rotate(CameraAngleX, CameraAngleY - 90, 0);//PlayerControllerのY.rotateを参照
+                    foreach (var TextChild in rigidbodies)
+                    {
+                        TextChild.useGravity = false;
+                        TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
+                        TextChild.tag = "flyingText";
+                    }
+                    textObject.tag = "flyingText";
+                    Destroy(textObject, 10.0f);
+                }
+                inputText = testText;
+            }
+        
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (dictationRecognizer.Status != SpeechSystemStatus.Stopped)
+            {
+                Debug.Log("音声認識終了");
+                dictationRecognizer.Stop();
+            }
+           
+        }
+
+        // イベントにイベントハンドラーを追加
+        SceneManager.sceneLoaded += SceneLoaded;
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -178,5 +200,14 @@ public class KotodamariScript: MonoBehaviour
 
         //コルーチンを終了
         yield break;
+    }
+
+    // イベントハンドラー（イベント発生時に動かしたい処理）
+    void SceneLoaded(Scene nextScene, LoadSceneMode mode)
+    {
+        if (dictationRecognizer.Status != SpeechSystemStatus.Failed)
+        {
+            dictationRecognizer.Dispose();
+        }
     }
 }
