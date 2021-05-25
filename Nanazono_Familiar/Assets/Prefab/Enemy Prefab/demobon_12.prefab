@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 6423767325288159945}
   - component: {fileID: 6423767325288159959}
   - component: {fileID: 6423767325288159949}
+  - component: {fileID: 1370349145787704507}
   m_Layer: 0
   m_Name: demobon_12
   m_TagString: Enemy
@@ -390,7 +391,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6189255992786738603}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7da6c7117f651f44afecb6a0fa86a26, type: 3}
   m_Name: 
@@ -411,6 +412,36 @@ MonoBehaviour:
   - {fileID: 7272732267870657162}
   - {fileID: 3457785420885762311}
   flag: 000000000000000000000000
+  blueMaterial: {fileID: 2100000, guid: af790c4a83bd2474b987f35f340fede4, type: 2}
+  redMaterial: {fileID: 895969136298549695, guid: 6f42bcd032cb1d14b87da974347e91f0, type: 2}
+--- !u!114 &1370349145787704507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6189255992786738603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6ac27355d0c624294bc5af2b135bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strLength: 12
+  listnum: 10
+  enemyTMP:
+  - {fileID: 6423767326883010670}
+  - {fileID: 6423767326464343677}
+  - {fileID: 6423767327018216853}
+  - {fileID: 6423767327271005799}
+  - {fileID: 6423767325919707230}
+  - {fileID: 5328632410852060767}
+  - {fileID: 4173615626548205442}
+  - {fileID: 4354486586050618275}
+  - {fileID: 1156628961534085103}
+  - {fileID: 1271494558326786294}
+  - {fileID: 7272732267870657162}
+  - {fileID: 3457785420885762311}
+  flag: 
   blueMaterial: {fileID: 2100000, guid: af790c4a83bd2474b987f35f340fede4, type: 2}
   redMaterial: {fileID: 895969136298549695, guid: 6f42bcd032cb1d14b87da974347e91f0, type: 2}
 --- !u!1 &6423767325919707228

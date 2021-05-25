@@ -141,7 +141,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5024336
-  m_Speed: 2
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -170,6 +170,7 @@ MonoBehaviour:
   enemyTMP:
   - {fileID: 2167957384611934345}
   - {fileID: 2167957385361677124}
+  flag: 
   blueMaterial: {fileID: -6510626163237118021, guid: af500a65666ad7642b857963c2d6804a, type: 2}
   redMaterial: {fileID: 2100000, guid: 90e6de1b4ec9b2c449f4977e85c64235, type: 2}
 --- !u!1 &2167957384412223029

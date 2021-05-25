@@ -15,7 +15,7 @@ public class Retry : MonoBehaviour
     {
         if (Input.GetKeyDown("r"))
         {
-            SceneManager.LoadScene("NepScean");
+            SceneManager.LoadScene("Nepuri-gu");
 
 
         }
