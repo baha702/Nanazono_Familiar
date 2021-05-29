@@ -3673,7 +3673,7 @@ MonoBehaviour:
   - {fileID: 3520598088546994326, guid: 40d3b5267204c2245aa09b331d37feab, type: 3}
   - {fileID: 4041545312033652031, guid: 68a9eb907c2710f40850b7fef4d80fbc, type: 3}
   - {fileID: 3655293975834280170, guid: efafd5a241149cc4480c2b8f97ac4d8f, type: 3}
-  appearNextTime: 12
+  appearNextTime: 50
   maxNumOfEnemys: 2
 --- !u!1 &609660428
 GameObject:
@@ -8118,7 +8118,7 @@ MonoBehaviour:
   enemys:
   - {fileID: 7643082522778558957, guid: 7bc0d1ed5f3f9364aaa3ca74e2e20874, type: 3}
   - {fileID: 2722597676865100658, guid: 386f701062cbd1242895be9358537f79, type: 3}
-  appearNextTime: 6
+  appearNextTime: 11
   maxNumOfEnemys: 3
 --- !u!1 &1651926087
 GameObject:
@@ -9126,7 +9126,7 @@ MonoBehaviour:
   - {fileID: 8431511348261706956, guid: 48ee729f5a429d540988c208a016d724, type: 3}
   - {fileID: 1970528907865780393, guid: 9206aac59fe1f4b4aa6ffea72e3e156f, type: 3}
   - {fileID: 9040679385941575005, guid: 34d4420e168ad2447928f5de9561cb7e, type: 3}
-  appearNextTime: 8
+  appearNextTime: 23
   maxNumOfEnemys: 2
 --- !u!1 &1823581722
 GameObject:
@@ -10767,7 +10767,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2542448194909165505, guid: 7660b204fe9d2c74984fac50657009d5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3822388424749947702, guid: 7660b204fe9d2c74984fac50657009d5, type: 3}
       propertyPath: m_IsActive
