@@ -34,7 +34,8 @@ public class KotodamariScript: MonoBehaviour
     public float KotodamaPosY,KotodamaPosZ;
 
     TitleKey titlekey;
-    
+    AudioSource audio;
+    public AudioClip ATKClip;
 
     void Start()
     {
@@ -51,6 +52,7 @@ public class KotodamariScript: MonoBehaviour
         //Debug.Log("音声認識開始");
         dictationRecognizer = new DictationRecognizer();
         testText = "test";
+        audio = GetComponent<AudioSource>();
     }
 
    
@@ -89,6 +91,7 @@ public class KotodamariScript: MonoBehaviour
                 {
                     StartCoroutine("Coroutine");
                     KotodamaPos(inputText);
+                    audio.PlayOneShot(ATKClip, 1.0f);
                     textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
                     textObject.name = "FlyingText";
                     Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();

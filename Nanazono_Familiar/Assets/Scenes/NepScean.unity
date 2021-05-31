@@ -450,6 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TitleKey: {fileID: 481207615}
   MenuUI: {fileID: 690634683}
+  menuClip: {fileID: 8300000, guid: 06ea1a82621a3c84c93b008d00f32a10, type: 3}
 --- !u!4 &433946801
 Transform:
   m_ObjectHideFlags: 0
@@ -755,6 +756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TitleKey: {fileID: 0}
   MenuUI: {fileID: 690634683}
+  menuClip: {fileID: 0}
 --- !u!114 &690634685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2138,6 +2140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbde05cda23d8b14899c879d846c0383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 5
+  currentHp: 0
   slider: {fileID: 1552038353}
 --- !u!1001 &1883177357
 PrefabInstance:

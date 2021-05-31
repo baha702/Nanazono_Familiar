@@ -21,13 +21,15 @@ public class NameJudge : MonoBehaviour
     private int strFlag;
     private bool iscalledOnce;
     public bool[] flag;
+    public float enespeed = 2.0f;
     public Material blueMaterial,redMaterial;
-    
 
+    AudioSource audio;
+    public AudioClip DMGClip;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
         NameList(listnum);
         strKatakana = inputKatakana;
         var ar = strKatakana.Split(',');
@@ -37,7 +39,7 @@ public class NameJudge : MonoBehaviour
 
             NameSet(ar[i], enemyTMP[i]);
         }
-       
+        
     }
    
      // Update is called once per frame
@@ -59,7 +61,7 @@ public class NameJudge : MonoBehaviour
     private IEnumerator Coroutine()
     {
         //１秒待機
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.5f);
 
         this.gameObject.SetActive(false);
         for (int i = 0; i < strLength; i++)
@@ -92,8 +94,11 @@ public class NameJudge : MonoBehaviour
                 {
                     enemyTMP[i].text = string.Format(ar[i]);
                     enemyTMP[i].fontSharedMaterial = blueMaterial;
+                    enespeed = 0;
+                    audio.PlayOneShot(DMGClip,1.0f);
                     if (flag[i]==false)
                     {
+                        
                         strFlag++;
                         flag[i] = true;
                         Debug.Log(strFlag);
