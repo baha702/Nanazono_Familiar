@@ -4205,7 +4205,7 @@ Material:
     - _FaceTex:
         m_Texture: {fileID: 2800000, guid: 91b67e38c33edef429951a10fac87c49, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: -0.29499975}
+        m_Offset: {x: 0, y: -0.2370003}
     - _MainTex:
         m_Texture: {fileID: 5797246922795732999}
         m_Scale: {x: 1, y: 1}

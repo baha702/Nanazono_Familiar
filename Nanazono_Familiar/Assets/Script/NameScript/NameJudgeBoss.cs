@@ -23,12 +23,13 @@ public class NameJudgeBoss : MonoBehaviour
     private bool iscalledOnce;
     public bool[] flag;
     public Material blueMaterial, redMaterial;
-
+    AudioSource audio;
+    public AudioClip DMGClip;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();
         NameList(listnum);
         strKatakana = inputKatakana;
         var ar = strKatakana.Split(',');
@@ -93,6 +94,7 @@ public class NameJudgeBoss : MonoBehaviour
                 {
                     enemyTMP[i].text = string.Format(ar[i]);
                     enemyTMP[i].fontSharedMaterial = blueMaterial;
+                    audio.PlayOneShot(DMGClip, 1.0f);
                     if (flag[i] == false)
                     {
                         strFlag++;

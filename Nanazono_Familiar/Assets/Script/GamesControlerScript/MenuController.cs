@@ -12,9 +12,12 @@ public class MenuController : MonoBehaviour
     //　ポーズした時に表示するUI
     [SerializeField]
     private GameObject MenuUI;
+    private AudioSource audio;
+    public AudioClip menuClip;
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         Time.timeScale = 1f;
     }
 
@@ -22,6 +25,7 @@ public class MenuController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            audio.PlayOneShot(menuClip,1.0f);
             //　ポーズUIのアクティブ、非アクティブを切り替え
             MenuUI.SetActive(!MenuUI.activeSelf);
 
