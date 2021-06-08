@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 7408640046524930323}
   - component: {fileID: 7408640046524930322}
   - component: {fileID: 7792137807499701361}
+  - component: {fileID: 2730818880543650450}
   m_Layer: 0
   m_Name: obaccho_2
   m_TagString: Enemy
@@ -646,3 +647,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2730818880543650450
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643082522778558957}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f526bbd3989e414eb654e12c900eca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

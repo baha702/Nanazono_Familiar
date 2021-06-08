@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5341922934551943456}
   - component: {fileID: 5341922934551943457}
   - component: {fileID: 6912815881456956827}
+  - component: {fileID: 3168005524628577157}
   m_Layer: 0
   m_Name: obacchoMagi_3
   m_TagString: Enemy
@@ -298,6 +299,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &3168005524628577157
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107991593672818128}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: efe460af99f2c7c4eb4532e62a6eba14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5341922933744728554
 GameObject:
   m_ObjectHideFlags: 0
