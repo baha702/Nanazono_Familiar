@@ -12,6 +12,7 @@ public class EnemyMoveAI : MonoBehaviour
     private NavMeshAgent myAgent;
     public float speed=0;
     public int length;
+    public float stopTime = 3.0f;
     [SerializeField] TextMeshProUGUI[] enemyTMP;
     public Material blueMate;
     NameJudge namejudge;
@@ -30,17 +31,21 @@ public class EnemyMoveAI : MonoBehaviour
         myAgent.speed = speed;
         // targetに向かって移動します。
         myAgent.SetDestination(target.transform.position);
-        /*if (namejudge.enespeed<=0)
+        if (speed==0)
         {
-            Coroutine();
-        }*/
+            StartCoroutine("Coroutine");
+        }
     }
 
+    public void EnemySpeed()
+    {
+        speed = 0;
+    }
     private IEnumerator Coroutine()
     {
         Debug.Log("コルーチン");
         //１秒待機
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(stopTime);
         speed = 2.0f;
         //コルーチンを終了
         yield break;

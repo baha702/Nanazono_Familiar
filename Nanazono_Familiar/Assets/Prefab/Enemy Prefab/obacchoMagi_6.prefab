@@ -1093,9 +1093,9 @@ MonoBehaviour:
   - {fileID: 5732097125914363921}
   - {fileID: 7774036097202699701}
   flag: 000000000000
-  enespeed: 0
   blueMaterial: {fileID: 2100000, guid: af790c4a83bd2474b987f35f340fede4, type: 2}
   redMaterial: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
+  enemyspeed: 0
   DMGClip: {fileID: 8300000, guid: 03582dc03cc39a34ea74379e1c6de9c2, type: 3}
 --- !u!114 &8194189372275892652
 MonoBehaviour:
@@ -1112,6 +1112,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 0
   length: 0
+  stopTime: 1.5
   enemyTMP: []
   blueMate: {fileID: 0}
 --- !u!82 &5213895483799766264

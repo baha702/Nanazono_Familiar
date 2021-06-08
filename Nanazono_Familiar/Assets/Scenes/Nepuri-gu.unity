@@ -2443,6 +2443,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+
     - target: {fileID: 1245332586658823851, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2498,6 +2499,26 @@ PrefabInstance:
     - target: {fileID: 7344321735013459221, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459228, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: m_defaultColor.r
+      value: 0.23270434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459228, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: m_defaultColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459228, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: m_defaultColor.b
+      value: 0.9281613
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: debugKotodama
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: dictationflag
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7344321735879644857, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: m_BackGroundColor.r
