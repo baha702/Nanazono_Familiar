@@ -29,11 +29,11 @@ public class KotodamariScript: MonoBehaviour
     public bool flag;
     public bool iscalledOnce;
     public bool dictationflag;
+    public bool debugKotodama = false;
 
     [SerializeField]
     public float KotodamaPosY,KotodamaPosZ;
 
-    TitleKey titlekey;
     AudioSource audio;
     public AudioClip ATKClip;
 
@@ -46,10 +46,7 @@ public class KotodamariScript: MonoBehaviour
         KotodamaPosZ = 0.7f;
 
         iscalledOnce = false;
-        /*dictationRecognizer = new DictationRecognizer();
-        //ディクテーションを開始
-        dictationRecognizer.Start();*/
-        //Debug.Log("音声認識開始");
+
         dictationRecognizer = new DictationRecognizer();
         testText = "test";
         audio = GetComponent<AudioSource>();
@@ -122,15 +119,17 @@ public class KotodamariScript: MonoBehaviour
         // イベントにイベントハンドラーを追加
         SceneManager.sceneLoaded += SceneLoaded;
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (debugKotodama==true)
         {
-            DebugText(DebugText1);
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                DebugText(DebugText1);
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                DebugText(DebugText2);
+            }
         }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            DebugText(DebugText2);
-        }
-        
     }
 
     private void KotodamaPos(string str1)
