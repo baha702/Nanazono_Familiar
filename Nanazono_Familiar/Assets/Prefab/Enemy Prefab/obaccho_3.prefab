@@ -134,6 +134,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 0
   length: 3
+  stopTime: 1.5
   enemyTMP:
   - {fileID: 2957165077484556220}
   - {fileID: 2957165077305238641}
@@ -149,7 +150,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5024336
-  m_Speed: 2
+  m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -180,9 +181,9 @@ MonoBehaviour:
   - {fileID: 2957165077305238641}
   - {fileID: 2690238413964596371}
   flag: 000000
-  enespeed: 0
   blueMaterial: {fileID: 2100000, guid: af790c4a83bd2474b987f35f340fede4, type: 2}
   redMaterial: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
+  enemyspeed: 0
   DMGClip: {fileID: 8300000, guid: 03582dc03cc39a34ea74379e1c6de9c2, type: 3}
 --- !u!82 &-4160133002063562445
 AudioSource:

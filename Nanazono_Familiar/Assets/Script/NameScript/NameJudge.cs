@@ -21,8 +21,9 @@ public class NameJudge : MonoBehaviour
     private int strFlag;
     private bool iscalledOnce;
     public bool[] flag;
-    public float enespeed = 2.0f;
     public Material blueMaterial,redMaterial;
+    float enemyMoveAI;
+    public float enemyspeed = 0;
 
     AudioSource audio;
     public AudioClip DMGClip;
@@ -85,6 +86,7 @@ public class NameJudge : MonoBehaviour
 
         var ar = strKatakana.Split(',');
         var ar2 = strHiragana.Split(',');
+        enemyMoveAI = this.gameObject.GetComponent<EnemyMoveAI>().speed;
         for (int i = 0; i < strLength; i++)
         {
             
@@ -94,11 +96,10 @@ public class NameJudge : MonoBehaviour
                 {
                     enemyTMP[i].text = string.Format(ar[i]);
                     enemyTMP[i].fontSharedMaterial = blueMaterial;
-                    enespeed = 0;
                     audio.PlayOneShot(DMGClip,1.0f);
                     if (flag[i]==false)
                     {
-                        
+                        this.gameObject.GetComponent<EnemyMoveAI>().speed = enemyspeed;
                         strFlag++;
                         flag[i] = true;
                         Debug.Log(strFlag);

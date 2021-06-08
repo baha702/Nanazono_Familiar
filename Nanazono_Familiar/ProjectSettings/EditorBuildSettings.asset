@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 0c513f5d0a803fb42b8f260a07a3e328
   - enabled: 1
@@ -17,6 +14,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/NepScean.unity
     guid: ed475c8c8b8f2aa4388fc56d0a827cbb
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/GameClear.unity
     guid: 1635151d9ebdd3a458c461e969372987
