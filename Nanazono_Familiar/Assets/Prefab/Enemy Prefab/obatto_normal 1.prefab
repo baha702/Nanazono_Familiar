@@ -388,8 +388,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30ED"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
-  m_sharedMaterial: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  m_sharedMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -517,7 +517,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3752979876306937908}
-  m_LocalRotation: {x: -0, y: 0.6709143, z: -0, w: 0.741535}
+  m_LocalRotation: {x: 0, y: 0.6709121, z: 0, w: 0.741537}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
@@ -641,9 +641,9 @@ MonoBehaviour:
   - {fileID: 7637804795688923286}
   - {fileID: 6487948758104628104}
   flag: 000000
-  enespeed: 0
-  blueMaterial: {fileID: 2100000, guid: af790c4a83bd2474b987f35f340fede4, type: 2}
-  redMaterial: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
+  blueMaterial: {fileID: 2100000, guid: a411dff8d2c362f40b63f82268a6665a, type: 2}
+  redMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  enemyspeed: 0
   DMGClip: {fileID: 8300000, guid: 03582dc03cc39a34ea74379e1c6de9c2, type: 3}
 --- !u!114 &7691975620936757924
 MonoBehaviour:
@@ -660,6 +660,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 0
   length: 2
+  stopTime: 3
   enemyTMP: []
   blueMate: {fileID: 0}
 --- !u!95 &727727667401103587
@@ -942,8 +943,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30E0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
-  m_sharedMaterial: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  m_sharedMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1076,8 +1077,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30A2"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
-  m_sharedMaterial: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  m_sharedMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

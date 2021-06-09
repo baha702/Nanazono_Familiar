@@ -159,8 +159,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30A2"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
-  m_sharedMaterial: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  m_sharedMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -323,8 +323,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30A2"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
-  m_sharedMaterial: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  m_sharedMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -549,7 +549,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4268294575864262356}
-  m_LocalRotation: {x: -0, y: 0.66269934, z: -0, w: 0.74888563}
+  m_LocalRotation: {x: 0, y: 0.6626985, z: 0, w: 0.74888635}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
@@ -578,9 +578,9 @@ MonoBehaviour:
   - {fileID: 6471095486213581150}
   - {fileID: 4526419848533094711}
   flag: 000000
-  enespeed: 0
-  blueMaterial: {fileID: 2100000, guid: af790c4a83bd2474b987f35f340fede4, type: 2}
-  redMaterial: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
+  blueMaterial: {fileID: 2100000, guid: a411dff8d2c362f40b63f82268a6665a, type: 2}
+  redMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  enemyspeed: 0
   DMGClip: {fileID: 8300000, guid: 03582dc03cc39a34ea74379e1c6de9c2, type: 3}
 --- !u!136 &8390554047930908894
 CapsuleCollider:
@@ -611,6 +611,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 0
   length: 2
+  stopTime: 3
   enemyTMP:
   - {fileID: 8435898080666640243}
   - {fileID: 6471095486213581150}
@@ -1160,8 +1161,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30A2"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
-  m_sharedMaterial: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  m_sharedMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
