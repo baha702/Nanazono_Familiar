@@ -18,6 +18,8 @@ public class KotodamariScript: MonoBehaviour
 
     public Vector3 PlayerPos;
     private float CameraAngleX,CameraAngleY;
+    private float SlowTime = 0.3f;
+
 
     [SerializeField]
     public float bulletSpeed;
@@ -69,6 +71,11 @@ public class KotodamariScript: MonoBehaviour
                //ディクテーションを開始
                dictationRecognizer.Start();
                 Debug.Log("音声認識開始");
+
+                if (Time.timeScale==1.0f)
+                {
+                    Time.timeScale = SlowTime;
+                }
             }
             
         }
@@ -86,6 +93,10 @@ public class KotodamariScript: MonoBehaviour
 
                 if (inputText != testText)
                 {
+                    /*if (Time.timeScale == SlowTime)
+                    {
+                        Time.timeScale = 1.0f;
+                    }*/
                     StartCoroutine("Coroutine");
                     KotodamaPos(inputText);
                     audio.PlayOneShot(ATKClip, 1.0f);
@@ -112,6 +123,10 @@ public class KotodamariScript: MonoBehaviour
             {
                 Debug.Log("音声認識終了");
                 dictationRecognizer.Stop();
+                if (Time.timeScale == SlowTime)
+                {
+                    Time.timeScale = 1.0f;
+                }
             }
            
         }
