@@ -121,7 +121,6 @@ public class NameJudge : MonoBehaviour
                 int num = Random.Range(0, 10);
                 inputKatakana = es.sheets[0].list[num].kake2;
                 inputHiragana = ex.sheets[0].list[num].Hira_kake2;
-
                 break;
             case 2:
                 int num2 = Random.Range(0, 62);

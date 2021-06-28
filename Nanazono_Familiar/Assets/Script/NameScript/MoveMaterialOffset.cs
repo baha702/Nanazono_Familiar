@@ -13,7 +13,7 @@ public class MoveMaterialOffset : MonoBehaviour
         mat.SetTextureOffset("_FaceTex", offset);
     }
     
-    void Update()
+    void FixedUpdate()
     {
         offset.y += speed;
         mat.SetTextureOffset("_FaceTex", offset);
