@@ -16,18 +16,24 @@ public class EnemyBorn : MonoBehaviour
 	private int numberOfEnemys;
 	//　待ち時間計測フィールド
 	private float elapsedTime;
+	//通常湧き停止用bool
+	private bool stopAppear;
+	public bool st;
+	//NameJudgeBossの変数
+	NameJudgeBoss namejudgeboss;
 
 	// Use this for initialization
 	void Start()
 	{
 		numberOfEnemys = 0;
 		elapsedTime = 0f;
+		gameObject.GetComponent<NameJudgeBoss>();
 	}
 
 	void Update()
 	{
 		//　この場所から出現する最大数を超えてたら何もしない
-		if (numberOfEnemys >= maxNumOfEnemys)
+		if (numberOfEnemys >= maxNumOfEnemys && !stopAppear)
 		{
 			return;
 		}
@@ -35,12 +41,26 @@ public class EnemyBorn : MonoBehaviour
 		elapsedTime += Time.deltaTime;
 
 		//　経過時間が経ったら
-		if (elapsedTime > appearNextTime)
+		if (elapsedTime > appearNextTime && !stopAppear)
 		{
 			elapsedTime = 0f;
 
 			AppearEnemy();
 		}
+        if (Input.GetMouseButtonDown(0))
+        {
+			st = true;
+
+		}
+        if (st==true)
+        {
+			HugeAppearEnemy();
+            if (GameObject.FindGameObjectWithTag("Enemy") == null)
+            {
+				stopAppear = false;
+            }
+			st=false;
+        }
 	}
 	//　敵出現メソッド
 	void AppearEnemy()
@@ -57,5 +77,20 @@ public class EnemyBorn : MonoBehaviour
 
 		numberOfEnemys++;
 		elapsedTime = 0f;
+	}
+
+	//大量発生用メソッド
+	void HugeAppearEnemy()
+    {
+		//　出現させる敵をランダムに選ぶ
+		var randomValue = Random.Range(0, enemys.Length);
+		//　敵の向きをランダムに決定
+		var randomRotationY = Random.value * 360f;
+
+		GameObject.Instantiate(enemys[randomValue], transform.position, Quaternion.Euler(0f, randomRotationY, 0f));
+		enemys[randomValue].gameObject.SetActive(true);
+
+		stopAppear = true;
+		
 	}
 }

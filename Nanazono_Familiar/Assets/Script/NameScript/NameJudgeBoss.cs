@@ -19,7 +19,7 @@ public class NameJudgeBoss : MonoBehaviour
     Entity_NameList es = null;
     Entity_Sheet1 ex = null;
 
-    private int strFlag;
+    public int strFlag;
     private bool iscalledOnce;
     public bool[] flag;
     public Material blueMaterial, redMaterial;
