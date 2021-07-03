@@ -19,7 +19,7 @@ public class start : MonoBehaviour
         {
             {
                 audio.PlayOneShot(startClip, 1.0f);
-                SceneManager.LoadScene("Nepuri-gu");
+                SceneManager.LoadScene("Tutorial");
             }
 
         }
