@@ -27,6 +27,7 @@ public class KotodamariScript: MonoBehaviour
     public string testText;
     public string DebugText1, DebugText2;
     public bool debugKotodama = false;
+    public bool efectbool = false;
 
     [SerializeField]
     public float KotodamaPosY,KotodamaPosZ;
@@ -177,8 +178,13 @@ public class KotodamariScript: MonoBehaviour
     {
         //音声認識アニメーション終了
         animReticle.SetBool("VoiceInput", false);
-        ChargeEffect.gameObject.SetActive(false);
-        ExprodeEffect.gameObject.SetActive(true);
+        if (efectbool)
+        {
+            //チャージエフェクト終了
+            //ChargeEffect.gameObject.SetActive(false);
+            //爆発エフェクト再生
+            //ExprodeEffect.gameObject.SetActive(true);
+        }
         Debug.Log("認識した音声：" + text);
         inputText = text;
     }
@@ -188,7 +194,11 @@ public class KotodamariScript: MonoBehaviour
     {
         //音声認識アニメーション再生
         animReticle.SetBool("VoiceInput", true);
-        ChargeEffect.gameObject.SetActive(true);
+        if (efectbool)
+        {
+            //チャージエフェクト再生
+            //ChargeEffect.gameObject.SetActive(true);
+        }
         //Debug.Log("音声認識中：" + text);
     }
 
@@ -210,13 +220,14 @@ public class KotodamariScript: MonoBehaviour
         //１秒待機
         yield return new WaitForSeconds(2.0f);
 
-        
-
-        if (ExprodeEffect.gameObject.activeSelf)
+        if (efectbool)
         {
-            ExprodeEffect.gameObject.SetActive(false);
+            //爆発エフェクト終了
+            /*if (ExprodeEffect.gameObject.activeSelf)
+            {
+                ExprodeEffect.gameObject.SetActive(false);
+            }*/
         }
-
         //コルーチンを終了
         yield break;
     }
