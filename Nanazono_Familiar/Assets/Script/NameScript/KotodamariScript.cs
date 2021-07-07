@@ -23,14 +23,9 @@ public class KotodamariScript: MonoBehaviour
 
     [SerializeField]
     public float bulletSpeed;
-    public Material textMaterial;
     public string inputText;
     public string testText;
     public string DebugText1, DebugText2;
-
-    public bool flag;
-    public bool iscalledOnce;
-    public bool dictationflag;
     public bool debugKotodama = false;
 
     [SerializeField]
@@ -39,19 +34,21 @@ public class KotodamariScript: MonoBehaviour
     AudioSource audio;
     public AudioClip ATKClip;
 
+    Animator animVoiceInput;
+    Animator animReticle;
+
     void Start()
     {
-        bulletSpeed = 40.0f;
         bulletSpeed = 20.0f;
-        flag = false;
         KotodamaPosY = 1.5f;
         KotodamaPosZ = 0.7f;
-
-        iscalledOnce = false;
 
         dictationRecognizer = new DictationRecognizer();
         testText = "test";
         audio = GetComponent<AudioSource>();
+
+        animVoiceInput = GameObject.Find("VoiceInput").gameObject.GetComponent<Animator>();
+        animReticle = GameObject.Find("Reticle").gameObject.GetComponent<Animator>();
     }
 
    
@@ -59,11 +56,7 @@ public class KotodamariScript: MonoBehaviour
     void Update()
     {
 
-        /*if (Input.GetMouseButton(0))
-        {
-            iscalledOnce = true;
-            Debug.Log("左クリック");
-        }*/
+        
         if (Input.GetMouseButton(0))
         {
             if (dictationRecognizer.Status != SpeechSystemStatus.Running)
@@ -71,10 +64,12 @@ public class KotodamariScript: MonoBehaviour
                //ディクテーションを開始
                dictationRecognizer.Start();
                 Debug.Log("音声認識開始");
+                //ホールドアニメーション再生
+                animVoiceInput.SetBool("MouseHold", true);
 
                 if (Time.timeScale==1.0f)
                 {
-                    Time.timeScale = SlowTime;
+                   Time.timeScale = SlowTime;
                 }
             }
             
@@ -93,11 +88,11 @@ public class KotodamariScript: MonoBehaviour
 
                 if (inputText != testText)
                 {
-                if (Time.timeScale == SlowTime)
-                {
-                    Time.timeScale = 1.0f;
-                }
-                StartCoroutine("Coroutine");
+                  if (Time.timeScale == SlowTime)
+                  {
+                     Time.timeScale = 1.0f;
+                  }
+                    StartCoroutine("Coroutine");
                     KotodamaPos(inputText);
                     audio.PlayOneShot(ATKClip, 1.0f);
                     textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
@@ -123,9 +118,13 @@ public class KotodamariScript: MonoBehaviour
             {
                 Debug.Log("音声認識終了");
                 dictationRecognizer.Stop();
-               
+                animVoiceInput.SetBool("MouseHold", false);
+                if (Time.timeScale == SlowTime)
+                {
+                    Time.timeScale = 1.0f;
+                }
             }
-           
+            
         }
 
         // イベントにイベントハンドラーを追加
@@ -176,6 +175,8 @@ public class KotodamariScript: MonoBehaviour
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
     {
+        //音声認識アニメーション終了
+        animReticle.SetBool("VoiceInput", false);
         ChargeEffect.gameObject.SetActive(false);
         ExprodeEffect.gameObject.SetActive(true);
         Debug.Log("認識した音声：" + text);
@@ -185,6 +186,8 @@ public class KotodamariScript: MonoBehaviour
     //DictationHypothesis：音声入力中に発生するイベント
     private void DictationRecognizer_DictationHypothesis(string text)
     {
+        //音声認識アニメーション再生
+        animReticle.SetBool("VoiceInput", true);
         ChargeEffect.gameObject.SetActive(true);
         //Debug.Log("音声認識中：" + text);
     }
@@ -206,6 +209,8 @@ public class KotodamariScript: MonoBehaviour
     {
         //１秒待機
         yield return new WaitForSeconds(2.0f);
+
+        
 
         if (ExprodeEffect.gameObject.activeSelf)
         {

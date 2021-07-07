@@ -10,6 +10,8 @@ public class EnemyBorn : MonoBehaviour
 	[SerializeField] public GameObject[] enemys;
 	//　次に敵が出現するまでの時間
 	[SerializeField] float appearNextTime;
+	//　大量発生が出現するまでの時間
+	[SerializeField] float hugeappearTIme;
 	//　この場所から出現する敵の数
 	[SerializeField] int maxNumOfEnemys;
 	//　今何人の敵を出現させたか（総数）
@@ -18,7 +20,8 @@ public class EnemyBorn : MonoBehaviour
 	private float elapsedTime;
 	//通常湧き停止用bool
 	private bool stopAppear;
-	public bool st;
+	//大量発生停止用bool
+	public bool stopHugeApr;
 	//NameJudgeBossの変数
 	NameJudgeBoss namejudgeboss;
 
@@ -47,20 +50,18 @@ public class EnemyBorn : MonoBehaviour
 
 			AppearEnemy();
 		}
-        if (Input.GetMouseButtonDown(0))
-        {
-			st = true;
 
+		if (stopHugeApr==false)
+		{
+			if (elapsedTime == hugeappearTIme)
+			{
+				HugeAppearEnemy();
+				if (GameObject.FindGameObjectWithTag("Enemy") == null)
+				{
+					stopAppear = false;
+				}
+			}
 		}
-        if (st==true)
-        {
-			HugeAppearEnemy();
-            if (GameObject.FindGameObjectWithTag("Enemy") == null)
-            {
-				stopAppear = false;
-            }
-			st=false;
-        }
 	}
 	//　敵出現メソッド
 	void AppearEnemy()
