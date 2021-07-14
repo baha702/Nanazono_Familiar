@@ -66,6 +66,7 @@ public class KotodamariScript: MonoBehaviour
                dictationRecognizer.Start();
                 Debug.Log("音声認識開始");
                 //ホールドアニメーション再生
+                //animVoiceInput = GameObject.Find("VoiceInput").gameObject.GetComponent<Animator>();
                 animVoiceInput.SetBool("MouseHold", true);
 
                 if (Time.timeScale==1.0f)
@@ -193,6 +194,7 @@ public class KotodamariScript: MonoBehaviour
     private void DictationRecognizer_DictationHypothesis(string text)
     {
         //音声認識アニメーション再生
+        //animReticle = GameObject.Find("Reticle").gameObject.GetComponent<Animator>();
         animReticle.SetBool("VoiceInput", true);
         if (efectbool)
         {

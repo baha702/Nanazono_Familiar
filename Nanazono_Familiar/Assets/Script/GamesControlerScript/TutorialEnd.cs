@@ -16,7 +16,7 @@ public class TutorialEnd : MonoBehaviour
 		enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
 
 		// データの入った箱の数をコンソール画面に表示する。
-		print(enemyObjects.Length);
+		//print(enemyObjects.Length);
 
 		// データの入った箱のデータが０に等しくなった時（Enemyというタグが付いているオブジェクトが全滅したとき）
 		if (enemyObjects.Length == 0)
