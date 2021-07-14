@@ -13,9 +13,4 @@ public class CursorControll : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
