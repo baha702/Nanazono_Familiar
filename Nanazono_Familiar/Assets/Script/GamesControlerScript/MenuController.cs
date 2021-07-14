@@ -25,7 +25,7 @@ public class MenuController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
         {
-            audio.PlayOneShot(menuClip,1.0f);
+            //audio.PlayOneShot(menuClip,1.0f);
             //　ポーズUIのアクティブ、非アクティブを切り替え
             MenuUI.SetActive(!MenuUI.activeSelf);
 
