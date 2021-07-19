@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ChangeImage : MonoBehaviour
 {
     public Sprite image1;
     public Sprite image2;
     public Sprite image3;
-    Image img;
+    public Image img;
     public GameObject nextbutton;
     public GameObject returnbutton;
 
-    private void Start()
+    public void Start()
     {
         img = GetComponent<Image>();
         img.sprite = image1;
@@ -25,19 +26,21 @@ public class ChangeImage : MonoBehaviour
             if (!nextbutton.activeSelf)
             {
                 nextbutton.SetActive(true);
+                Debug.Log("next1");
             }
             if (!returnbutton.activeSelf)
             {
                 returnbutton.SetActive(true);
+               
             }
         }
         else if(img.sprite == image2)
         {
             img.sprite = image3;
-            if (nextbutton.activeSelf)
-            {
-                nextbutton.SetActive(false);
-            }
+        }
+        else if (img.sprite == image3)
+        {
+            SceneManager.LoadScene("Tutorial");
         }
        
     }
@@ -49,6 +52,7 @@ public class ChangeImage : MonoBehaviour
             if (returnbutton.activeSelf)
             {
                 returnbutton.SetActive(false);
+                Debug.Log("retruen1");
             }
         }
         else if (img.sprite == image3)
@@ -57,7 +61,13 @@ public class ChangeImage : MonoBehaviour
             if (!nextbutton.activeSelf)
             {
                 nextbutton.SetActive(true);
+                Debug.Log("return2");
             }
         }
     }
+    public void SkipTutorial()
+    {
+        SceneManager.LoadScene("Nepuri-gu");
+    }
+   
 }
