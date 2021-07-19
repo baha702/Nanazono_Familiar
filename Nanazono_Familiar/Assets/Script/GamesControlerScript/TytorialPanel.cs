@@ -12,11 +12,7 @@ public class TytorialPanel : MonoBehaviour
     private GameObject TutorialCanvas;   
     public AudioClip menuClip;
 
-    void Start()
-    {
-       
-    }
-
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

@@ -28,6 +28,6 @@ public class start : MonoBehaviour
     public void StartGame()
     {
         //audio.PlayOneShot(startClip, 1.0f);
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("OptionScene");
     }
 }

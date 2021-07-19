@@ -15,6 +15,8 @@ public class MenuController : MonoBehaviour
     private AudioSource audio;
     public AudioClip menuClip;
 
+    public bool menuBool=false;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -23,29 +25,39 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
+        if (menuBool == true)
         {
-            //audio.PlayOneShot(menuClip,1.0f);
-            //　ポーズUIのアクティブ、非アクティブを切り替え
-            MenuUI.SetActive(!MenuUI.activeSelf);
+            //カーソルを表示
+            Cursor.visible = true;
+            //カーソルの固定を解除
+            Cursor.lockState = CursorLockMode.None;
+        }
+        if (menuBool == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
+            {
+                //audio.PlayOneShot(menuClip,1.0f);
+                //　ポーズUIのアクティブ、非アクティブを切り替え
+                MenuUI.SetActive(!MenuUI.activeSelf);
 
-            //　ポーズUIが表示されてる時は停止
-            if (MenuUI.activeSelf)
-            {
-                //カーソルを表示
-                Cursor.visible = true;
-                //カーソルの固定を解除
-                Cursor.lockState = CursorLockMode.None;
-                Time.timeScale = 0f;
-                //　ポーズUIが表示されてなければ通常通り進行
-            }
-            else
-            {
-                //カーソルを非表示
-                Cursor.visible = true;
-                //カーソルを中央に固定
-                Cursor.lockState = CursorLockMode.Locked;
-                Time.timeScale = 1f;
+                //　ポーズUIが表示されてる時は停止
+                if (MenuUI.activeSelf)
+                {
+                    //カーソルを表示
+                    Cursor.visible = true;
+                    //カーソルの固定を解除
+                    Cursor.lockState = CursorLockMode.None;
+                    Time.timeScale = 0f;
+                    //　ポーズUIが表示されてなければ通常通り進行
+                }
+                else
+                {
+                    //カーソルを非表示
+                    Cursor.visible = true;
+                    //カーソルを中央に固定
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Time.timeScale = 1f;
+                }
             }
         }
     }
@@ -65,6 +77,10 @@ public class MenuController : MonoBehaviour
     public void LoadTitle()
     {
         SceneManager.LoadScene("Start");
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene("Nepuri-gu");
     }
 
     public void Quit()
