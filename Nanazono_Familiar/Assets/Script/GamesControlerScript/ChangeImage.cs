@@ -40,7 +40,7 @@ public class ChangeImage : MonoBehaviour
         }
         else if (img.sprite == image3)
         {
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("StageChoice");
         }
        
     }
@@ -67,7 +67,7 @@ public class ChangeImage : MonoBehaviour
     }
     public void SkipTutorial()
     {
-        SceneManager.LoadScene("Nepuri-gu");
+        SceneManager.LoadScene("StageChoice");
     }
    
 }

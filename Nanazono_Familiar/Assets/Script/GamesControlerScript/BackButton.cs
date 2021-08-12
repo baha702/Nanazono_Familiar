@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Stage1GO : MonoBehaviour
+
+public class BackButton : MonoBehaviour
 {
     private AudioSource audio;
     public AudioClip startClip;
@@ -14,6 +15,6 @@ public class Stage1GO : MonoBehaviour
     public void StartGame()
     {
         //audio.PlayOneShot(startClip, 1.0f);
-        SceneManager.LoadScene("Nepuri-gu");
+        SceneManager.LoadScene("Start");
     }
 }
