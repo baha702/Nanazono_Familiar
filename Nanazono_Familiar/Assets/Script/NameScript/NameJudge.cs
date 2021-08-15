@@ -18,6 +18,7 @@ public class NameJudge : MonoBehaviour
     Entity_NameList es = null;
     Entity_Sheet1 ex = null;
 
+    private Animator animator;
     private int strFlag;
     private bool iscalledOnce;
     public bool[] flag;
@@ -30,6 +31,7 @@ public class NameJudge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
         NameList(listnum);
         strKatakana = inputKatakana;
@@ -61,6 +63,7 @@ public class NameJudge : MonoBehaviour
 
     private IEnumerator Coroutine()
     {
+        animator.SetTrigger("Dead");
         //１秒待機
         yield return new WaitForSeconds(0.5f);
 
