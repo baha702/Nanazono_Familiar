@@ -13,6 +13,7 @@ public class NameJudgeTutorial : MonoBehaviour
     [SerializeField] string[] HiraganaName;
     [SerializeField] string[] KatakanaName;
 
+    private Animator animator;
     private int strFlag;
     public bool[] flag;
     public Material blueMaterial, redMaterial;
@@ -22,6 +23,7 @@ public class NameJudgeTutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
 
         for (int i = 0; i < strLength; i++)
@@ -50,6 +52,7 @@ public class NameJudgeTutorial : MonoBehaviour
 
     private IEnumerator Coroutine()
     {
+        animator.SetTrigger("Dead");
         //１秒待機
         yield return new WaitForSeconds(0.5f);
 
@@ -58,7 +61,7 @@ public class NameJudgeTutorial : MonoBehaviour
         {
             enemyTMP[i].fontSharedMaterial = redMaterial;
         }
-        strFlag = 0;
+        strFlag = 0;      
         Destroy(this.gameObject);
 
         //コルーチンを終了
