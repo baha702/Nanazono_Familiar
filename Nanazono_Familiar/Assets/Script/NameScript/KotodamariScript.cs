@@ -10,12 +10,14 @@ public class KotodamariScript: MonoBehaviour
 
     public DictationRecognizer dictationRecognizer;
 
-    private GameObject textObject;
+    private GameObject textObject,enemytext;
     public GameObject PlayerObject;
     public GameObject CameraObject;
     public GameObject ChargeEffect;
     public GameObject ExprodeEffect;
 
+    public Material redMaterial;
+    
     public Vector3 PlayerPos;
     private float CameraAngleX,CameraAngleY;
     private float SlowTime = 0.3f;
@@ -97,7 +99,7 @@ public class KotodamariScript: MonoBehaviour
                     StartCoroutine("Coroutine");
                     KotodamaPos(inputText);
                     audio.PlayOneShot(ATKClip, 1.0f);
-                    textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
+                    textObject = FlyingText.GetObjects(inputText,PlayerPos, Quaternion.identity);//FlyingTextを生成
                     textObject.name = "FlyingText";
                     Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
                     Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
@@ -172,6 +174,26 @@ public class KotodamariScript: MonoBehaviour
         }
         textObject.tag = "flyingText";
         Destroy(textObject, 10.0f);
+    }
+
+    public void BossKotodama(string str1, Vector3 pos1)
+    {
+        //enemytext = FlyingText.GetObjects(str1, pos1, Quaternion.identity);//FlyingTextを生成
+        enemytext = FlyingText.GetObjects(str1,redMaterial,null,10.0f,1.0f,5, pos1, Quaternion.identity);//FlyingTextを生成
+        enemytext.name = "EnemyText";
+        Rigidbody rigidbody = enemytext.AddComponent<Rigidbody>();
+        Rigidbody[] rigidbodies = enemytext.GetComponentsInChildren<Rigidbody>();
+        enemytext.transform.Rotate(-15, 270, 0);//PlayerControllerのY.rotateを参照
+        foreach (var TextChild in rigidbodies)
+        {
+            TextChild.useGravity = false;
+            TextChild.AddForce(enemytext.transform.forward * -bulletSpeed, ForceMode.Impulse);
+            TextChild.tag = "EnemyText";
+            TextChild.gameObject.AddComponent<EnemyflyingText>();
+        }
+        enemytext.tag = "EnemyText";
+        //enemytext.AddComponent<EnemyflyingText>();
+        Destroy(enemytext, 10.0f);
     }
 
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント

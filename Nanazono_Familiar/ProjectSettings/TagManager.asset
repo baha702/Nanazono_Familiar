@@ -9,6 +9,7 @@ TagManager:
   - Hantei
   - Enemy
   - flyingText
+  - EnemyText
   layers:
   - Default
   - TransparentFX

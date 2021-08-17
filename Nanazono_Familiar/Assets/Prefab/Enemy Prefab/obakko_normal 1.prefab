@@ -616,7 +616,7 @@ MonoBehaviour:
   - {fileID: 8435898080666640243}
   - {fileID: 6471095486213581150}
   - {fileID: 4526419848533094711}
-  blueMate: {fileID: 2100000, guid: af790c4a83bd2474b987f35f340fede4, type: 2}
+  blueMate: {fileID: 0}
 --- !u!195 &7104585026899920769
 NavMeshAgent:
   m_ObjectHideFlags: 0

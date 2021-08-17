@@ -39,7 +39,8 @@ public class MenuController : MonoBehaviour
                 //audio.PlayOneShot(menuClip,1.0f);
                 //　ポーズUIのアクティブ、非アクティブを切り替え
                 MenuUI.SetActive(!MenuUI.activeSelf);
-
+                Time.timeScale = 0f;
+                Debug.Log("Pose");
                 //　ポーズUIが表示されてる時は停止
                 if (MenuUI.activeSelf)
                 {
@@ -48,6 +49,7 @@ public class MenuController : MonoBehaviour
                     //カーソルの固定を解除
                     Cursor.lockState = CursorLockMode.None;
                     Time.timeScale = 0f;
+                    Debug.Log("MenuUI Active");
                     //　ポーズUIが表示されてなければ通常通り進行
                 }
                 else

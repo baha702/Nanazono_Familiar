@@ -36,6 +36,12 @@ public class PlayerHPBar2 : MonoBehaviour
             Debug.Log(hp);
         }
 
+        if (collision.gameObject.tag == "EnemyText")
+        {
+            hp -= 4;//hpを-1ずつ変える
+            Debug.Log(hp);
+        }
+
         if (hp == 0)//もしhpが0以下なら
         {            
                 SceneManager.LoadScene("GameOver");           
