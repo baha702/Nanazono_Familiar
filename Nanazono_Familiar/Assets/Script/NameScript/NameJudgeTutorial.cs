@@ -87,6 +87,7 @@ public class NameJudgeTutorial : MonoBehaviour
                     audio.PlayOneShot(DMGClip, 1.0f);
                     if (flag[i] == false)
                     {
+                        animator.SetTrigger("Damage");
                         strFlag++;
                         flag[i] = true;
                         Debug.Log(strFlag);

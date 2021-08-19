@@ -102,6 +102,7 @@ public class NameJudge : MonoBehaviour
                     audio.PlayOneShot(DMGClip,1.0f);
                     if (flag[i]==false)
                     {
+                        animator.SetTrigger("Damage");
                         this.gameObject.GetComponent<EnemyMoveAI>().speed = enemyspeed;
                         strFlag++;
                         flag[i] = true;

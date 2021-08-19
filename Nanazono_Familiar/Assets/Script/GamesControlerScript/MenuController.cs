@@ -80,7 +80,7 @@ public class MenuController : MonoBehaviour
     }
     public void Restart()
     {
-        SceneManager.LoadScene("Nepuri-gu");
+        SceneManager.LoadScene("Stage01");
     }
 
     public void Quit()

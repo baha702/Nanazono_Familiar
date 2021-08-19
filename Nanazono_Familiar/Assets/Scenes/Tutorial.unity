@@ -1010,6 +1010,10 @@ PrefabInstance:
       propertyPath: DebugText2
       value: "\u30CB\u30B3\u30E9\u30B9"
       objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: DebugText3
+      value: "\u30C8\u30E0"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
 --- !u!1001 &1161320876

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Stage1GO : MonoBehaviour
+
+public class OptionButton : MonoBehaviour
 {
     private AudioSource audio;
     public AudioClip startClip;
@@ -11,9 +12,10 @@ public class Stage1GO : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
     }
+
     public void StartGame()
     {
         //audio.PlayOneShot(startClip, 1.0f);
-        SceneManager.LoadScene("Stage01");
+        SceneManager.LoadScene("GameOption");
     }
 }
