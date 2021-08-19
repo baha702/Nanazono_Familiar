@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8459325663288781999}
+  - component: {fileID: 1639442954}
   m_Layer: 0
   m_Name: EnemyBorn
   m_TagString: Untagged
@@ -30,3 +31,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1639442954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862923774190969033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310e54db0dac41245a2e9bddaada6f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemys:
+  - {fileID: 5417594083100965941, guid: 5f6d62ccc6c86e94496e84bc9bbbcbf6, type: 3}
+  - {fileID: 4268294575864262356, guid: 60ea48816e998cd4a87d49732401cd07, type: 3}
+  appearNextTime: 11
+  hugeappearTIme: 40
+  maxNumOfEnemys: 3
+  stopHugeApr: 1
