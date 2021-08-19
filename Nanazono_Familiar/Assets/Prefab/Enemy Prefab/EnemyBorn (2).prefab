@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16115888253058607}
-  m_LocalRotation: {x: -0, y: 0.21360508, z: -0, w: 0.9769201}
+  m_LocalRotation: {x: 0, y: 0.21360159, z: 0, w: 0.9769209}
   m_LocalPosition: {x: -19.9, y: 1.3000002, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -48,4 +48,6 @@ MonoBehaviour:
   - {fileID: 8144951608426680073, guid: ec903bb1545be134abe5bb13d2df1f4b, type: 3}
   - {fileID: 4579974956412183360, guid: a12b78a18cdfc8d418f32b1ee730962f, type: 3}
   appearNextTime: 50
+  hugeappearTIme: 40
   maxNumOfEnemys: 2
+  stopHugeApr: 1

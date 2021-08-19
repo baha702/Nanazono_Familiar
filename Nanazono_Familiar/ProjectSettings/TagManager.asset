@@ -9,6 +9,8 @@ TagManager:
   - Hantei
   - Enemy
   - flyingText
+  - EnemyText
+  - HealItem
   layers:
   - Default
   - TransparentFX
