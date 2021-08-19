@@ -14,6 +14,6 @@ public class Stage1GO : MonoBehaviour
     public void StartGame()
     {
         //audio.PlayOneShot(startClip, 1.0f);
-        SceneManager.LoadScene("Nepuri-gu");
+        SceneManager.LoadScene("Stage01");
     }
 }

@@ -27,7 +27,7 @@ public class KotodamariScript: MonoBehaviour
     public float bulletSpeed;
     public string inputText;
     public string testText;
-    public string DebugText1, DebugText2;
+    public string DebugText1, DebugText2, DebugText3;
     public bool debugKotodama = false;
     public bool efectbool = false;
 
@@ -143,6 +143,10 @@ public class KotodamariScript: MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 DebugText(DebugText2);
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                DebugText(DebugText3);
             }
         }
     }

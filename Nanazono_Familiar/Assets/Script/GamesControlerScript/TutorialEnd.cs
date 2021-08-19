@@ -23,7 +23,7 @@ public class TutorialEnd : MonoBehaviour
 		{
 
 			// ゲームクリアーシーンに遷移する。
-			SceneManager.LoadScene("Nepuri-gu");
+			SceneManager.LoadScene("Stage01");
 		}
 	}
 }
