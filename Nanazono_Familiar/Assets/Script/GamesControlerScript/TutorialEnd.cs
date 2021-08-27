@@ -23,7 +23,7 @@ public class TutorialEnd : MonoBehaviour
 		{
 
 			// ゲームクリアーシーンに遷移する。
-			SceneManager.LoadScene("Stage01");
+			SceneManager.LoadScene("TutorialEnd");
 		}
 	}
 }

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Stage1GO : MonoBehaviour
+
+public class Stage4GO : MonoBehaviour
 {
     private AudioSource audio;
     public AudioClip startClip;
@@ -14,13 +15,6 @@ public class Stage1GO : MonoBehaviour
     public void StartGame()
     {
         //audio.PlayOneShot(startClip, 1.0f);
-        SceneManager.LoadScene("Stage01");
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            {
-            SceneManager.LoadScene("Stage01");
-             }
+        SceneManager.LoadScene("Stage04");
     }
 }
