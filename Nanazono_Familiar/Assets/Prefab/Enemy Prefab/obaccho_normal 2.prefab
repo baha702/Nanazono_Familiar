@@ -870,6 +870,7 @@ GameObject:
   - component: {fileID: 8566023265463380071}
   - component: {fileID: 4629010136697739956}
   - component: {fileID: 2308119760456202981}
+  - component: {fileID: 3348922469258965071}
   m_Layer: 0
   m_Name: obaccho_normal 2
   m_TagString: Enemy
@@ -1148,6 +1149,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3348922469258965071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6641359337084175805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3fc39c30a9e434b98c65f3cc6d2f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6719474997438457417
 GameObject:
   m_ObjectHideFlags: 0
