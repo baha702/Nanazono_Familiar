@@ -26,7 +26,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30AF,\u30EC,\u30E0,\u30DE,\u30AD,\u30B7,\u30DF,\u30EA,\u30A2,\u30FC,\u30CE"
       boss12: "\u30DF,\u30C3,\u30B7,\u30A7,\u30EB,\u30B8,\u30A7,\u30D5,\u30A1,\u30FC,\u30BD,\u30F3"
-      boss13: 
+      boss13: "\u30B3\u30EF\u30A4"
     - kake2: "\u30E4,\u30CA"
       kake3: "\u30B0,\u30EC,\u30F3"
       kake4: "\u30A8,\u30A4,\u30DF,\u30FC"
@@ -38,7 +38,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30EA,\u30C1,\u30E3,\u30FC,\u30C9,\u30E9,\u30C7,\u30A3,\u30EA,\u30A2,\u30B9"
       boss12: "\u30D5,\u30A7,\u30EB,\u30CA,\u30F3,\u30C9,\u30DE,\u30B0,\u30C0,\u30EC,\u30FC,\u30CA"
-      boss13: 
+      boss13: "\u30B3\u30A4\u30EF"
     - kake2: "\u30ED,\u30A4"
       kake3: "\u30B1,\u30F3,\u30C8"
       kake4: "\u30AB,\u30FC,\u30BF,\u30FC"
@@ -50,7 +50,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30B3,\u30F3,\u30E9,\u30C3,\u30C9,\u30B9,\u30C6,\u30A3,\u30FC,\u30D6,\u30F3"
       boss12: "\u30D5,\u30A7,\u30EA,\u30B7,\u30C6,\u30A3,\u30C0,\u30A4,\u30E4,\u30E2,\u30F3,\u30C9"
-      boss13: 
+      boss13: "\u30EF\u30B3\u30A4"
     - kake2: "\u30ED,\u30F3"
       kake3: "\u30B3,\u30EB,\u30C8"
       kake4: "\u30AB,\u30A4,\u30E9,\u30F3"
@@ -62,7 +62,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30B0,\u30EC,\u30A4,\u30B7,\u30FC,\u30AF,\u30EA,\u30B9,\u30C8,\u30D0,\u30EB"
       boss12: "\u30B5,\u30EB,\u30D0,\u30C8,\u30FC,\u30EC,\u30C7,\u30E1,\u30C8,\u30EA,\u30A2,\u30B9"
-      boss13: 
+      boss13: "\u30EF\u30A4\u30B3"
     - kake2: "\u30AC,\u30A4"
       kake3: "\u30B9,\u30C6,\u30E9"
       kake4: "\u30AF,\u30E9,\u30FC,\u30AF"
@@ -74,7 +74,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30D6,\u30EC,\u30A4,\u30BA,\u30C7,\u30A3,\u30A2,\u30F3,\u30B8,\u30A7,\u30ED"
       boss12: "\u30B7,\u30E3,\u30FC,\u30ED,\u30C3,\u30C8,\u30A2,\u30F3,\u30B8,\u30A7,\u30EA,\u30FC"
-      boss13: 
+      boss13: "\u30A4\u30B3\u30EF"
     - kake2: "\u30B5,\u30E9"
       kake3: "\u30C0,\u30E9,\u30B9"
       kake4: "\u30B3,\u30FC,\u30C7,\u30EB"
@@ -86,7 +86,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30D5,\u30EC,\u30C9,\u30EA,\u30C3,\u30AF,\u30DF,\u30C3,\u30B7,\u30A7,\u30EB"
       boss12: "\u30AD,\u30E3,\u30ED,\u30E9,\u30A4,\u30CA,\u30A8,\u30B9,\u30C6,\u30D5,\u30A1,\u30CB"
-      boss13: 
+      boss13: "\u30A4\u30EF\u30B3"
     - kake2: "\u30CE,\u30A2"
       kake3: "\u30CB,\u30FC,\u30CA"
       kake4: "\u30B8,\u30E5,\u30EA,\u30FC"
@@ -98,7 +98,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30EC,\u30C6,\u30A3,\u30B7,\u30A2,\u30DA,\u30A4,\u30B7,\u30E3,\u30F3,\u30B9"
       boss12: 
-      boss13: 
+      boss13: "\u30A4\u30E4\u30C0"
     - kake2: "\u30DF,\u30A2"
       kake3: "\u30CB,\u30C3,\u30AF"
       kake4: "\u30B8,\u30A7,\u30A4,\u30AF"
@@ -110,7 +110,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30B0,\u30EC,\u30A4,\u30C7,\u30A3,\u30B3,\u30FC,\u30CD,\u30EA,\u30A2,\u30B9"
       boss12: 
-      boss13: 
+      boss13: "\u30A4\u30C0\u30E4"
     - kake2: "\u30E9,\u30E9"
       kake3: "\u30CF,\u30EA,\u30FC"
       kake4: "\u30C8,\u30FC,\u30DE,\u30B9"
@@ -122,7 +122,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30B8,\u30A7,\u30A4,\u30EA,\u30F3,\u30A2,\u30C9,\u30EA,\u30A2,\u30F3,\u30CC"
       boss12: 
-      boss13: 
+      boss13: "\u30C0\u30E4\u30A4"
     - kake2: "\u30A8,\u30DE"
       kake3: "\u30D2,\u30FC,\u30B9"
       kake4: "\u30C7,\u30A2,\u30B7,\u30A2"
@@ -134,7 +134,7 @@ MonoBehaviour:
       boss10: 
       boss11: "\u30C9,\u30EC,\u30A4,\u30E2,\u30F3,\u30C9,\u30E1,\u30EB,\u30BB,\u30C7,\u30B9"
       boss12: 
-      boss13: 
+      boss13: "\u30C0\u30A4\u30E4"
     - kake2: 
       kake3: "\u30D8,\u30EC,\u30F3"
       kake4: "\u30CA,\u30BF,\u30EA,\u30FC"
@@ -146,7 +146,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30E4\u30C0\u30A4"
     - kake2: 
       kake3: "\u30DE,\u30A4,\u30AF"
       kake4: "\u30CA,\u30C3,\u30B7,\u30E5"
@@ -158,7 +158,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30E4\u30A4\u30C0"
     - kake2: 
       kake3: "\u30DE,\u30EA,\u30A2"
       kake4: "\u30CD,\u30EB,\u30BD,\u30F3"
@@ -170,7 +170,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30CA\u30F3\u30C7"
     - kake2: 
       kake3: "\u30E2,\u30CB,\u30AB"
       kake4: "\u30CE,\u30A8,\u30EA,\u30A2"
@@ -182,7 +182,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30CA\u30C7\u30F3"
     - kake2: 
       kake3: "\u30E8,\u30B7,\u30A2"
       kake4: "\u30CF,\u30ED,\u30EB,\u30C9"
@@ -194,7 +194,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30C7\u30CA\u30F3"
     - kake2: 
       kake3: "\u30E9,\u30A4,\u30E9"
       kake4: "\u30D5,\u30A3,\u30AA,\u30CA"
@@ -206,7 +206,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30C7\u30F3\u30CA"
     - kake2: 
       kake3: "\u30E9,\u30E2,\u30F3"
       kake4: "\u30D4,\u30FC,\u30BF,\u30FC"
@@ -218,7 +218,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30F3\u30C7\u30CA"
     - kake2: 
       kake3: "\u30E9,\u30EB,\u30D5"
       kake4: "\u30D8,\u30AF,\u30BF,\u30FC"
@@ -230,7 +230,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30F3\u30CA\u30C7"
     - kake2: 
       kake3: "\u30EA,\u30EA,\u30FC"
       kake4: "\u30D8,\u30F3,\u30EA,\u30FC"
@@ -242,7 +242,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30AD\u30A8\u30BF\u30AF\u30CA\u30A4"
     - kake2: 
       kake3: "\u30EC,\u30A4,\u30CA"
       kake4: "\u30DF,\u30EB,\u30C8,\u30F3"
@@ -254,7 +254,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30A8\u30CA\u30AF\u30A4\u30BF\u30AD"
     - kake2: 
       kake3: "\u30A2,\u30ED,\u30F3"
       kake4: "\u30A2,\u30E1,\u30EA,\u30A2"
@@ -266,7 +266,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30A8\u30AF\u30AD\u30A4\u30CA\u30BF"
     - kake2: 
       kake3: "\u30A4,\u30EF,\u30F3"
       kake4: "\u30A4,\u30B6,\u30D9,\u30E9"
@@ -278,7 +278,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30AF\u30CA\u30BF\u30AD\u30A4\u30A8"
     - kake2: 
       kake3: "\u30A8,\u30EC,\u30CA"
       kake4: "\u30A8,\u30EA,\u30A2,\u30B9"
@@ -290,7 +290,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30CA\u30A8\u30A4\u30AF\u30AD\u30BF"
     - kake2: 
       kake3: "\u30AF,\u30EA,\u30B9"
       kake4: "\u30AA,\u30EA,\u30D0,\u30FC"
@@ -302,7 +302,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30A4\u30CA\u30AF\u30BF\u30A8\u30AD"
     - kake2: 
       kake3: "\u30B1,\u30D3,\u30F3"
       kake4: "\u30AA,\u30EA,\u30D3,\u30A2"
@@ -314,7 +314,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30CA\u30CB\u30B3\u30A4\u30C4"
     - kake2: 
       kake3: "\u30B9,\u30B5,\u30CA"
       kake4: "\u30B1,\u30FC,\u30B7,\u30FC"
@@ -326,7 +326,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30C4\u30A4\u30B3\u30CB\u30CA"
     - kake2: 
       kake3: "\u30B8,\u30E7,\u30F3"
       kake4: "\u30AD,\u30E3,\u30ED,\u30EB"
@@ -338,7 +338,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30A4\u30CB\u30C4\u30CA\u30B3"
     - kake2: 
       kake3: "\u30BF,\u30EA,\u30A2"
       kake4: "\u30B1,\u30A4,\u30EA,\u30FC"
@@ -350,7 +350,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30B3\u30CA\u30CB\u30C4\u30A4"
     - kake2: 
       kake3: "\u30C7,\u30FC,\u30EB"
       kake4: "\u30BB,\u30AA,\u30C9,\u30A2"
@@ -362,7 +362,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30CB\u30CA\u30A4\u30B3\u30C4"
     - kake2: 
       kake3: "\u30C6,\u30EA,\u30FC"
       kake4: "\u30BB,\u30EC,\u30EA,\u30A2"
@@ -374,7 +374,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30CA\u30B3\u30A4\u30C4\u30CB"
     - kake2: 
       kake3: "\u30C8,\u30EC,\u30A4"
       kake4: "\u30BB,\u30B7,\u30EA,\u30A2"
@@ -386,7 +386,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30E4\u30E1\u30C6\u30E8"
     - kake2: 
       kake3: "\u30CB,\u30FC,\u30EB"
       kake4: "\u30B8,\u30E7,\u30BB,\u30D5"
@@ -398,7 +398,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30E8\u30C6\u30E1\u30E4"
     - kake2: 
       kake3: "\u30CE,\u30EB,\u30DE"
       kake4: "\u30B6,\u30F3,\u30C0,\u30FC"
@@ -410,7 +410,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30E1\u30E8\u30C6\u30E4"
     - kake2: 
       kake3: "\u30CE,\u30A8,\u30EB"
       kake4: "\u30BF,\u30FC,\u30CA,\u30FC"
@@ -422,7 +422,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30C6\u30E4\u30E8\u30E1"
     - kake2: 
       kake3: "\u30CF,\u30F3,\u30CA"
       kake4: "\u30CB,\u30B3,\u30E9,\u30B9"
@@ -434,7 +434,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30C6\u30E8\u30E1\u30E4"
     - kake2: 
       kake3: "\u30DF,\u30B1,\u30EB"
       kake4: "\u30CE,\u30FC,\u30E9,\u30F3"
@@ -446,7 +446,7 @@ MonoBehaviour:
       boss10: 
       boss11: 
       boss12: 
-      boss13: 
+      boss13: "\u30E1\u30C6\u30E8\u30E4"
     - kake2: 
       kake3: "\u30E2,\u30FC,\u30BB"
       kake4: "\u30CB,\u30E3,\u30B7,\u30A2"
