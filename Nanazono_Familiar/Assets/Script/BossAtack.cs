@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class BossAtack : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class BossAtack : MonoBehaviour
     private bool stopAppear;
     public int num;
     public bool debugbool;
+    Entity_NameList es = null;
 
     // Start is called before the first frame update
     void Start()
@@ -66,9 +68,13 @@ public class BossAtack : MonoBehaviour
 
     public void EnemyNameList(int number)
     {
-        
+        es = Resources.Load("NameList") as Entity_NameList;
 
-        switch (number)
+        int num = Random.Range(0, 37);
+        inputText = es.sheets[0].list[num].boss13;
+        Debug.Log(inputText);
+
+        /*switch (number)
         {
             case 1:
                 inputText = "コワイ";
@@ -95,6 +101,6 @@ public class BossAtack : MonoBehaviour
                 inputText = "エナクイタキ";
                 break;
            
-        }
+        }*/
     }
 }
