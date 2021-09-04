@@ -20,6 +20,9 @@ public class NameJudgeTutorial : MonoBehaviour
 
     AudioSource audio;
     public AudioClip DMGClip;
+
+    private bool atombool;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +55,20 @@ public class NameJudgeTutorial : MonoBehaviour
 
     private IEnumerator Coroutine()
     {
+
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+
+            if (atombool == false)
+            {
+                atomSrc.Play(14);
+                atombool = true;
+            }
+
+
+        }
+
         animator.SetTrigger("Dead");
         //１秒待機
         yield return new WaitForSeconds(0.5f);
@@ -61,7 +78,10 @@ public class NameJudgeTutorial : MonoBehaviour
         {
             enemyTMP[i].fontSharedMaterial = redMaterial;
         }
-        strFlag = 0;      
+        strFlag = 0;
+
+        atombool = false;
+
         Destroy(this.gameObject);
 
         //コルーチンを終了
@@ -84,6 +104,14 @@ public class NameJudgeTutorial : MonoBehaviour
                 {
                     enemyTMP[i].text = string.Format(KatakanaName[i]);
                     enemyTMP[i].fontSharedMaterial = blueMaterial;
+
+                    CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+                    if (atomSrc != null)
+                    {
+                        atomSrc.Play();
+
+                    }
+
                     audio.PlayOneShot(DMGClip, 1.0f);
                     if (flag[i] == false)
                     {

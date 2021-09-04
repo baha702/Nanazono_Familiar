@@ -26,6 +26,8 @@ public class NameJudgeBoss : MonoBehaviour
     AudioSource audio;
     public AudioClip DMGClip;
 
+    private bool atombool;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +62,14 @@ public class NameJudgeBoss : MonoBehaviour
 
     private IEnumerator Coroutine()
     {
+
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play(22);
+
+        }
+
         //１秒待機
         yield return new WaitForSeconds(2.0f);
 
@@ -69,6 +79,9 @@ public class NameJudgeBoss : MonoBehaviour
             enemyTMP[i].fontSharedMaterial = redMaterial;
         }
         strFlag = 0;
+
+        atombool = false;
+
         Destroy(this.gameObject);
         SceneManager.LoadScene("GameClear");
         //コルーチンを終了
@@ -94,6 +107,18 @@ public class NameJudgeBoss : MonoBehaviour
                 {
                     enemyTMP[i].text = string.Format(ar[i]);
                     enemyTMP[i].fontSharedMaterial = blueMaterial;
+
+                    CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+                    if (atomSrc != null)
+                    {
+
+                        if (atombool == false)
+                        {
+                            atomSrc.Play(22);
+
+                        }
+                    }
+
                     audio.PlayOneShot(DMGClip, 1.0f);
                     if (flag[i] == false)
                     {

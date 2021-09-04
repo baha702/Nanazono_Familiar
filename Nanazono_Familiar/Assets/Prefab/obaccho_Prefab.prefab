@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2167957384535186618}
   - component: {fileID: 2167957384535186617}
   - component: {fileID: 2167957384535186616}
+  - component: {fileID: 739731356137692043}
   m_Layer: 0
   m_Name: obaccho_Prefab
   m_TagString: Enemy
@@ -131,6 +132,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  speed: 0
+  length: 0
+  stopTime: 3
+  enemyTMP: []
+  blueMate: {fileID: 0}
 --- !u!195 &2167957384535186617
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -173,6 +179,31 @@ MonoBehaviour:
   flag: 
   blueMaterial: {fileID: -6510626163237118021, guid: af500a65666ad7642b857963c2d6804a, type: 2}
   redMaterial: {fileID: 2100000, guid: 90e6de1b4ec9b2c449f4977e85c64235, type: 2}
+  enemyspeed: 0
+  DMGClip: {fileID: 0}
+--- !u!114 &739731356137692043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357633049043133511}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: damage_hit
+  _cueSheet: Kotobashiin_SFX
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &2167957384412223029
 GameObject:
   m_ObjectHideFlags: 0

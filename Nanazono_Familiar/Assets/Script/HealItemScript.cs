@@ -47,6 +47,16 @@ public class HealItemScript : MonoBehaviour
 
     private void FallApple()
     {
+
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play();
+
+
+
+        }
+
         Rigidbody rigidbody = this.gameObject.GetComponent<Rigidbody>();
         rigidbody.isKinematic = false;
         rigidbody.useGravity = true;

@@ -18,7 +18,7 @@ public class start : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             {
-                audio.PlayOneShot(startClip, 1.0f);
+                
                 SceneManager.LoadScene("Tutorial");
             }
 
@@ -28,6 +28,12 @@ public class start : MonoBehaviour
     public void StartGame()
     {
         //audio.PlayOneShot(startClip, 1.0f);
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play(6);
+
+        }
         SceneManager.LoadScene("OptionScene");
     }
 }
