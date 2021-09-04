@@ -20,6 +20,12 @@ public class ChangeImage : MonoBehaviour
     }
     public void NextImage()
     {
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play();
+
+        }
         if (img.sprite == image1)
         {
             img.sprite = image2;
@@ -46,6 +52,14 @@ public class ChangeImage : MonoBehaviour
     }
     public void ReturnImage()
     {
+
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play();
+
+        }
+
         if (img.sprite == image2)
         {
             img.sprite = image1;
@@ -67,6 +81,14 @@ public class ChangeImage : MonoBehaviour
     }
     public void SkipTutorial()
     {
+
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play(7);
+
+        }
+
         SceneManager.LoadScene("StageChoice");
     }
    

@@ -13,6 +13,14 @@ public class Stage1GO : MonoBehaviour
     }
     public void StartGame()
     {
+
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play();
+
+        }
+
         //audio.PlayOneShot(startClip, 1.0f);
         SceneManager.LoadScene("Stage01");
     }

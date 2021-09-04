@@ -32,6 +32,16 @@ public class PlayerHPBar2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")//衝突した相手のタグがEnemyなら
         {
+
+            CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+            if (atomSrc != null)
+            {
+                atomSrc.Play(12);
+
+
+
+            }
+
             hp -= 1;//hpを-1ずつ変える
             Debug.Log(hp);
         }

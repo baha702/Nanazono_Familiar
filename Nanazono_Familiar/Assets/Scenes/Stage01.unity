@@ -1197,6 +1197,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95681ecc4d68ec45bbacb515fb70276, type: 3}
+--- !u!1 &97688325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 97688327}
+  - component: {fileID: 97688326}
+  m_Layer: 0
+  m_Name: CRIWARE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &97688326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97688325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f529aa944b914449d62b8c40f188fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acfFile: Kotobashiin.acf
+  cueSheets:
+  - name: Kotobashiin_BGM
+    acbFile: Kotobashiin_BGM.acb
+    awbFile: 
+    loaderStatus: 0
+  - name: Kotobashiin_SFX
+    acbFile: Kotobashiin_SFX.acb
+    awbFile: 
+    loaderStatus: 0
+  dspBusSetting: 
+  dontDestroyOnLoad: 0
+  dontRemoveExistsCueSheet: 0
+--- !u!4 &97688327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97688325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &97984439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2ddd9498c0372204da6397ec7e2b4b0d, type: 3}
@@ -1432,6 +1488,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7344321735013459221, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
   m_PrefabInstance: {fileID: 1442125762}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &129127278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129127277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: 
+  _cueSheet: Kotobashiin_SFX
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1001 &134755155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1683,6 +1762,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2ddd9498c0372204da6397ec7e2b4b0d, type: 3}
   m_PrefabInstance: {fileID: 1137876371}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &179115620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1361408335381408565, guid: 06bb9ce562afe4e4cab339f246627103, type: 3}
+  m_PrefabInstance: {fileID: 1862292017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &179115622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179115620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: 
+  _cueSheet: Kotobashiin_BGM
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 1
+  _volume: 0.13
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!4 &180306575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2ddd9498c0372204da6397ec7e2b4b0d, type: 3}
@@ -5612,6 +5719,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ddd9498c0372204da6397ec7e2b4b0d, type: 3}
+--- !u!1 &572078513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2268498216324631016, guid: fa4d25d9fb7a9db4a8cea05edff75705, type: 3}
+  m_PrefabInstance: {fileID: 675040581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &572078514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572078513}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: damage_hit
+  _cueSheet: Kotobashiin_SFX
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 0.56
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1001 &575245671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6662,6 +6797,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.88
       objectReference: {fileID: 0}
+    - target: {fileID: 6220799539591419282, guid: fa4d25d9fb7a9db4a8cea05edff75705, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa4d25d9fb7a9db4a8cea05edff75705, type: 3}
 --- !u!1001 &683264919
@@ -7040,6 +7179,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3834161884106386676, guid: 324bce4841bcde740baf3019b0a87650, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834161884106386677, guid: 324bce4841bcde740baf3019b0a87650, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3834161884106386678, guid: 324bce4841bcde740baf3019b0a87650, type: 3}
@@ -7585,6 +7728,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2035177361, guid: d5abb9967ec6f094181a2997f17eeb7d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 88404724909026843, guid: d5abb9967ec6f094181a2997f17eeb7d, type: 3}
       propertyPath: m_Name
       value: demobon_normal1
@@ -9209,6 +9356,29 @@ MonoBehaviour:
   appearNextTime: 19
   num: 0
   debugbool: 1
+--- !u!114 &946604060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946604058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: 
+  _cueSheet: Kotobashiin_SFX
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1001 &948395452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15123,6 +15293,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26f33c40826646c4fb4c568a592ecf88, type: 3}
   m_PrefabInstance: {fileID: 1589270656}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1598598457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8291577637571230269, guid: e91525b6e6a9baa478501c393cb2af3b, type: 3}
+  m_PrefabInstance: {fileID: 9210125394004188788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1598598458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598598457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: kaihuku
+  _cueSheet: Kotobashiin_SFX
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1001 &1612296015
 PrefabInstance:
   m_ObjectHideFlags: 0

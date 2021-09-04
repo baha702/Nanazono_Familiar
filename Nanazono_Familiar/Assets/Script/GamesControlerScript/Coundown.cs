@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Coundown : MonoBehaviour
 {
+    private bool atombool;
     public Text timerText;
 
     public float totalTime;//時間（実数）Insepectorから入力
@@ -13,6 +14,15 @@ public class Coundown : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play();
+
+
+
+        }
 
     }
 
@@ -25,6 +35,18 @@ public class Coundown : MonoBehaviour
         if (totalTime < 1f)//カウントが1より小さくなった場合
         {
             timerText.GetComponent<Text>().enabled = false;//表示を消す
+
+            CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+            if (atomSrc != null)
+            {
+
+                if (atombool == false)
+                {
+                    atomSrc.Play(0);
+                    atombool = true;
+                }
+            }
+
         }
     }
 }
