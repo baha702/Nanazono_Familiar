@@ -1119,6 +1119,7 @@ GameObject:
   - component: {fileID: 4092355881210369283}
   - component: {fileID: 3759877591979247161}
   - component: {fileID: 7855312075691886079}
+  - component: {fileID: 3736267781177111133}
   m_Layer: 0
   m_Name: obatto_normal 1 1
   m_TagString: Enemy
@@ -1418,6 +1419,18 @@ MonoBehaviour:
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
+--- !u!114 &3736267781177111133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144951608426680073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3fc39c30a9e434b98c65f3cc6d2f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8192417055531883899
 GameObject:
   m_ObjectHideFlags: 0
