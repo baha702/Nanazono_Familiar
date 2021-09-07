@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerController : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Transform PlayerTransform;
     private Transform CameraTransform;
+
+    public float AngeleRotation;
    
     [SerializeField] GameObject targetObj;
     Vector3 targetPos;
@@ -17,21 +20,24 @@ public class PlayerController : MonoBehaviour
     float angleH;
     float angleV;
 
+    public Slider SensitivitySlider;//マウス調節用スライダー
+
     // Use this for initialization
     void Start()
     {
-
+        AngeleRotation = 150f;
         PlayerTransform = transform.parent;
-        // CameraTransform = GetComponent<Transform>();
+         CameraTransform = GetComponent<Transform>();
         targetPos = targetObj.transform.position;
         roteuler = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0f);
+        SensitivitySlider.value = AngeleRotation;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        SensitivitySlider.value = AngeleRotation;
         // targetの移動量分、自分（カメラ）も移動する
         transform.position += targetObj.transform.position - targetPos;
         targetPos = targetObj.transform.position;
@@ -40,9 +46,16 @@ public class PlayerController : MonoBehaviour
         float mouseInputX = Input.GetAxis("Mouse X");
         float mouseInputY = Input.GetAxis("Mouse Y");
 
+        
+
+
         // マウス移動量から求めた水平・垂直回転角
-        float deltaAngleH = mouseInputX * Time.deltaTime * 300f;
-        float deltaAngleV = -mouseInputY * Time.deltaTime * 300f;
+        //float deltaAngleH = mouseInputX * Time.deltaTime * 300f;
+        //float deltaAngleV = -mouseInputY * Time.deltaTime * 300f;
+
+        // マウス移動量から求めた水平・垂直回転角
+        float deltaAngleH = mouseInputX * Time.deltaTime * AngeleRotation;
+        float deltaAngleV = -mouseInputY * Time.deltaTime * AngeleRotation;
 
         // 角度を積算する
         angleH += deltaAngleH;
@@ -69,5 +82,12 @@ public class PlayerController : MonoBehaviour
 
         // カメラの垂直移動
         transform.RotateAround(targetPos, transform.right, deltaAngleV);
+    }
+
+    //マウス感度調整用スライダーメソッド
+    public void OnEnable()
+    {
+
+        AngeleRotation = SensitivitySlider.value;
     }
 }

@@ -15,12 +15,13 @@ public class KotodamariScript: MonoBehaviour
     public GameObject CameraObject;
     public GameObject ChargeEffect;
     public GameObject ExprodeEffect;
+    public GameObject MenuUI;
 
     public Material redMaterial;
 
     public Vector3 PlayerPos;
     private float CameraAngleX,CameraAngleY;
-    private float SlowTime = 0.3f;
+    private float SlowTime = 1.0f;
 
 
     [SerializeField]
@@ -58,26 +59,27 @@ public class KotodamariScript: MonoBehaviour
 
     void Update()
     {
-
-        
-        if (Input.GetMouseButton(0))
+        if (!MenuUI.activeSelf)
         {
-            if (dictationRecognizer.Status != SpeechSystemStatus.Running)
-            {
-               //ディクテーションを開始
-               dictationRecognizer.Start();
-                Debug.Log("音声認識開始");
-                //ホールドアニメーション再生
-                //animVoiceInput = GameObject.Find("VoiceInput").gameObject.GetComponent<Animator>();
-                animVoiceInput.SetBool("MouseHold", true);
 
-                if (Time.timeScale==1.0f)
+            if (Input.GetMouseButton(0))
+            {
+                if (dictationRecognizer.Status != SpeechSystemStatus.Running)
                 {
-                   Time.timeScale = SlowTime;
+                    //ディクテーションを開始
+                    dictationRecognizer.Start();
+                    Debug.Log("音声認識開始");
+                    //ホールドアニメーション再生
+                    //animVoiceInput = GameObject.Find("VoiceInput").gameObject.GetComponent<Animator>();
+                    animVoiceInput.SetBool("MouseHold", true);
+
+                    /*if (Time.timeScale==1.0f)
+                    {
+                       Time.timeScale = SlowTime;
+                    }*/
                 }
+
             }
-            
-        }
             if (dictationRecognizer.Status == SpeechSystemStatus.Running)
             {
 
@@ -92,10 +94,10 @@ public class KotodamariScript: MonoBehaviour
 
                 if (inputText != testText)
                 {
-                  if (Time.timeScale == SlowTime)
-                  {
-                     Time.timeScale = 1.0f;
-                  }
+                    /*if (Time.timeScale == SlowTime)
+                    {
+                       Time.timeScale = 1.0f;
+                    }*/
                     StartCoroutine("Coroutine");
                     KotodamaPos(inputText);
                     audio.PlayOneShot(ATKClip, 1.0f);
@@ -115,20 +117,21 @@ public class KotodamariScript: MonoBehaviour
                 }
                 inputText = testText;
             }
-        
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (dictationRecognizer.Status != SpeechSystemStatus.Stopped)
+
+            if (Input.GetMouseButtonUp(0))
             {
-                Debug.Log("音声認識終了");
-                dictationRecognizer.Stop();
-                animVoiceInput.SetBool("MouseHold", false);
-                if (Time.timeScale == SlowTime)
+                if (dictationRecognizer.Status != SpeechSystemStatus.Stopped)
                 {
-                    Time.timeScale = 1.0f;
+                    Debug.Log("音声認識終了");
+                    dictationRecognizer.Stop();
+                    animVoiceInput.SetBool("MouseHold", false);
+                    /*if (Time.timeScale == SlowTime)
+                    {
+                        Time.timeScale = 1.0f;
+                    }*/
                 }
+
             }
-            
         }
 
         // イベントにイベントハンドラーを追加
@@ -187,7 +190,7 @@ public class KotodamariScript: MonoBehaviour
         enemytext.name = "EnemyText";
         Rigidbody rigidbody = enemytext.AddComponent<Rigidbody>();
         Rigidbody[] rigidbodies = enemytext.GetComponentsInChildren<Rigidbody>();
-        enemytext.transform.Rotate(15, 90, 0);//PlayerControllerのY.rotateを参照
+        enemytext.transform.Rotate(12, 90, 0);//PlayerControllerのY.rotateを参照
         foreach (var TextChild in rigidbodies)
         {
             TextChild.useGravity = false;

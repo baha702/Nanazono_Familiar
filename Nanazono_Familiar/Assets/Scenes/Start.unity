@@ -262,8 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e322df5125679cf47a3624d6848def2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuUI: {fileID: 0}
+  MenuUI: {fileID: 192489936}
   menuClip: {fileID: 0}
+  ReticleUI: {fileID: 0}
   menuBool: 0
 --- !u!114 &192489943
 MonoBehaviour:
