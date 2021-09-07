@@ -23,6 +23,10 @@ public class PlayerHPBar2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hp>5)
+        {
+            hp = 5;
+        }
         _slider.value = hp;//スライダーとHPの紐づけ
         // イベントにイベントハンドラーを追加
         SceneManager.sceneLoaded += SceneLoaded;
@@ -44,6 +48,18 @@ public class PlayerHPBar2 : MonoBehaviour
 
             hp -= 1;//hpを-1ずつ変える
             Debug.Log(hp);
+        }
+        if (collision.gameObject.tag == "EnemtText")
+        {
+            CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+            if (atomSrc != null)
+            {
+                atomSrc.Play(12);
+
+
+
+            }
+            hp -= 1;
         }
 
         if (hp == 0)//もしhpが0以下なら

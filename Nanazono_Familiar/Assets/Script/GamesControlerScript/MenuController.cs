@@ -14,6 +14,7 @@ public class MenuController : MonoBehaviour
     private GameObject MenuUI;
     private AudioSource audio;
     public AudioClip menuClip;
+    public GameObject ReticleUI;
 
     public bool menuBool=false;
 
@@ -21,6 +22,8 @@ public class MenuController : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         Time.timeScale = 1f;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -36,28 +39,30 @@ public class MenuController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
             {
-                //audio.PlayOneShot(menuClip,1.0f);
+                
                 //　ポーズUIのアクティブ、非アクティブを切り替え
                 MenuUI.SetActive(!MenuUI.activeSelf);
-
                 //　ポーズUIが表示されてる時は停止
-                if (MenuUI.activeSelf)
-                {
-                    //カーソルを表示
-                    Cursor.visible = true;
-                    //カーソルの固定を解除
-                    Cursor.lockState = CursorLockMode.None;
-                    Time.timeScale = 0f;
-                    //　ポーズUIが表示されてなければ通常通り進行
-                }
-                else
-                {
-                    //カーソルを非表示
-                    Cursor.visible = true;
-                    //カーソルを中央に固定
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Time.timeScale = 1f;
-                }
+                
+            }
+            if (MenuUI.activeSelf)
+            {
+                //ReticleUI.SetActive(false);
+                //カーソルを表示
+                Cursor.visible = true;
+                //カーソルの固定を解除
+                Cursor.lockState = CursorLockMode.None;
+                //　ポーズUIが表示されてなければ通常通り進行
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                //ReticleUI.SetActive(true);
+                //カーソルを非表示
+                Cursor.visible = false;
+                //カーソルを中央に固定
+                Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1f;
             }
         }
     }
