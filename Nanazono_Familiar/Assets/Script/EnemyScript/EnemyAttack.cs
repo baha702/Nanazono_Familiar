@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    public float deleteTime;
     private Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class EnemyAttack : MonoBehaviour
         if (collision.gameObject.tag == "Player")//衝突した相手のタグがEnemyなら
         {
             animator.SetTrigger("Attack");
+            Destroy(gameObject, deleteTime);
         }
     }
 }
