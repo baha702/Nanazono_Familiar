@@ -9,6 +9,8 @@ public class ChangeImage : MonoBehaviour
     public Sprite image1;
     public Sprite image2;
     public Sprite image3;
+    public Sprite image4;
+    public Sprite image5;
     public Image img;
     public GameObject nextbutton;
     public GameObject returnbutton;
@@ -44,7 +46,15 @@ public class ChangeImage : MonoBehaviour
         {
             img.sprite = image3;
         }
-        else if (img.sprite == image3)
+        else if(img.sprite == image3)
+        {
+            img.sprite = image4;
+        }
+        else if(img.sprite == image4)
+        {
+            img.sprite = image5;
+        }
+        else if (img.sprite == image5)
         {
             SceneManager.LoadScene("StageChoice");
         }
@@ -76,6 +86,24 @@ public class ChangeImage : MonoBehaviour
             {
                 nextbutton.SetActive(true);
                 Debug.Log("return2");
+            }
+        }
+        else if (img.sprite == image4)
+        {
+            img.sprite = image3;
+            if (!nextbutton.activeSelf)
+            {
+                nextbutton.SetActive(true);
+                Debug.Log("return3");
+            }
+        }
+        else if (img.sprite == image5)
+        {
+            img.sprite = image4;
+            if (!nextbutton.activeSelf)
+            {
+                nextbutton.SetActive(true);
+                Debug.Log("return4");
             }
         }
     }
