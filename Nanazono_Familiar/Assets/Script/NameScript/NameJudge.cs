@@ -115,29 +115,31 @@ public class NameJudge : MonoBehaviour
             
             if (GameObject.Find("FlyingText") != null)
             {
-                if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
+                if (GameObject.FindWithTag("flyingText"))
                 {
-                    enemyTMP[i].text = string.Format(ar[i]);
-                    enemyTMP[i].fontSharedMaterial = blueMaterial;
-
-                    CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
-                    if (atomSrc != null)
+                    if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
                     {
-                        atomSrc.Play();
+                        enemyTMP[i].text = string.Format(ar[i]);
+                        enemyTMP[i].fontSharedMaterial = blueMaterial;
 
-                    }
+                        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+                        if (atomSrc != null)
+                        {
+                            atomSrc.Play();
 
-                    audio.PlayOneShot(DMGClip,1.0f);
-                    if (flag[i]==false)
-                    {
-                        animator.SetTrigger("Damage");
-                        this.gameObject.GetComponent<EnemyMoveAI>().speed = enemyspeed;
-                        strFlag++;
-                        flag[i] = true;
-                        Debug.Log(strFlag);
+                        }
+
+                        audio.PlayOneShot(DMGClip, 1.0f);
+                        if (flag[i] == false)
+                        {
+                            animator.SetTrigger("Damage");
+                            this.gameObject.GetComponent<EnemyMoveAI>().speed = enemyspeed;
+                            strFlag++;
+                            flag[i] = true;
+                            Debug.Log(strFlag);
+                        }
                     }
                 }
-
             }
            
         }

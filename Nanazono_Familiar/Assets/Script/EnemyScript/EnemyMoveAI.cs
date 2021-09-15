@@ -22,7 +22,7 @@ public class EnemyMoveAI : MonoBehaviour
         // Nav Mesh Agent を取得します。
         myAgent = GetComponent<NavMeshAgent>();
         target = GameObject.Find("Target");
-        speed = 2.0f;
+        speed = 1.25f;
         
     }
 

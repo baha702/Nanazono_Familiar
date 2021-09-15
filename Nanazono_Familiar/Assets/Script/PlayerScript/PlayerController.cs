@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        AngeleRotation = 150f;
+        AngeleRotation = 50f;
         PlayerTransform = transform.parent;
          CameraTransform = GetComponent<Transform>();
         targetPos = targetObj.transform.position;

@@ -49,13 +49,13 @@ public class PlayerHPBar2 : MonoBehaviour
             hp -= 1;//hpを-1ずつ変える
             Debug.Log(hp);
         }
-        if (collision.gameObject.tag == "EnemtText")
+        if (collision.gameObject.tag == "EnemyText")
         {
             CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
             if (atomSrc != null)
             {
                 atomSrc.Play(12);
-
+                Debug.Log("BossATK当たってる");
 
 
             }
