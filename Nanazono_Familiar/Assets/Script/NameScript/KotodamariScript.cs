@@ -59,8 +59,8 @@ public class KotodamariScript: MonoBehaviour
 
     void Update()
     {
-        if (!MenuUI.activeSelf)
-        {
+        //if (!MenuUI.activeSelf)
+        //{
 
             if (Input.GetMouseButton(0))
             {
@@ -132,7 +132,7 @@ public class KotodamariScript: MonoBehaviour
                 }
 
             }
-        }
+        //}
 
         // イベントにイベントハンドラーを追加
         SceneManager.sceneLoaded += SceneLoaded;
@@ -183,10 +183,10 @@ public class KotodamariScript: MonoBehaviour
         Destroy(textObject, 10.0f);
     }
 
-    public void BossKotodama(string str1, Vector3 pos1)
+    public void BossKotodama(string str1, Vector3 pos1,float bulletnum)
     {
         //enemytext = FlyingText.GetObjects(str1, pos1, Quaternion.identity);//FlyingTextを生成
-        enemytext = FlyingText.GetObjects(str1, redMaterial, null, 10.0f, 1.0f, 5, pos1, Quaternion.identity);//FlyingTextを生成
+        enemytext = FlyingText.GetObjects(str1, redMaterial, null, 10.0f, 2.0f, 5, pos1, Quaternion.identity);//FlyingTextを生成
         enemytext.name = "EnemyText";
         Rigidbody rigidbody = enemytext.AddComponent<Rigidbody>();
         Rigidbody[] rigidbodies = enemytext.GetComponentsInChildren<Rigidbody>();
@@ -194,7 +194,7 @@ public class KotodamariScript: MonoBehaviour
         foreach (var TextChild in rigidbodies)
         {
             TextChild.useGravity = false;
-            TextChild.AddForce(enemytext.transform.forward * bulletSpeed, ForceMode.Impulse);
+            TextChild.AddForce(enemytext.transform.forward * bulletnum, ForceMode.Impulse);
             TextChild.tag = "EnemyText";
             //TextChild.gameObject.AddComponent<EnemyflyingText>();
         }

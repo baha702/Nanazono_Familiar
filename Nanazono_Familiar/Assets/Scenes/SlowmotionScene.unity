@@ -335,6 +335,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2035177356, guid: d5abb9967ec6f094181a2997f17eeb7d, type: 3}
+      propertyPath: blueMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a411dff8d2c362f40b63f82268a6665a, type: 2}
     - target: {fileID: 88404724909026843, guid: d5abb9967ec6f094181a2997f17eeb7d, type: 3}
       propertyPath: m_Name
       value: demobon_normal1
@@ -771,6 +775,10 @@ PrefabInstance:
       propertyPath: DebugText1
       value: "\u30EA\u30F3\u30B4"
       objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: MenuUI
+      value: 
+      objectReference: {fileID: 2084446778}
     - target: {fileID: 7344321735879644839, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: SensitivitySlider
       value: 

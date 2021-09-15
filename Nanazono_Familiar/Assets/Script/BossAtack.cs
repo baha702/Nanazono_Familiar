@@ -28,7 +28,7 @@ public class BossAtack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bulletSpeed = 20.0f;
+        bulletSpeed = 6.0f;
         KotodamaPosX = 15.0f;
         KotodamaPosY = 15.0f;
         KotodamaPosZ = -7.0f;
@@ -57,7 +57,7 @@ public class BossAtack : MonoBehaviour
                 elapsedTime = 0f;
                 num = Random.Range(0, 8);
                 EnemyNameList(num);
-                kotodamaScript.BossKotodama(inputText, EnemyPos);
+                kotodamaScript.BossKotodama(inputText, EnemyPos,bulletSpeed);
 
             }
             //　経過時間を足す

@@ -103,31 +103,33 @@ public class NameJudgeBoss : MonoBehaviour
 
             if (GameObject.Find("FlyingText") != null)
             {
-                if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
+                if (GameObject.FindWithTag("flyingText"))
                 {
-                    enemyTMP[i].text = string.Format(ar[i]);
-                    enemyTMP[i].fontSharedMaterial = blueMaterial;
-
-                    CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
-                    if (atomSrc != null)
+                    if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
                     {
+                        enemyTMP[i].text = string.Format(ar[i]);
+                        enemyTMP[i].fontSharedMaterial = blueMaterial;
 
-                        if (atombool == false)
+                        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+                        if (atomSrc != null)
                         {
-                            atomSrc.Play(22);
 
+                            if (atombool == false)
+                            {
+                                atomSrc.Play(22);
+
+                            }
+                        }
+
+                        audio.PlayOneShot(DMGClip, 1.0f);
+                        if (flag[i] == false)
+                        {
+                            strFlag++;
+                            flag[i] = true;
+                            Debug.Log(strFlag);
                         }
                     }
-
-                    audio.PlayOneShot(DMGClip, 1.0f);
-                    if (flag[i] == false)
-                    {
-                        strFlag++;
-                        flag[i] = true;
-                        Debug.Log(strFlag);
-                    }
                 }
-
             }
             //NameJudges(ar[i], ar2[i], enemyTMP[i],i);
 
