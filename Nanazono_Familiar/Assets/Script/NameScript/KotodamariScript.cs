@@ -16,6 +16,7 @@ public class KotodamariScript: MonoBehaviour
     public GameObject ChargeEffect;
     public GameObject ExprodeEffect;
     public GameObject MenuUI;
+    public float angle;
 
     public Material redMaterial;
 
@@ -105,7 +106,7 @@ public class KotodamariScript: MonoBehaviour
                     textObject.name = "FlyingText";
                     Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
                     Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
-                    textObject.transform.Rotate(CameraAngleX, CameraAngleY - 90, 0);//PlayerControllerのY.rotateを参照
+                    textObject.transform.Rotate(CameraAngleX, CameraAngleY +angle, 0);//PlayerControllerのY.rotateを参照
                     foreach (var TextChild in rigidbodies)
                     {
                         TextChild.useGravity = false;
@@ -172,7 +173,7 @@ public class KotodamariScript: MonoBehaviour
         textObject.name = "FlyingText";
         Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
         Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
-        textObject.transform.Rotate(CameraAngleX, CameraAngleY-90, 0);//PlayerControllerのY.rotateを参照
+        textObject.transform.Rotate(CameraAngleX, CameraAngleY+angle, 0);//PlayerControllerのY.rotateを参照
         foreach (var TextChild in rigidbodies)
         {
             TextChild.useGravity = false;
@@ -190,7 +191,7 @@ public class KotodamariScript: MonoBehaviour
         enemytext.name = "EnemyText";
         Rigidbody rigidbody = enemytext.AddComponent<Rigidbody>();
         Rigidbody[] rigidbodies = enemytext.GetComponentsInChildren<Rigidbody>();
-        enemytext.transform.Rotate(12, 90, 0);//PlayerControllerのY.rotateを参照
+        enemytext.transform.Rotate(12, +angle, 0);//PlayerControllerのY.rotateを参照
         foreach (var TextChild in rigidbodies)
         {
             TextChild.useGravity = false;
