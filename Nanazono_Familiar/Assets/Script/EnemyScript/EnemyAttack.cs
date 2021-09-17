@@ -19,7 +19,7 @@ public class EnemyAttack : MonoBehaviour
     }
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Player")//衝突した相手のタグがEnemyなら
+        if (collision.gameObject.tag == "Player")//衝突した相手のタグがPlayerなら
         {
             animator.SetTrigger("Attack");
             Destroy(gameObject, deleteTime);
