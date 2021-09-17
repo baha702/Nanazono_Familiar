@@ -21,6 +21,7 @@ public class BossAtack : MonoBehaviour
     private float elapsedTime;
     //通常湧き停止用bool
     private bool stopAppear;
+    private Animator animator;
     public int num;
     public bool debugbool;
     Entity_NameList es = null;
@@ -28,6 +29,7 @@ public class BossAtack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         bulletSpeed = 6.0f;
         KotodamaPosX = 15.0f;
         KotodamaPosY = 15.0f;
@@ -68,6 +70,7 @@ public class BossAtack : MonoBehaviour
 
     public void EnemyNameList(int number)
     {
+        animator.SetTrigger("Shout");
         es = Resources.Load("NameList") as Entity_NameList;
 
         int num = Random.Range(0, 37);

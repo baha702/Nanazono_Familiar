@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         angleV += deltaAngleV;
 
         // 積算角度を制限内にクランプする
-        float clampedAngleH = Mathf.Clamp(angleH, -60, 60);
+        float clampedAngleH = Mathf.Clamp(angleH, -70, 70);
         float clampedAngleV = Mathf.Clamp(angleV, -45, 45);
 
         // クランプ前の積算角からクランプ後の積算角を引いて、どれだけ制限範囲を超えたかを求める

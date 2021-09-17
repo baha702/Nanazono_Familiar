@@ -34,6 +34,7 @@ public class PlayerHPBar2 : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
+
         if (collision.gameObject.tag == "Enemy")//衝突した相手のタグがEnemyなら
         {
 
@@ -49,6 +50,7 @@ public class PlayerHPBar2 : MonoBehaviour
             hp -= 1;//hpを-1ずつ変える
             Debug.Log(hp);
         }
+
         if (collision.gameObject.tag == "EnemyText")
         {
             CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
@@ -60,6 +62,22 @@ public class PlayerHPBar2 : MonoBehaviour
 
             }
             hp -= 1;
+        }
+
+        if (collision.gameObject.tag == "EnemyN")//衝突した相手のタグがEnemyNなら
+        {
+
+            CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+            if (atomSrc != null)
+            {
+                atomSrc.Play(12);
+
+
+
+            }
+
+            hp -= 2;//hpを-2ずつ変える
+            Debug.Log(hp);
         }
 
         if (hp == 0)//もしhpが0以下なら
