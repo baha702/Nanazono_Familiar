@@ -14497,6 +14497,14 @@ PrefabInstance:
       propertyPath: MenuUI
       value: 
       objectReference: {fileID: 1361075810}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: angle
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: DebugText3
+      value: "\u30A8\u30DE"
+      objectReference: {fileID: 0}
     - target: {fileID: 7344321735879644839, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: SensitivitySlider
       value: 

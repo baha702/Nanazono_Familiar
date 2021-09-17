@@ -26,11 +26,13 @@ public class NameJudgeBoss : MonoBehaviour
     AudioSource audio;
     public AudioClip DMGClip;
 
+    private Animator animator;
     private bool atombool;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
         NameList(listnum);
         strKatakana = inputKatakana;
@@ -70,6 +72,7 @@ public class NameJudgeBoss : MonoBehaviour
 
         }
 
+        animator.SetTrigger("Dead");
         //１秒待機
         yield return new WaitForSeconds(2.0f);
 
