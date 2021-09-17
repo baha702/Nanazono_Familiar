@@ -14,6 +14,8 @@ public class ChangeImage : MonoBehaviour
     public Image img;
     public GameObject nextbutton;
     public GameObject returnbutton;
+    public GameObject VoiceOtionText;
+    public GameObject MikeOptionText;
 
     public void Start()
     {
@@ -41,8 +43,10 @@ public class ChangeImage : MonoBehaviour
                 returnbutton.SetActive(true);
                
             }
+            VoiceOtionText.SetActive(false);
+            MikeOptionText.SetActive(true); 
         }
-        else if(img.sprite == image2)
+        /*else if(img.sprite == image2)
         {
             img.sprite = image3;
         }
@@ -53,8 +57,8 @@ public class ChangeImage : MonoBehaviour
         else if(img.sprite == image4)
         {
             img.sprite = image5;
-        }
-        else if (img.sprite == image5)
+        }*/
+        else if (img.sprite == image2)
         {
             SceneManager.LoadScene("StageChoice");
         }
@@ -76,10 +80,12 @@ public class ChangeImage : MonoBehaviour
             if (returnbutton.activeSelf)
             {
                 returnbutton.SetActive(false);
+                MikeOptionText.SetActive(false);
+                VoiceOtionText.SetActive(true);
                 Debug.Log("retruen1");
             }
         }
-        else if (img.sprite == image3)
+        /*else if (img.sprite == image3)
         {
             img.sprite = image2;
             if (!nextbutton.activeSelf)
@@ -105,7 +111,7 @@ public class ChangeImage : MonoBehaviour
                 nextbutton.SetActive(true);
                 Debug.Log("return4");
             }
-        }
+        }*/
     }
     public void SkipTutorial()
     {
