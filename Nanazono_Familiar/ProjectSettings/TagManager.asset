@@ -11,6 +11,7 @@ TagManager:
   - flyingText
   - EnemyText
   - HealItem
+  - EnemyN
   layers:
   - Default
   - TransparentFX
