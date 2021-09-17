@@ -105,7 +105,7 @@ public class KotodamariScript: MonoBehaviour
                     textObject.name = "FlyingText";
                     Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
                     Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
-                    textObject.transform.Rotate(CameraAngleX, CameraAngleY - 90, 0);//PlayerControllerのY.rotateを参照
+                    textObject.transform.Rotate(CameraAngleX, CameraAngleY -90, 0);//PlayerControllerのY.rotateを参照
                     foreach (var TextChild in rigidbodies)
                     {
                         TextChild.useGravity = false;
