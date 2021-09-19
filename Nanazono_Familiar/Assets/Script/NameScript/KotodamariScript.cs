@@ -45,8 +45,7 @@ public class KotodamariScript: MonoBehaviour
     void Start()
     {
         bulletSpeed = 20.0f;
-        KotodamaPosY = 1.5f;
-        KotodamaPosZ = 0.7f;
+       
 
         dictationRecognizer = new DictationRecognizer();
         testText = "test";
@@ -104,6 +103,7 @@ public class KotodamariScript: MonoBehaviour
                     audio.PlayOneShot(ATKClip, 1.0f);
                     textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
                     textObject.name = "FlyingText";
+                    textObject.transform.Rotate(CameraAngleX, CameraAngleY + angle, 0);//PlayerControllerのY.rotateを参照
                     Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
                     Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
 
