@@ -31,9 +31,7 @@ public class BossAtack : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         bulletSpeed = 6.0f;
-        KotodamaPosX = 15.0f;
-        KotodamaPosY = 15.0f;
-        KotodamaPosZ = -7.0f;
+ 
         kotodamaScript = PlayerObject.GetComponent<KotodamariScript>();
         FlyingText flyingtext = PlayerObject.GetComponent<FlyingText>();
         EnemyPos = Bossenemy.transform.position;//プレイヤーの位置を取得
