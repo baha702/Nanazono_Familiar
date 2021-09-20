@@ -94,6 +94,7 @@ public class HealItemScript : MonoBehaviour
                         {
                             FallApple();
                             Invoke("Heal", 2.0f);
+
                         }
                     }
                 }
