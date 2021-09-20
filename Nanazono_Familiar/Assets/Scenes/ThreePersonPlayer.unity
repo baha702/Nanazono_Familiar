@@ -613,15 +613,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerObject: {fileID: 1097138155}
   CameraObject: {fileID: 921057772}
+  ChargeEffect: {fileID: 0}
+  ExprodeEffect: {fileID: 0}
+  MenuUI: {fileID: 0}
+  angle: 0
+  redMaterial: {fileID: 0}
   PlayerPos: {x: 0, y: 0, z: 0}
-  PlayerAndle: 0
   bulletSpeed: 0
-  textMaterial: {fileID: 0}
   inputText: 
   testText: 
-  flag: 0
-  Levenflag: 0
-  KotodamaPos: 0
+  DebugText1: 
+  DebugText2: 
+  DebugText3: 
+  debugKotodama: 0
+  efectbool: 0
+  KotodamaPosY: 0
+  KotodamaPosZ: 0
+  ATKClip: {fileID: 0}
 --- !u!1001 &1258656262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -724,7 +732,6 @@ MonoBehaviour:
   EnemyObject: {fileID: 0}
   Damageflag: 0
   EikyouPower: 0
-  Ruizido: 0
   AllDamage: 0
 --- !u!1001 &1287894846
 PrefabInstance:

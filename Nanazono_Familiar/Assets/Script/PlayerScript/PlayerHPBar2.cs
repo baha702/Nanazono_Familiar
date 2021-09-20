@@ -47,7 +47,7 @@ public class PlayerHPBar2 : MonoBehaviour
 
             }
 
-            hp -= 1;//hpを-1ずつ変える
+            hp -= 0.2f;//hpを-1ずつ変える
             Debug.Log(hp);
         }
 
@@ -65,6 +65,22 @@ public class PlayerHPBar2 : MonoBehaviour
         }
 
         if (collision.gameObject.tag == "EnemyN")//衝突した相手のタグがEnemyNなら
+        {
+
+            CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+            if (atomSrc != null)
+            {
+                atomSrc.Play(12);
+
+
+
+            }
+
+            hp -= 1;//hpを-2ずつ変える
+            Debug.Log(hp);
+        }
+
+        if (collision.gameObject.tag == "EnemyT")//衝突した相手のタグがEnemyNなら
         {
 
             CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
