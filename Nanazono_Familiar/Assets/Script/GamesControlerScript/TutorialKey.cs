@@ -14,12 +14,12 @@ public class TutorialKey : MonoBehaviour
 
     public void StartGame()
     {
-        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        /*CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
         if (atomSrc != null)
         {
             atomSrc.Play();
 
-        }
+        }*/
         //audio.PlayOneShot(startClip, 1.0f);
         SceneManager.LoadScene("Tutorial");
     }
