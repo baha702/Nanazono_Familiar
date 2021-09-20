@@ -12,6 +12,7 @@ TagManager:
   - EnemyText
   - HealItem
   - EnemyN
+  - EnemyT
   layers:
   - Default
   - TransparentFX

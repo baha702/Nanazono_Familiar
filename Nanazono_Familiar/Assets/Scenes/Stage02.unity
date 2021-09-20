@@ -10567,7 +10567,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2963237278602316817, guid: 8ef32eeb7030c6840a516d24ae6b6d4f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8ef32eeb7030c6840a516d24ae6b6d4f, type: 3}
 --- !u!1001 &1012164049
 PrefabInstance:
@@ -14910,6 +14911,14 @@ PrefabInstance:
       propertyPath: DebugText3
       value: "\u30B7\u30A7\u30B7\u30E3"
       objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: KotodamaPosY
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: KotodamaPosZ
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7344321735879644838, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -15940,7 +15949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3fc39c30a9e434b98c65f3cc6d2f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deleteTime: 1
+  deleteTime: 2
 --- !u!114 &1558941970
 MonoBehaviour:
   m_ObjectHideFlags: 0

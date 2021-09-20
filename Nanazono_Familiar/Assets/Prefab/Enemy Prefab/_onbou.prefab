@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 112097812451756485}
   m_Layer: 0
   m_Name: _onbou
-  m_TagString: Enemy
+  m_TagString: EnemyN
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3fc39c30a9e434b98c65f3cc6d2f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deleteTime: 1
+  deleteTime: 2
 --- !u!114 &5564319319567118037
 MonoBehaviour:
   m_ObjectHideFlags: 0
