@@ -5,33 +5,45 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Start.unity
     guid: 0c513f5d0a803fb42b8f260a07a3e328
   - enabled: 1
     path: Assets/Scenes/StartCautionScene.unity
     guid: 029061f13f5df8845b64b1218708f715
   - enabled: 1
+    path: Assets/Scenes/Start Voice.unity
+    guid: 9605ac90160ce1349ad6c6aa4b458f45
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: f2c1bc31e49601049a6ea0e9b8cb0ec5
-  - enabled: 0
-    path: Assets/Scenes/Nepuri-gu.unity
-    guid: 59f925fe41938e64fb8fbe81a7639f93
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/GameClear.unity
     guid: 1635151d9ebdd3a458c461e969372987
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StageChoice.unity
     guid: 57383d45803495f4ca94bea00eb4ebf2
+  - enabled: 0
+    path: Assets/Scenes/ThreePersonPlayer.unity
+    guid: 95fd4431c067c584086f97a41cbc3115
   - enabled: 1
     path: Assets/Scenes/Stage01.unity
     guid: d86c9ada3f463564bbc9290e1469ff37
   - enabled: 1
     path: Assets/Scenes/Stage02.unity
     guid: 77ec32a06a398284ea06dc116c4ce325
+  - enabled: 0
+    path: Assets/Scenes/SlowmotionScene.unity
+    guid: f4d706c61203b5341b55ac2c1618d542
+  - enabled: 1
+    path: Assets/Scenes/Stage03.unity
+    guid: dc64bb6f862d82344b4bb0cca2fd0881
+  - enabled: 1
+    path: Assets/Scenes/Stage04.unity
+    guid: 7ebba1fbda7b2f7418d78ac183e016bc
   - enabled: 1
     path: Assets/Scenes/GameOption.unity
     guid: 7be90da29a72e8d4ca3c51e420fbd36d
