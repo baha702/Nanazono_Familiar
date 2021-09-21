@@ -15,7 +15,6 @@ public class MenuController : MonoBehaviour
     private AudioSource audio;
     public AudioClip menuClip;
     public GameObject ReticleUI;
-
     public bool menuBool=false;
 
     void Start()
@@ -81,13 +80,9 @@ public class MenuController : MonoBehaviour
 
     public void LoadTitle()
     {
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("Start Voice");
     }
-    public void Restart()
-    {
-        SceneManager.LoadScene("Stage01");
-    }
-
+ 
     public void Quit()
     {
 #if UNITY_EDITOR
