@@ -659,6 +659,27 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5002040831126141133, guid: cfa803e01fd41d640bbca36d039058c0, type: 3}
   m_PrefabInstance: {fileID: 1271080280}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1158968345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5385607753548064636, guid: 1d57d639a4750e447a6a3870c2e11f1a, type: 3}
+  m_PrefabInstance: {fileID: 7586054258503811827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1158968346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158968345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e95e38dc9da874ea0ccaddb8683a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuUI: {fileID: 1158968345}
+  menuClip: {fileID: 0}
+  ReticleUI: {fileID: 0}
+  menuBool: 0
 --- !u!1001 &1242551248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1484,6 +1505,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3484685400557851558, guid: 1d57d639a4750e447a6a3870c2e11f1a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4371931433398492966, guid: 1d57d639a4750e447a6a3870c2e11f1a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 179.77658
@@ -1611,6 +1636,14 @@ PrefabInstance:
     - target: {fileID: 5385607753548064636, guid: 1d57d639a4750e447a6a3870c2e11f1a, type: 3}
       propertyPath: m_Name
       value: Option MenuUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385607754069914377, guid: 1d57d639a4750e447a6a3870c2e11f1a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1158968346}
+    - target: {fileID: 5385607754069914377, guid: 1d57d639a4750e447a6a3870c2e11f1a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: OptionMenuController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5385607754069914378, guid: 1d57d639a4750e447a6a3870c2e11f1a, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -11,6 +11,9 @@ public class StageChange : MonoBehaviour
     public GameObject DayText;
     public GameObject LeftButtonObject;
     public GameObject RightButtonObject;
+    public GameObject FadePanel;
+    public GameObject WhiteFadePanel;
+    FadeController fadeController;
     Text text;
     float CameraAngle;
     bool Tutorialbool;
@@ -29,6 +32,7 @@ public class StageChange : MonoBehaviour
         testText = "test";
 
         text = DayText.GetComponent<Text>();
+        fadeController = FadePanel.GetComponent<FadeController>();
 
         animVoiceInput = GameObject.Find("VoiceInput").gameObject.GetComponent<Animator>();
         animReticle = GameObject.Find("Reticle").gameObject.GetComponent<Animator>();
@@ -72,21 +76,23 @@ public class StageChange : MonoBehaviour
                 animReticle.SetBool("VoiceInput", false);
             }
             //チュートリアルシーン切り替え
-            if (CameraAngle == 270 || LeftButtonObject.activeSelf)
+            if (CameraAngle == 270 && !LeftButtonObject.activeSelf)
             {
                 if (inputText == "スタート" || inputText == "Start")
                 {
-                    SceneManager.LoadScene("Tutorial");
+                    WhiteFadePanel.SetActive(true);
+                    Invoke(nameof(Scenewait00), 4.0f);
                     Debug.Log("チュートリアルスタート");
                 }
             }
                 //ステージ１へシーン切り替え
-                if (CameraAngle == 270 )
+                if (CameraAngle == 270 && LeftButtonObject.activeSelf)
                 {
-                    
+                
                     if (inputText == "スタート" || inputText == "Start")
                     {
-                        SceneManager.LoadScene("Stage01");
+                    fadeController.isFadeOut = true;
+                    Invoke(nameof(Scenewait01), 4.0f);
                         Debug.Log("ステージ１スタート");
                     }
                 }
@@ -96,7 +102,9 @@ public class StageChange : MonoBehaviour
                     
                     if (inputText == "スタート" || inputText == "Start")
                     {
-                         SceneManager.LoadScene("Stage02");
+                    fadeController.isFadeOut = true;
+                    Invoke(nameof(Scenewait02), 4.0f);
+                        
                          Debug.Log("ステージ２スタート");
                     }
                 }
@@ -106,8 +114,9 @@ public class StageChange : MonoBehaviour
                     
                     if (inputText == "スタート" || inputText == "Start")
                     {
-                        //SceneManager.LoadScene("Stage02");
-                        Debug.Log("ステージ２スタート");
+                    fadeController.isFadeOut = true;
+                    Invoke(nameof(Scenewait03), 4.0f);
+                    Debug.Log("ステージ２スタート");
                     }
                 }
                 //ステージ４へシーン切り替え
@@ -116,8 +125,9 @@ public class StageChange : MonoBehaviour
                    
                     if (inputText == "スタート" || inputText == "Start")
                     {
-                        //SceneManager.LoadScene("Stage02");
-                        Debug.Log("ステージ２スタート");
+                    fadeController.isFadeOut = true;
+                    Invoke(nameof(Scenewait04), 4.0f);
+                    Debug.Log("ステージ２スタート");
                     }
                 }
 
@@ -234,6 +244,27 @@ public class StageChange : MonoBehaviour
         }
     }
 
+    void Scenewait00()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+    void Scenewait01()
+    {
+        SceneManager.LoadScene("Stage01");
+    }
+    void Scenewait02()
+    {
+        SceneManager.LoadScene("Stage02");
+    }
+    void Scenewait03()
+    {
+        SceneManager.LoadScene("Stage03");
+    }
+    void Scenewait04()
+    {
+        SceneManager.LoadScene("Stage04");
+    }
+    
 
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)

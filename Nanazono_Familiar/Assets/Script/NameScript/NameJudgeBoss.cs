@@ -29,11 +29,15 @@ public class NameJudgeBoss : MonoBehaviour
     private Animator animator;
     private bool atombool;
 
+    public GameObject FadePanel;
+    FadeController fadeController;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
+        fadeController = FadePanel.GetComponent<FadeController>();
         NameList(listnum);
         strKatakana = inputKatakana;
         var ar = strKatakana.Split(',');
@@ -74,22 +78,28 @@ public class NameJudgeBoss : MonoBehaviour
 
         animator.SetTrigger("Dead");
         //１秒待機
-        yield return new WaitForSeconds(2.0f);
-
-        this.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        fadeController.isFadeOut = true;
+        
         for (int i = 0; i < strLength; i++)
         {
             enemyTMP[i].fontSharedMaterial = redMaterial;
         }
-        strFlag = 0;
+        
 
         atombool = false;
 
-        Destroy(this.gameObject);
+        yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene("GameClear");
+        this.gameObject.SetActive(false);
+        Destroy(this.gameObject);
+        strFlag = 0;
         //コルーチンを終了
         yield break;
     }
+
+    
+    
     private void NameSet(string str, TextMeshProUGUI TMPstr)
     {
         TMPstr.text = string.Format(str);

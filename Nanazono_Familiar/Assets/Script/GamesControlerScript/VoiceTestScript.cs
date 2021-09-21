@@ -12,10 +12,12 @@ public class VoiceTestScript : MonoBehaviour
     public string testText;
     Animator animVoiceInput;
     Animator animReticle;
+    public GameObject FadePanel;
+    FadeController fade;
 
     void Start()
     {
-       
+        fade = FadePanel.GetComponent<FadeController>();
 
         dictationRecognizer = new DictationRecognizer();
         testText = "test";
@@ -60,7 +62,9 @@ public class VoiceTestScript : MonoBehaviour
             }
             if (inputText == "スタート" || inputText == "Start")
             {
-                SceneManager.LoadScene("Tutorial");
+                fade.isFadeOut = true;
+                Invoke(nameof(FadeWait), 5.0f);
+                
                 Debug.Log("ゲームスタート");
                
                
@@ -85,7 +89,16 @@ public class VoiceTestScript : MonoBehaviour
 
     }
 
-   
+    public void FadeWait()
+    {
+        fade.isFadeOut = true;
+
+        
+
+        SceneManager.LoadScene("Tutorial");
+
+        
+    }
 
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
