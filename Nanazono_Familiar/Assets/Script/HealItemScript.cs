@@ -4,57 +4,64 @@ using UnityEngine;
 
 public class HealItemScript : MonoBehaviour
 {
-
     private GameObject player;
     PlayerHPBar2 hpScript;
-    public float healpointGreen, healpointRed;
-    private float healpoint;
-    bool calledOnce, calledOnce2;
+    float healpoint = 0.2f;
+    bool calledOnce;
     public Material redMaterial;
     Vector3 AppleScal;
+    float time = 0.0f;
+    bool red = false;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         hpScript = player.GetComponent<PlayerHPBar2>();
         calledOnce = true;
-        calledOnce2 = true;
         AppleScal = this.gameObject.transform.localScale;
-
-
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (calledOnce2 == true)
+        time += Time.deltaTime;
+        //0.1秒毎にHealPointを増やす関数を呼び出すよ。
+        if(time >= 0.1f)
         {
-            StartCoroutine("ChangeRed");
+            IncreaseHealPoint();
+            time = 0.0f;
+        }
+        //リンゴの大きさが200になったら完熟させるよ。
+        if (AppleScal.x >= 200.0f)
+        {
+            ChangeRed();
         }
     }
 
-    private IEnumerator ChangeRed()
+    //HealPointを増加させる関数
+    private void IncreaseHealPoint()
     {
-        //10秒待機
-        yield return new WaitForSeconds(40.0f);
+        //完熟してたり落ちてたらreturnする。
+        if (red) return;
+        healpoint += 0.007f;
+        Vector3 add = new Vector3(0.35f, 0.35f, 0.35f);
+        AppleScal += add;
+        gameObject.transform.localScale = AppleScal;
+    }
+
+    private void ChangeRed()
+    {
         this.transform.localScale = new Vector3(200, 200, 200);
+        healpoint = 3.0f;
         GetComponent<Renderer>().material.color = redMaterial.color;
-        calledOnce2 = false;
-        //コルーチンを終了
-        yield break;
+        red = true;
     }
 
     private void FallApple()
     {
-
         CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
         if (atomSrc != null)
         {
             atomSrc.Play();
-
-
-
         }
 
         Rigidbody rigidbody = this.gameObject.GetComponent<Rigidbody>();
@@ -62,21 +69,12 @@ public class HealItemScript : MonoBehaviour
         rigidbody.useGravity = true;
         this.gameObject.transform.parent = null;
     }
+
     private void Heal()
     {
-        if (calledOnce2 == false)
-        {
-            healpoint = healpointRed;
-        }
-        else
-        {
-            healpoint = healpointGreen;
-        }
         hpScript.hp = hpScript.hp + healpoint;
-        calledOnce = false;
         Debug.Log(healpoint + "回復");
         Destroy(this.gameObject);
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -92,15 +90,14 @@ public class HealItemScript : MonoBehaviour
                     {
                         if (calledOnce == true)
                         {
+                            red = true;  //落ちてる2秒間回復量が増えないように。
+                            calledOnce = false;
                             FallApple();
                             Invoke("Heal", 2.0f);
-
                         }
                     }
                 }
             }
         }
     }
-
-
 }
