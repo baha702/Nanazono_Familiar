@@ -15,6 +15,7 @@ public class BossAtack : MonoBehaviour
     [SerializeField]
     public float KotodamaPosX, KotodamaPosY, KotodamaPosZ;
     KotodamariScript kotodamaScript;
+    public float BossAngle;
     //　次に敵が出現するまでの時間
     [SerializeField] float appearNextTime;
     //　待ち時間計測フィールド
@@ -41,6 +42,7 @@ public class BossAtack : MonoBehaviour
         for (int i = 1; i < inputText.Length; i++)
         {
             EnemyPos.z -= KotodamaPosZ;
+            EnemyPos.z -= KotodamaPosZ;
         }
         elapsedTime = 0f;
     }
@@ -57,7 +59,7 @@ public class BossAtack : MonoBehaviour
                 elapsedTime = 0f;
                 num = Random.Range(0, 8);
                 EnemyNameList(num);
-                kotodamaScript.BossKotodama(inputText, EnemyPos,bulletSpeed);
+                kotodamaScript.BossKotodama(inputText, EnemyPos,bulletSpeed,BossAngle);
 
             }
             //　経過時間を足す
