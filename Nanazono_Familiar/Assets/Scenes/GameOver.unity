@@ -1183,6 +1183,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -30
       objectReference: {fileID: 0}
+    - target: {fileID: 8043055041081564991, guid: 094693d98cba00048b2b0cc972ec7ab4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8043055041238218616, guid: 094693d98cba00048b2b0cc972ec7ab4, type: 3}
       propertyPath: m_Name
       value: GameOver MenuUI Button

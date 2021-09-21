@@ -5302,7 +5302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 516497218553347286, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3545436596205613232, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5371,7 +5371,7 @@ PrefabInstance:
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: enemys.Array.data[0]
       value: 
-      objectReference: {fileID: 3768744642733877466, guid: c19e814d3eb113f4d8e70ee715e73e96, type: 3}
+      objectReference: {fileID: 1102152509193797400, guid: c43fc0c877b1682479ca1cff830eda5e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
 --- !u!1001 &499524498
@@ -9276,7 +9276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 516497218553347286, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3545436596205613232, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9345,7 +9345,7 @@ PrefabInstance:
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: enemys.Array.data[0]
       value: 
-      objectReference: {fileID: 3768744642733877466, guid: c19e814d3eb113f4d8e70ee715e73e96, type: 3}
+      objectReference: {fileID: 1102152509193797400, guid: c43fc0c877b1682479ca1cff830eda5e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
 --- !u!4 &832107953 stripped
@@ -15701,6 +15701,10 @@ PrefabInstance:
     - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: DebugText3
       value: "\u30A8\u30DE"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: DebugText2
+      value: "\u30AF\u30EC\u30C3\u30C4\u30A7"
       objectReference: {fileID: 0}
     - target: {fileID: 7344321735879644838, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: m_LocalPosition.x

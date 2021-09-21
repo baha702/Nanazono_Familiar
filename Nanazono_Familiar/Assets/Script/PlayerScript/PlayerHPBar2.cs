@@ -50,7 +50,7 @@ public class PlayerHPBar2 : MonoBehaviour
 
             }
 
-            hp -= 0.2f;//hpを-1ずつ変える
+            hp -= 0.2f;//hpを-0.2ずつ変える
             Debug.Log(hp);
         }
 
@@ -79,7 +79,7 @@ public class PlayerHPBar2 : MonoBehaviour
 
             }
 
-            hp -= 1;//hpを-2ずつ変える
+            hp -= 1;//hpを-1ずつ変える
             Debug.Log(hp);
         }
 
