@@ -15,10 +15,12 @@ public class TextWriter : MonoBehaviour
     public GameObject HpBarUI;
     public GameObject ReticleUI;
     public GameObject MenuUIObject;
+    public GameObject FadePanel;
     KotodamariScript kotodama;
     PlayerController Playercamera;
     MenuController menuController;
     PlayerHPBar2 hpbar;
+    FadeController fadeController;
 
     public GameObject ImgObject,ImgObject2;
     public GameObject nextbutton;
@@ -35,6 +37,7 @@ public class TextWriter : MonoBehaviour
         menuController = GetComponent<MenuController>();
         MenuUIObject.GetComponent<MenuController>().enabled = false;
         hpbar = Player.GetComponent<PlayerHPBar2>();
+        fadeController = FadePanel.GetComponent<FadeController>();
         hpbar.hp = 4;
         HpBarUI.SetActive(false);
         ReticleUI.SetActive(false);
@@ -42,7 +45,7 @@ public class TextWriter : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         StartCoroutine("Cotest");
-
+        EnemyObject2.SetActive(false);
     }
 
     private void Update()
@@ -84,6 +87,7 @@ public class TextWriter : MonoBehaviour
             {
                 if (!isCalledOnce3)
                 {
+                   
                     StartCoroutine("TutorialEnd");
                     isCalledOnce3 = true;
                 }
@@ -171,9 +175,11 @@ public class TextWriter : MonoBehaviour
             uitext.DrawText("自分一人じゃこの穴から出られないし、助けを待つしかないか……。");
             yield return StartCoroutine("Skip");
 
-        }
-        yield return new WaitForSeconds(2.0f);
 
+        }
+        
+        fadeController.isFadeOut = true;
+        yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene("StageChoice");
     }
     public void NextButton()

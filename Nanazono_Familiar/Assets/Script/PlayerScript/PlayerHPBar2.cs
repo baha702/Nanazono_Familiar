@@ -10,10 +10,13 @@ public class PlayerHPBar2 : MonoBehaviour
     public float maxhp;
     private Slider _slider;//Sliderの値を代入する_sliderを宣言
     public GameObject slider;//体力ゲージに指定するSlider
+    public GameObject FadePanel;
+    FadeController fade;
 
     // Use this for initialization
     void Start()
     {
+        fade = FadePanel.GetComponent<FadeController>();
         maxhp = 5;
         _slider = slider.GetComponent<Slider>();//sliderを取得する
         hp = maxhp;
@@ -96,10 +99,19 @@ public class PlayerHPBar2 : MonoBehaviour
             Debug.Log(hp);
         }
 
-        if (hp == 0)//もしhpが0以下なら
-        {            
-                SceneManager.LoadScene("GameOver");           
+        if (hp <= 0)//もしhpが0以下なら
+        {
+
+            StartCoroutine("SceneWait");
         }
+    }
+
+    IEnumerator SceneWait()
+    {
+        fade.isFadeOut = true;
+        yield return new WaitForSeconds(4.0f);
+        SceneManager.LoadScene("GameOver");
+        yield break;
     }
     // イベントハンドラー（イベント発生時に動かしたい処理）
     void SceneLoaded(Scene nextScene, LoadSceneMode mode)
