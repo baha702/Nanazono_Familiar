@@ -80,10 +80,22 @@ public class OptionMenuController : MonoBehaviour
 
     public void LoadTitle()
     {
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play(6);
+
+        }
         SceneManager.LoadScene("Start Voice");
     }
     public void Restart()
     {
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play(7);
+
+        }
         SceneManager.LoadScene("Stage01");
     }
 
