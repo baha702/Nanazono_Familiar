@@ -15,14 +15,14 @@ public class Coundown : MonoBehaviour
     void Start()
     {
 
-        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        /*CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
         if (atomSrc != null)
         {
             atomSrc.Play();
 
 
 
-        }
+        }*/
 
     }
 
@@ -36,7 +36,7 @@ public class Coundown : MonoBehaviour
         {
             timerText.GetComponent<Text>().enabled = false;//表示を消す
 
-            CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+            /*CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
             if (atomSrc != null)
             {
 
@@ -45,7 +45,7 @@ public class Coundown : MonoBehaviour
                     atomSrc.Play(0);
                     atombool = true;
                 }
-            }
+            }*/
 
         }
     }

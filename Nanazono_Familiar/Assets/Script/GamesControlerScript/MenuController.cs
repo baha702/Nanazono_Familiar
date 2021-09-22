@@ -78,6 +78,10 @@ public class MenuController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void LoadStageChoice()
+    {
+        SceneManager.LoadScene("StageChoice");
+    }
     public void LoadTitle()
     {
         SceneManager.LoadScene("Start Voice");
