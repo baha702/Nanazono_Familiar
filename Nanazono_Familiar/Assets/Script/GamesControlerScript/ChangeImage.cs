@@ -60,7 +60,7 @@ public class ChangeImage : MonoBehaviour
         }*/
         else if (img.sprite == image2)
         {
-            SceneManager.LoadScene("StageChoice");
+            SceneManager.LoadScene("Start Voice");
         }
        
     }

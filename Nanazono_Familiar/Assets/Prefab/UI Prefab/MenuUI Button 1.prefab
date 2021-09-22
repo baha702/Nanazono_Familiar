@@ -3082,13 +3082,17 @@ PrefabInstance:
       propertyPath: bgmVolumeSlider
       value: 
       objectReference: {fileID: 5612368821056337051}
+    - target: {fileID: 5002040831126141134, guid: cfa803e01fd41d640bbca36d039058c0, type: 3}
+      propertyPath: atomSlider
+      value: 
+      objectReference: {fileID: 5612368821056337051}
     - target: {fileID: 5002040831126141135, guid: cfa803e01fd41d640bbca36d039058c0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5002040831126141135, guid: cfa803e01fd41d640bbca36d039058c0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5002040831126141135, guid: cfa803e01fd41d640bbca36d039058c0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -3100,11 +3104,11 @@ PrefabInstance:
       objectReference: {fileID: 5612368821056337050}
     - target: {fileID: 5002040831126141135, guid: cfa803e01fd41d640bbca36d039058c0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SoundSlider, Assembly-CSharp
+      value: UnityEngine.Behaviour, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5002040831126141135, guid: cfa803e01fd41d640bbca36d039058c0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnVolSliderChanged
+      value: set_enabled
       objectReference: {fileID: 0}
     - target: {fileID: 5002040831126141135, guid: cfa803e01fd41d640bbca36d039058c0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
