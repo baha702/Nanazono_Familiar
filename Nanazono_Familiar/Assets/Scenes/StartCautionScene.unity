@@ -428,6 +428,14 @@ PrefabInstance:
       propertyPath: MikeOptionText
       value: 
       objectReference: {fileID: 692152632}
+    - target: {fileID: 248636396800327348, guid: 34f2969b8b51e2e46887b5929ec4e580, type: 3}
+      propertyPath: image2
+      value: 
+      objectReference: {fileID: 21300000, guid: c5d613bc255746c4fadab929a542adb3, type: 3}
+    - target: {fileID: 248636396800327348, guid: 34f2969b8b51e2e46887b5929ec4e580, type: 3}
+      propertyPath: image1
+      value: 
+      objectReference: {fileID: 21300000, guid: 4adf2e03862c52d479e3124b108a484f, type: 3}
     - target: {fileID: 248636396800327351, guid: 34f2969b8b51e2e46887b5929ec4e580, type: 3}
       propertyPath: m_SizeDelta.x
       value: 2400

@@ -15719,6 +15719,10 @@ PrefabInstance:
       propertyPath: KotodamaPosX
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: debugKotodama
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7344321735879644838, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0

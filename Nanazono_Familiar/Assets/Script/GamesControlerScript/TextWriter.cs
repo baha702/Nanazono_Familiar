@@ -16,6 +16,7 @@ public class TextWriter : MonoBehaviour
     public GameObject ReticleUI;
     public GameObject MenuUIObject;
     public GameObject FadePanel;
+    public GameObject Apple;
     KotodamariScript kotodama;
     PlayerController Playercamera;
     MenuController menuController;
@@ -23,10 +24,10 @@ public class TextWriter : MonoBehaviour
     FadeController fadeController;
 
     public GameObject ImgObject,ImgObject2;
-    public GameObject nextbutton;
+    public GameObject nextbutton,nextbutton2;
     public GameObject EnemyObject,EnemyObject2;
     public Text exptext;
-    bool isCalledOnece,isCalledOnce2,isCalledOnce3;
+    bool isCalledOnece,isCalledOnce2,isCalledOnce3,applecalledOnce;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +60,7 @@ public class TextWriter : MonoBehaviour
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 ImgObject2.SetActive(true);
-                nextbutton.SetActive(true);
+                nextbutton2.SetActive(true);
                 Player.GetComponent<KotodamariScript>().enabled = false;
                 Playercamera.Camera.GetComponent<PlayerController>().enabled = false;
                 MenuUIObject.GetComponent<MenuController>().enabled = false;
@@ -71,9 +72,9 @@ public class TextWriter : MonoBehaviour
                 isCalledOnece = true;
             }
         }
-        if (hpbar.hp >= 5)
+        if (hpbar.hp > 4)
         {
-            if (!isCalledOnce2)
+            if (Apple == null && !isCalledOnce2)
             {
                 EnemyObject2.SetActive(true);
                 exptext.fontSize = 40;
@@ -83,7 +84,7 @@ public class TextWriter : MonoBehaviour
         }
         if (isCalledOnce2)
         {
-            if (EnemyObject2 == null || hpbar.hp < 5)
+            if (EnemyObject2 == null)
             {
                 if (!isCalledOnce3)
                 {
@@ -204,7 +205,32 @@ public class TextWriter : MonoBehaviour
         HpBarUI.SetActive(true);
         ReticleUI.SetActive(true);
         Exptext.SetActive(true);
+      
+    }
 
+    public void NextButton2()
+    {
+        Debug.Log(" botann");
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        if (ImgObject.activeSelf)
+        {
+            ImgObject.SetActive(false);
+        }
+        else if (ImgObject2.activeSelf)
+        {
+            ImgObject2.SetActive(false);
+            exptext.text = ("回復：「リンゴ」\n\n\nりんごに向かって「リンゴ」のコトダマを飛ばそう。");
+            exptext.fontSize = 40;
+        }
+        nextbutton2.SetActive(false);
+        Player.GetComponent<KotodamariScript>().enabled = true;
+        Playercamera.Camera.GetComponent<PlayerController>().enabled = true;
+        MenuUIObject.GetComponent<MenuController>().enabled = true;
+        HpBarUI.SetActive(true);
+        ReticleUI.SetActive(true);
+        Exptext.SetActive(true);
+        applecalledOnce = true;
     }
 
 }

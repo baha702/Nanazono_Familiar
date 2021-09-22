@@ -50,7 +50,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SlowmotionScene.unity
     guid: f4d706c61203b5341b55ac2c1618d542
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TutorialEnd.unity
     guid: f6eb2820938269548b6dcca4ed33b655
   m_configObjects: {}

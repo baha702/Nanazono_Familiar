@@ -2249,19 +2249,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5612368821056337050, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5612368821056337050, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
+      propertyPath: atomSlider
+      value: 
+      objectReference: {fileID: 509402485}
     - target: {fileID: 5612368821056337051, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 922066846}
+      objectReference: {fileID: 1093422676}
     - target: {fileID: 5612368821056337051, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnVolSliderChanged
+      value: set_enabled
       objectReference: {fileID: 0}
     - target: {fileID: 5612368821056337051, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AtomVolumeSlider, Assembly-CSharp
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612368821056337051, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5612368822242641473, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7447,7 +7455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7972524062673689889, guid: 61fe4179f7e11fa48bb3006553cbdd61, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7972524062673689889, guid: 61fe4179f7e11fa48bb3006553cbdd61, type: 3}
       propertyPath: m_SizeDelta.x
@@ -9338,17 +9346,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2ddd9498c0372204da6397ec7e2b4b0d, type: 3}
   m_PrefabInstance: {fileID: 1320844263}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &922066846 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8345290792680099469, guid: 963f5a58543e906468cc1b4ed32fb457, type: 3}
-  m_PrefabInstance: {fileID: 974145460}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d99ef40df587d04fa87108424e43c43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &934853197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10071,7 +10068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5108700638482129472, guid: 963f5a58543e906468cc1b4ed32fb457, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5108700638482129474, guid: 963f5a58543e906468cc1b4ed32fb457, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10119,12 +10116,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8345290792680099464, guid: 963f5a58543e906468cc1b4ed32fb457, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8345290792680099469, guid: 963f5a58543e906468cc1b4ed32fb457, type: 3}
       propertyPath: volSlider
       value: 
       objectReference: {fileID: 509402485}
+    - target: {fileID: 8345290792680099469, guid: 963f5a58543e906468cc1b4ed32fb457, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963f5a58543e906468cc1b4ed32fb457, type: 3}
 --- !u!1001 &984123280
@@ -10959,6 +10960,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2ddd9498c0372204da6397ec7e2b4b0d, type: 3}
   m_PrefabInstance: {fileID: 1072128291}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1093422676 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5612368821056337050, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
+  m_PrefabInstance: {fileID: 219252781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59928ced29b1fd4db289557b998f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1094025836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14668,6 +14680,10 @@ PrefabInstance:
     - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: KotodamaPosZ
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: debugKotodama
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7344321735879644838, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: m_LocalPosition.x

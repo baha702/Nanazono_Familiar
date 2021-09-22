@@ -14507,6 +14507,10 @@ PrefabInstance:
       propertyPath: KotodamaPosZ
       value: -0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
+      propertyPath: debugKotodama
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7344321735879644838, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -20168,7 +20172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7972524062673689889, guid: 61fe4179f7e11fa48bb3006553cbdd61, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7972524062673689889, guid: 61fe4179f7e11fa48bb3006553cbdd61, type: 3}
       propertyPath: m_SizeDelta.x
