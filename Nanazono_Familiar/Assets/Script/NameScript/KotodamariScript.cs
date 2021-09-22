@@ -34,7 +34,7 @@ public class KotodamariScript: MonoBehaviour
     public bool efectbool = false;
 
     [SerializeField]
-    public float KotodamaPosY,KotodamaPosZ;
+    public float KotodamaPosY,KotodamaPosZ,KotodamaPosX;
 
     AudioSource audio;
     public AudioClip ATKClip;
@@ -159,6 +159,7 @@ public class KotodamariScript: MonoBehaviour
     {
         PlayerPos = PlayerObject.transform.position;//プレイヤーの位置を取得
         PlayerPos.y += KotodamaPosY;
+        PlayerPos.x += KotodamaPosX;
         CameraAngleX = CameraObject.transform.localEulerAngles.x;
         CameraAngleY = CameraObject.transform.localEulerAngles.y;
         for(int i=1; i < str1.Length; i++)
