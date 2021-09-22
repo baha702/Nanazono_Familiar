@@ -41,6 +41,25 @@ public class StageChange : MonoBehaviour
     }
 
 
+    public void CRIPlay()
+    {
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play(6);
+
+        }
+    }
+
+    public void CRIPlay1()
+    {
+        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+        if (atomSrc != null)
+        {
+            atomSrc.Play(25);
+
+        }
+    }
 
     void Update()
     {
@@ -80,6 +99,7 @@ public class StageChange : MonoBehaviour
             {
                 if (inputText == "スタート" || inputText == "Start")
                 {
+                    CRIPlay();
                     WhiteFadePanel.SetActive(true);
                     Invoke(nameof(Scenewait00), 4.0f);
                     Debug.Log("チュートリアルスタート");
@@ -91,6 +111,9 @@ public class StageChange : MonoBehaviour
                 
                     if (inputText == "スタート" || inputText == "Start")
                     {
+
+                    CRIPlay();
+
                     fadeController.isFadeOut = true;
                     Invoke(nameof(Scenewait01), 4.0f);
                         Debug.Log("ステージ１スタート");
@@ -102,6 +125,7 @@ public class StageChange : MonoBehaviour
                     
                     if (inputText == "スタート" || inputText == "Start")
                     {
+                    CRIPlay();
                     fadeController.isFadeOut = true;
                     Invoke(nameof(Scenewait02), 4.0f);
                         
@@ -114,6 +138,8 @@ public class StageChange : MonoBehaviour
                     
                     if (inputText == "スタート" || inputText == "Start")
                     {
+
+                    CRIPlay();
                     fadeController.isFadeOut = true;
                     Invoke(nameof(Scenewait03), 4.0f);
                     Debug.Log("ステージ２スタート");
@@ -125,6 +151,7 @@ public class StageChange : MonoBehaviour
                    
                     if (inputText == "スタート" || inputText == "Start")
                     {
+                    CRIPlay();
                     fadeController.isFadeOut = true;
                     Invoke(nameof(Scenewait04), 4.0f);
                     Debug.Log("ステージ２スタート");
@@ -157,8 +184,10 @@ public class StageChange : MonoBehaviour
    
     public void LeftButton()
     {
+        CRIPlay1();
         if (CameraAngle == 270 )
         {
+
             text.fontSize = 54;
             text.text = "チュートリアル";
             Tutorialbool = true;
@@ -206,6 +235,7 @@ public class StageChange : MonoBehaviour
 
     public void RightButton()
     {
+        CRIPlay1();
         if (LeftButtonObject.activeSelf)
         {
             CameraObject.transform.Rotate(0, 90, 0);

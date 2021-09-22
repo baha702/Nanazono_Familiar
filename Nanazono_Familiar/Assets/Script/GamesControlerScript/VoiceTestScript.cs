@@ -62,6 +62,14 @@ public class VoiceTestScript : MonoBehaviour
             }
             if (inputText == "スタート" || inputText == "Start")
             {
+
+                CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+                if (atomSrc != null)
+                {
+                    atomSrc.Play(9);
+
+                }
+
                 fade.isFadeOut = true;
                 Invoke(nameof(FadeWait), 5.0f);
                 

@@ -660,7 +660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7972524062673689889, guid: 61fe4179f7e11fa48bb3006553cbdd61, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7972524062673689889, guid: 61fe4179f7e11fa48bb3006553cbdd61, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1276,6 +1276,29 @@ MonoBehaviour:
   inputText: 
   testText: 
   FadePanel: {fileID: 381472283}
+--- !u!114 &1043658420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043658418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: system_decide
+  _cueSheet: Kotobashiin_SFX
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 0.3
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!224 &1043658423 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1361408336029533435, guid: 06bb9ce562afe4e4cab339f246627103, type: 3}
@@ -1444,8 +1467,8 @@ MonoBehaviour:
   _regionOnStart: {fileID: 0}
   _listenerOnStart: {fileID: 0}
   _use3dPositioning: 1
-  _loop: 0
-  _volume: 0.48
+  _loop: 1
+  _volume: 0.35
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
