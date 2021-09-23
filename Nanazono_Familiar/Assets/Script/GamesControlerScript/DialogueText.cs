@@ -25,13 +25,13 @@ public class DialogueText : MonoBehaviour
     // ナレーション用のテキストを生成する関数
     public void DrawText(string text)
     {
-        nameText.text = "";
+        //snameText.text = "";
         StartCoroutine("CoDrawText", text);
     }
     // 通常会話用のテキストを生成する関数
     public void DrawText(string name, string text)
     {
-        nameText.text = name + "\n「";
+        //nameText.text = name + "\n「";
         StartCoroutine("CoDrawText", text + "」");
     }
 
