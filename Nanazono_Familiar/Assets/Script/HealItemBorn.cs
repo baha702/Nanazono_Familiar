@@ -18,7 +18,7 @@ public class HealItemBorn : MonoBehaviour
     {
         if (GameObject.FindWithTag("HealItem")==null)
         {
-            Instantiate(Apple,pos,Quaternion.identity);
+            Instantiate(Apple, pos,Quaternion.identity);
         }
     }
 }
