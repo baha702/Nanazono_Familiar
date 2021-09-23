@@ -31,7 +31,7 @@ public class BossAtack : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        bulletSpeed = 6.0f;
+        bulletSpeed = 5.0f;
  
         kotodamaScript = PlayerObject.GetComponent<KotodamariScript>();
         FlyingText flyingtext = PlayerObject.GetComponent<FlyingText>();

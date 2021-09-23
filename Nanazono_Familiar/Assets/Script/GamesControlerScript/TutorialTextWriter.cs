@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TextWriter : MonoBehaviour
+public class TutorialTextWriter : MonoBehaviour
 {
     public DialogueText uitext;
     public GameObject NameText;
