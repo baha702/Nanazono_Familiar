@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 7175641869914440847}
   - component: {fileID: 293296597945321822}
   - component: {fileID: 2631324119562258325}
+  - component: {fileID: 1378489223342398847}
   m_Layer: 0
   m_Name: zonbou_normal
   m_TagString: EnemyN
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102152509193797400}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c24566d00c8bd36418c72927af41aa1d, type: 3}
   m_Name: 
@@ -241,6 +242,18 @@ MonoBehaviour:
   redMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
   enemyspeed: 0
   DMGClip: {fileID: 0}
+--- !u!114 &1378489223342398847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102152509193797400}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6209e07ace74aa14f8e99741505a3fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1255652419375956718
 GameObject:
   m_ObjectHideFlags: 0
