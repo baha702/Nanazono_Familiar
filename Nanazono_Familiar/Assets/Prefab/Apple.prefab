@@ -126,6 +126,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92c76ce283e4fe418e8bb130d5db53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healpointGreen: 1
-  healpointRed: 5
   redMaterial: {fileID: -7615553433737913317, guid: d47a062f782fb9d48a8ac5d95acea9ff, type: 3}

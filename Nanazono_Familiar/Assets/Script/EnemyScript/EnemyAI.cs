@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     Vector3 playerPos;
     GameObject player;
     float distance;
-    [SerializeField] float trackingRange = 3f;
+    [SerializeField] float trackingRange = 1000000f;
     [SerializeField] float quitRange = 5f;
     [SerializeField] bool tracking = false;
 

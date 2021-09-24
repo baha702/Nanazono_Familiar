@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySporn : MonoBehaviour
 {
-    private GameObject _onbou;
+    private GameObject zonbou_normal;
     private Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,10 @@ public class EnemySporn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _onbou.gameObject.SetActive(true);
+        if (GameObject.FindWithTag("EnemyN") == null)
+
+            zonbou_normal.gameObject.SetActive(true);           
         animator.SetTrigger("Sporn");
     }
+
 }
