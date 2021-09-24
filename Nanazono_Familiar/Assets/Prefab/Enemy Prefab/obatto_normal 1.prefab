@@ -637,7 +637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strLength: 3
-  listnum: 6
+  listnum: 12
+  listnum2: 3
   enemyTMP:
   - {fileID: 6200379100341534549}
   - {fileID: 7637804795688923286}

@@ -8,7 +8,7 @@ public class NameJudge : MonoBehaviour
 {
 
     public int strLength;
-    public int listnum; 
+    public int listnum,listnum2; 
     [SerializeField] TextMeshProUGUI[] enemyTMP;
     string inputKatakana;
     string inputHiragana;
@@ -30,13 +30,15 @@ public class NameJudge : MonoBehaviour
     public AudioClip DMGClip;
 
     private bool atombool;
+    GameObject EnemyBoss;
+    NewNameJudgeBoss newNameJudgeBoss;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
-        NameList(listnum);
+        NameList(listnum,listnum2);
         strKatakana = inputKatakana;
         var ar = strKatakana.Split(',');
         strHiragana = inputHiragana;
@@ -45,7 +47,11 @@ public class NameJudge : MonoBehaviour
 
             NameSet(ar[i], enemyTMP[i]);
         }
-        
+        EnemyBoss = GameObject.FindGameObjectWithTag("EnemyBoss");
+        newNameJudgeBoss = EnemyBoss.GetComponent<NewNameJudgeBoss>();
+        newNameJudgeBoss.MobStrKatakana = inputKatakana;
+        newNameJudgeBoss.MobStrHiragana = inputKatakana;
+        newNameJudgeBoss.MobstrLength = strLength;
     }
    
      // Update is called once per frame
@@ -93,6 +99,8 @@ public class NameJudge : MonoBehaviour
 
         atombool = false;
 
+        newNameJudgeBoss.MobDestroybool = true;
+
         Destroy(this.gameObject);
 
         //コルーチンを終了
@@ -112,10 +120,8 @@ public class NameJudge : MonoBehaviour
         enemyMoveAI = this.gameObject.GetComponent<EnemyMoveAI>().speed;
         for (int i = 0; i < strLength; i++)
         {
-            
-            if (GameObject.Find("FlyingText") != null)
-            {
-                if (GameObject.FindWithTag("flyingText"))
+
+            if (GameObject.FindWithTag("flyingText"))
                 {
                     if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
                     {
@@ -136,15 +142,15 @@ public class NameJudge : MonoBehaviour
                             this.gameObject.GetComponent<EnemyMoveAI>().speed = enemyspeed;
                             strFlag++;
                             flag[i] = true;
-                            Debug.Log(strFlag);
+                            
                         }
                     }
                 }
-            }
+            
            
         }
     }
-    public void NameList(int number)
+    public void NameList(int number,int enemynum)
     {
         es = Resources.Load("NameList") as Entity_NameList;
         ex = Resources.Load("NameList_Hiragana") as Entity_Sheet1;
@@ -205,6 +211,11 @@ public class NameJudge : MonoBehaviour
                 int num11 = Random.Range(0, 2);
                 inputKatakana = es.sheets[0].list[num11].boss13;
                 inputHiragana = ex.sheets[0].list[num11].Hira_boss13;
+                break;
+            case 12:
+                int num12 = enemynum;
+                inputKatakana = es.sheets[0].list[num12].boss10;
+                inputHiragana = ex.sheets[0].list[num12].Hira_boss10;
                 break;
         }
     }

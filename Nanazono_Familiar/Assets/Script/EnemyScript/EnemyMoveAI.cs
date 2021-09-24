@@ -43,7 +43,7 @@ public class EnemyMoveAI : MonoBehaviour
     }
     private IEnumerator Coroutine()
     {
-        Debug.Log("コルーチン");
+        //Debug.Log("コルーチン");
         //１秒待機
         yield return new WaitForSeconds(stopTime);
         speed = 2.0f;

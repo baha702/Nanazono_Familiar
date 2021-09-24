@@ -5,38 +5,43 @@ using TMPro;
 using System.IO;
 using UnityEngine.SceneManagement;
 
-public class NameJudgeBoss : MonoBehaviour
+public class NewNameJudgeBoss : MonoBehaviour
 {
-
     public int strLength;
+    public int MobstrLength;
     public int listnum;
+    private int Namenum = 0;
+    private float waitnum = 1.0f;
+    [SerializeField] TextMeshProUGUI[] enemyMoyaTMP;
     [SerializeField] TextMeshProUGUI[] enemyTMP;
     string inputKatakana;
     string inputHiragana;
     string strKatakana;
     string strHiragana;
+    public string MobStrKatakana;
+    public string MobStrHiragana;
+    public GameObject[] MobEnemyObject;
 
     Entity_NameList es = null;
     Entity_Sheet1 ex = null;
 
-    public int strFlag;
+     int strFlag;
     private bool iscalledOnce;
+    public bool MobDestroybool;
     public bool[] flag;
     public Material blueMaterial, redMaterial;
-    AudioSource audio;
-    public AudioClip DMGClip;
 
     private Animator animator;
     private bool atombool;
 
     public GameObject FadePanel;
     FadeController fadeController;
+    NameJudge nameJudge;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        audio = GetComponent<AudioSource>();
         fadeController = FadePanel.GetComponent<FadeController>();
         NameList(listnum);
         strKatakana = inputKatakana;
@@ -47,12 +52,17 @@ public class NameJudgeBoss : MonoBehaviour
 
             NameSet(ar[i], enemyTMP[i]);
         }
-
+        Debug.Log(strKatakana);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (MobDestroybool)
+        {
+            StartCoroutine("NameColorChange");
+        }
 
         if (strFlag >= strLength)
         {
@@ -62,7 +72,7 @@ public class NameJudgeBoss : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        NameRepeat();
+        NameRepeat(collision);
     }
 
 
@@ -80,12 +90,12 @@ public class NameJudgeBoss : MonoBehaviour
         //１秒待機
         yield return new WaitForSeconds(1.5f);
         fadeController.isFadeOut = true;
-        
-        for (int i = 0; i < strLength; i++)
+
+        /*for (int i = 0; i < strLength; i++)
         {
             enemyTMP[i].fontSharedMaterial = redMaterial;
-        }
-        
+        }*/
+
 
         atombool = false;
 
@@ -98,54 +108,97 @@ public class NameJudgeBoss : MonoBehaviour
         yield break;
     }
 
-    
-    
+
+
     private void NameSet(string str, TextMeshProUGUI TMPstr)
     {
         TMPstr.text = string.Format(str);
     }
 
 
-    public void NameRepeat()
+    public void NameRepeat(Collision collision)
     {
-
+        string hitObjectName = collision.gameObject.transform.root.name;
+        Debug.Log(hitObjectName);
         var ar = strKatakana.Split(',');
         var ar2 = strHiragana.Split(',');
-        for (int i = 0; i < strLength; i++)
+        if (GameObject.FindWithTag("flyingText"))
         {
-
-           
-                if (GameObject.FindWithTag("flyingText"))
+            if (hitObjectName == ar[0] + ar[1] || hitObjectName == ar2[0] + ar2[1])
+            {
+                for (int i = 0; i < strLength; i++)
                 {
-                    if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
+
+                    enemyTMP[i].text = string.Format(ar[i]);
+                    enemyTMP[i].fontSharedMaterial = blueMaterial;
+
+                    CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+                    if (atomSrc != null)
                     {
-                        enemyTMP[i].text = string.Format(ar[i]);
-                        enemyTMP[i].fontSharedMaterial = blueMaterial;
 
-                        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
-                        if (atomSrc != null)
+                        if (atombool == false)
                         {
+                            atomSrc.Play(22);
 
-                            if (atombool == false)
-                            {
-                                atomSrc.Play(22);
-
-                            }
-                        }
-
-                        audio.PlayOneShot(DMGClip, 1.0f);
-                        if (flag[i] == false)
-                        {
-                            strFlag++;
-                            flag[i] = true;
-                            Debug.Log(strFlag);
                         }
                     }
+
+                    if (flag[i] == false)
+                    {
+                        strFlag++;
+                        flag[i] = true;
+                        Debug.Log(strFlag);
+                    }
                 }
-           
+            }
             //NameJudges(ar[i], ar2[i], enemyTMP[i],i);
 
         }
+    }
+
+    
+
+    private IEnumerator NameColorChange()
+    {
+        MobDestroybool = false;
+        Debug.Log("NameColorChange");
+        var ar = strKatakana.Split(',');
+        var ar2 = strHiragana.Split(',');
+        
+        for (int i = 0; i < strLength; i++)
+        {
+            if (MobStrKatakana.Contains(ar[i]) || MobStrHiragana.Contains(ar2[i]))//Mob敵の名前とボスの名前の合否を判断
+            {
+                
+                if (Namenum < 6)
+                {
+                    
+                    //青くする
+                    enemyMoyaTMP[i].color = Color.blue;
+                    yield return new WaitForSeconds(waitnum);
+                    enemyMoyaTMP[i].color = Color.white;
+                    
+                }
+                if (Namenum >= 6)
+                {
+                   
+                    //非表示
+                    enemyMoyaTMP[i].GetComponent<TextMeshProUGUI>().enabled = false;
+                    yield return new WaitForSeconds(waitnum);
+                    enemyMoyaTMP[i].GetComponent<TextMeshProUGUI>().enabled = true;
+                    waitnum = waitnum + 0.5f;
+                    Debug.Log("Waitnum" + waitnum);
+                    
+                }
+                Namenum++;
+                Debug.Log("Namenum"+Namenum);
+
+            }
+        }
+
+       
+
+        yield break;
     }
     public void NameList(int number)
     {
@@ -209,6 +262,11 @@ public class NameJudgeBoss : MonoBehaviour
                 int num11 = Random.Range(0, 2);
                 inputKatakana = es.sheets[0].list[num11].boss13;
                 inputHiragana = ex.sheets[0].list[num11].Hira_boss13;
+                break;
+            case 12:
+                int num12 = 0;
+                inputKatakana = es.sheets[0].list[num12].boss10;
+                inputHiragana = ex.sheets[0].list[num12].Hira_boss10;
                 break;
         }
     }

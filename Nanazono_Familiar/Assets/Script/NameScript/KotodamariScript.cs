@@ -102,7 +102,7 @@ public class KotodamariScript: MonoBehaviour
                     KotodamaPos(inputText);
                     audio.PlayOneShot(ATKClip, 1.0f);
                     textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
-                    textObject.name = "FlyingText";
+                    textObject.name = inputText;
                     textObject.transform.Rotate(CameraAngleX, CameraAngleY + angle, 0);//PlayerControllerのY.rotateを参照
                     Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
                     Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
@@ -113,7 +113,7 @@ public class KotodamariScript: MonoBehaviour
                         TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
                         TextChild.tag = "flyingText";
                     }
-                    textObject.tag = "flyingText";
+                    //textObject.tag = "flyingText";
                     Destroy(textObject, 10.0f);
                 }
                 inputText = testText;
@@ -171,7 +171,7 @@ public class KotodamariScript: MonoBehaviour
     {
         KotodamaPos(str1);
         textObject = FlyingText.GetObjects(str1, PlayerPos, Quaternion.identity);//FlyingTextを生成
-        textObject.name = "FlyingText";
+        textObject.name = str1;
         Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
         Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
         textObject.transform.Rotate(CameraAngleX, CameraAngleY+angle, 0);//PlayerControllerのY.rotateを参照
@@ -181,7 +181,7 @@ public class KotodamariScript: MonoBehaviour
             TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
             TextChild.tag = "flyingText";
         }
-        textObject.tag = "flyingText";
+        //textObject.tag = "flyingText";
         Destroy(textObject, 10.0f);
     }
 

@@ -13,6 +13,7 @@ TagManager:
   - HealItem
   - EnemyN
   - EnemyT
+  - EnemyBoss
   layers:
   - Default
   - TransparentFX
