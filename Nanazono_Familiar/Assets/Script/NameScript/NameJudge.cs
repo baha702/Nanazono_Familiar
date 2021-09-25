@@ -66,7 +66,7 @@ public class NameJudge : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        NameRepeat();
+        NameRepeat(collision);
     }
 
 
@@ -112,7 +112,7 @@ public class NameJudge : MonoBehaviour
     }
    
 
-    public void NameRepeat()
+    public void NameRepeat(Collision collision)
     {
 
         var ar = strKatakana.Split(',');
@@ -122,30 +122,30 @@ public class NameJudge : MonoBehaviour
         {
 
             if (GameObject.FindWithTag("flyingText"))
+            {
+                if (collision.gameObject.name == ar[i] || collision.gameObject.name == ar2[i])
                 {
-                    if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
+                    enemyTMP[i].text = string.Format(ar[i]);
+                    enemyTMP[i].fontSharedMaterial = blueMaterial;
+
+                    CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+                    if (atomSrc != null)
                     {
-                        enemyTMP[i].text = string.Format(ar[i]);
-                        enemyTMP[i].fontSharedMaterial = blueMaterial;
+                        atomSrc.Play();
 
-                        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
-                        if (atomSrc != null)
-                        {
-                            atomSrc.Play();
+                    }
 
-                        }
-
-                        audio.PlayOneShot(DMGClip, 1.0f);
-                        if (flag[i] == false)
-                        {
-                            animator.SetTrigger("Damage");
-                            this.gameObject.GetComponent<EnemyMoveAI>().speed = enemyspeed;
-                            strFlag++;
-                            flag[i] = true;
+                    audio.PlayOneShot(DMGClip, 1.0f);
+                    if (flag[i] == false)
+                    {
+                        animator.SetTrigger("Damage");
+                        this.gameObject.GetComponent<EnemyMoveAI>().speed = enemyspeed;
+                        strFlag++;
+                        flag[i] = true;
                             
-                        }
                     }
                 }
+            }
             
            
         }

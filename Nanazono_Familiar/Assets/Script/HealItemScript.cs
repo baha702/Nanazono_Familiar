@@ -80,23 +80,15 @@ public class HealItemScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("回復当たってる");
-        if (GameObject.Find("FlyingText") != null)
+        string hitObjectName = collision.gameObject.transform.root.name;
+        if (hitObjectName == "リンゴ" || hitObjectName == "りんご")
         {
-            if (GameObject.Find("リ") != null || GameObject.Find("り") != null)
+            if (calledOnce == true)
             {
-                if (GameObject.Find("ン") != null || GameObject.Find("ん") != null)
-                {
-                    if (GameObject.Find("ゴ") != null || GameObject.Find("ご") != null)
-                    {
-                        if (calledOnce == true)
-                        {
-                            red = true;  //落ちてる2秒間回復量が増えないように。
-                            calledOnce = false;
-                            FallApple();
-                            Invoke("Heal", 2.0f);
-                        }
-                    }
-                }
+                red = true;  //落ちてる2秒間回復量が増えないように。
+                calledOnce = false;
+                FallApple();
+                Invoke("Heal", 2.0f);
             }
         }
     }
