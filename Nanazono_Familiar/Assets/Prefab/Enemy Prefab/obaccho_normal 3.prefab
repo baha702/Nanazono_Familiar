@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 5262744463094091533}
   - component: {fileID: 6229785664910364276}
   - component: {fileID: 1254079680102859765}
+  - component: {fileID: 1636332145903499838}
   m_Layer: 0
   m_Name: obaccho_normal 3
   m_TagString: Enemy
@@ -548,6 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strLength: 6
   listnum: 5
+  listnum2: 0
   enemyTMP:
   - {fileID: 1504667727885273041}
   - {fileID: 3568142469546925064}
@@ -729,6 +731,18 @@ MonoBehaviour:
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
+--- !u!114 &1636332145903499838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756314217443988306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03db79605cec254497ee110ae837859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1816403861400187046
 GameObject:
   m_ObjectHideFlags: 0

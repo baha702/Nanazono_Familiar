@@ -1120,6 +1120,7 @@ GameObject:
   - component: {fileID: 3759877591979247161}
   - component: {fileID: 7855312075691886079}
   - component: {fileID: 3736267781177111133}
+  - component: {fileID: 2862329652939376682}
   m_Layer: 0
   m_Name: obatto_normal 1 1
   m_TagString: Enemy
@@ -1253,6 +1254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strLength: 4
   listnum: 7
+  listnum2: 0
   enemyTMP:
   - {fileID: 1374098118671259752}
   - {fileID: 3234433334283212715}
@@ -1432,6 +1434,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deleteTime: 2
+--- !u!114 &2862329652939376682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144951608426680073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03db79605cec254497ee110ae837859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8192417055531883899
 GameObject:
   m_ObjectHideFlags: 0
