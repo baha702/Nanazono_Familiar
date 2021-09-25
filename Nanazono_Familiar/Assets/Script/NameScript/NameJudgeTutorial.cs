@@ -98,8 +98,7 @@ public class NameJudgeTutorial : MonoBehaviour
         for (int i = 0; i < strLength; i++)
         {
 
-            if (GameObject.Find("FlyingText") != null)
-            {
+           
                 if (GameObject.Find(HiraganaName[i]) != null || GameObject.Find(KatakanaName[i]) != null)
                 {
                     enemyTMP[i].text = string.Format(KatakanaName[i]);
@@ -122,7 +121,7 @@ public class NameJudgeTutorial : MonoBehaviour
                     }
                 }
 
-            }
+            
 
         }
     }

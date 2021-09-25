@@ -6,12 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class ChangeImage : MonoBehaviour
 {
-    public Sprite image1;
-    public Sprite image2;
-    public Sprite image3;
-    public Sprite image4;
-    public Sprite image5;
-    public Image img;
+  
+   
+    public GameObject Gif01,Gif02;
     public GameObject nextbutton;
     public GameObject returnbutton;
     public GameObject VoiceOtionText;
@@ -19,8 +16,7 @@ public class ChangeImage : MonoBehaviour
 
     public void Start()
     {
-        img = GetComponent<Image>();
-        img.sprite = image1;
+        
     }
     public void NextImage()
     {
@@ -30,9 +26,14 @@ public class ChangeImage : MonoBehaviour
             atomSrc.Play();
 
         }
-        if (img.sprite == image1)
+        if (Gif02.activeSelf)
         {
-            img.sprite = image2;
+            SceneManager.LoadScene("Start Voice");
+        }
+        if (Gif01.activeSelf)
+        {
+            Gif01.SetActive(false);
+            Gif02.SetActive(true);
             if (!nextbutton.activeSelf)
             {
                 nextbutton.SetActive(true);
@@ -46,22 +47,6 @@ public class ChangeImage : MonoBehaviour
             VoiceOtionText.SetActive(false);
             MikeOptionText.SetActive(true); 
         }
-        /*else if(img.sprite == image2)
-        {
-            img.sprite = image3;
-        }
-        else if(img.sprite == image3)
-        {
-            img.sprite = image4;
-        }
-        else if(img.sprite == image4)
-        {
-            img.sprite = image5;
-        }*/
-        else if (img.sprite == image2)
-        {
-            SceneManager.LoadScene("Start Voice");
-        }
        
     }
     public void ReturnImage()
@@ -74,9 +59,10 @@ public class ChangeImage : MonoBehaviour
 
         }
 
-        if (img.sprite == image2)
+        if (Gif02.activeSelf)
         {
-            img.sprite = image1;
+            Gif02.SetActive(false);
+            Gif01.SetActive(true);
             if (returnbutton.activeSelf)
             {
                 returnbutton.SetActive(false);
@@ -85,33 +71,7 @@ public class ChangeImage : MonoBehaviour
                 Debug.Log("retruen1");
             }
         }
-        /*else if (img.sprite == image3)
-        {
-            img.sprite = image2;
-            if (!nextbutton.activeSelf)
-            {
-                nextbutton.SetActive(true);
-                Debug.Log("return2");
-            }
-        }
-        else if (img.sprite == image4)
-        {
-            img.sprite = image3;
-            if (!nextbutton.activeSelf)
-            {
-                nextbutton.SetActive(true);
-                Debug.Log("return3");
-            }
-        }
-        else if (img.sprite == image5)
-        {
-            img.sprite = image4;
-            if (!nextbutton.activeSelf)
-            {
-                nextbutton.SetActive(true);
-                Debug.Log("return4");
-            }
-        }*/
+       
     }
     public void SkipTutorial()
     {

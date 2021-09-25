@@ -23,7 +23,7 @@ MonoBehaviour:
       yominikui3: "\u30F4,\u30A3,\u30C0"
       yominikui4: "\u30A2,\u30AC,\u30B4,\u30B0"
       yominikui5: "\u30AF,\u30EC,\u30C3,\u30C4,\u30A7"
-      boss10: 
+      boss10: "\u30ED,\u30A4"
       boss11: "\u30AF,\u30EC,\u30E0,\u30DE,\u30AD,\u30B7,\u30DF,\u30EA,\u30A2,\u30FC,\u30CE"
       boss12: "\u30DF,\u30C3,\u30B7,\u30A7,\u30EB,\u30B8,\u30A7,\u30D5,\u30A1,\u30FC,\u30BD,\u30F3"
       boss13: "\u30B3\u30EF\u30A4"
@@ -35,7 +35,7 @@ MonoBehaviour:
       yominikui3: "\u30A8,\u30C3,\u30EA"
       yominikui4: "\u30A2,\u30E1,\u30C3,\u30EC"
       yominikui5: "\u30B7,\u30E3,\u30B7,\u30B7,\u30E7"
-      boss10: 
+      boss10: "\u30E4,\u30A4"
       boss11: "\u30EA,\u30C1,\u30E3,\u30FC,\u30C9,\u30E9,\u30C7,\u30A3,\u30EA,\u30A2,\u30B9"
       boss12: "\u30D5,\u30A7,\u30EB,\u30CA,\u30F3,\u30C9,\u30DE,\u30B0,\u30C0,\u30EC,\u30FC,\u30CA"
       boss13: "\u30B3\u30A4\u30EF"
@@ -47,7 +47,7 @@ MonoBehaviour:
       yominikui3: "\u30AE,\u30E7,\u30D0"
       yominikui4: "\u30F4,\u30A3,\u30B7,\u30E3"
       yominikui5: "\u30B7,\u30E7,\u30C3,\u30B7,\u30E3"
-      boss10: 
+      boss10: "\u30AB,\u30EB,\u30ED"
       boss11: "\u30B3,\u30F3,\u30E9,\u30C3,\u30C9,\u30B9,\u30C6,\u30A3,\u30FC,\u30D6,\u30F3"
       boss12: "\u30D5,\u30A7,\u30EA,\u30B7,\u30C6,\u30A3,\u30C0,\u30A4,\u30E4,\u30E2,\u30F3,\u30C9"
       boss13: "\u30EF\u30B3\u30A4"
@@ -59,7 +59,7 @@ MonoBehaviour:
       yominikui3: "\u30AD,\u30EA,\u30F2"
       yominikui4: "\u30F4,\u30A3,\u30C7,\u30A3"
       yominikui5: "\u30C4,\u30A7,\u30FC,\u30CB,\u30E3"
-      boss10: 
+      boss10: "\u30EB,\u30FC,\u30C9"
       boss11: "\u30B0,\u30EC,\u30A4,\u30B7,\u30FC,\u30AF,\u30EA,\u30B9,\u30C8,\u30D0,\u30EB"
       boss12: "\u30B5,\u30EB,\u30D0,\u30C8,\u30FC,\u30EC,\u30C7,\u30E1,\u30C8,\u30EA,\u30A2,\u30B9"
       boss13: "\u30EF\u30A4\u30B3"
@@ -71,7 +71,7 @@ MonoBehaviour:
       yominikui3: "\u30B3,\u30C3,\u30ED"
       yominikui4: "\u30AB,\u30B3,\u30C3,\u30F3"
       yominikui5: "\u30C6,\u30C6,\u30C6,\u30C3,\u30EA"
-      boss10: 
+      boss10: "\u30E4,\u30B3,\u30D6"
       boss11: "\u30D6,\u30EC,\u30A4,\u30BA,\u30C7,\u30A3,\u30A2,\u30F3,\u30B8,\u30A7,\u30ED"
       boss12: "\u30B7,\u30E3,\u30FC,\u30ED,\u30C3,\u30C8,\u30A2,\u30F3,\u30B8,\u30A7,\u30EA,\u30FC"
       boss13: "\u30A4\u30B3\u30EF"
@@ -83,7 +83,7 @@ MonoBehaviour:
       yominikui3: "\u30B8,\u30A7,\u30CA"
       yominikui4: "\u30B8,\u30A7,\u30B7,\u30E3"
       yominikui5: "\u30B7,\u30B7,\u30E3,\u30FC,\u30B7,\u30A7"
-      boss10: 
+      boss10: "\u30AD,\u30C3,\u30AB"
       boss11: "\u30D5,\u30EC,\u30C9,\u30EA,\u30C3,\u30AF,\u30DF,\u30C3,\u30B7,\u30A7,\u30EB"
       boss12: "\u30AD,\u30E3,\u30ED,\u30E9,\u30A4,\u30CA,\u30A8,\u30B9,\u30C6,\u30D5,\u30A1,\u30CB"
       boss13: "\u30A4\u30EF\u30B3"
@@ -95,7 +95,7 @@ MonoBehaviour:
       yominikui3: "\u30C0,\u30F4,\u30A9"
       yominikui4: "\u30B7,\u30A7,\u30C3,\u30C7"
       yominikui5: "\u30B8,\u30E7,\u30F4,\u30A1,\u30F3,\u30CC"
-      boss10: 
+      boss10: "\u30DF,\u30FC,\u30B7,\u30E3"
       boss11: "\u30EC,\u30C6,\u30A3,\u30B7,\u30A2,\u30DA,\u30A4,\u30B7,\u30E3,\u30F3,\u30B9"
       boss12: 
       boss13: "\u30A4\u30E4\u30C0"
