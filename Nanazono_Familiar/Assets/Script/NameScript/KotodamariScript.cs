@@ -94,11 +94,7 @@ public class KotodamariScript: MonoBehaviour
 
                 if (inputText != testText)
                 {
-                    /*if (Time.timeScale == SlowTime)
-                    {
-                       Time.timeScale = 1.0f;
-                    }*/
-                    StartCoroutine("Coroutine");
+                    
                     KotodamaPos(inputText);
                     audio.PlayOneShot(ATKClip, 1.0f);
                     textObject = FlyingText.GetObjects(inputText, PlayerPos, Quaternion.identity);//FlyingTextを生成
