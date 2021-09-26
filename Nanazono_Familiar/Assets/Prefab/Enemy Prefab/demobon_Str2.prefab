@@ -119,7 +119,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425864579538608330}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -11.2}
+  m_LocalPosition: {x: 0, y: 0, z: -2.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5965783475275605195}
@@ -127,7 +127,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -371.3, y: -187.09998}
+  m_AnchoredPosition: {x: -371.3, y: -192.1}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3726993677406790669
@@ -405,7 +405,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3156849924339707455}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -6.2}
+  m_LocalPosition: {x: 0, y: 0, z: 2.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5965783475275605195}
@@ -413,7 +413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -371.3002, y: -187.09998}
+  m_AnchoredPosition: {x: -371.30023, y: -192.1}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &874036327207958917
@@ -900,7 +900,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5965783475037607230}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -6.2}
+  m_LocalPosition: {x: 0, y: 0, z: 2.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5965783475275605195}
@@ -908,7 +908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -371.3002, y: -187.09998}
+  m_AnchoredPosition: {x: -371.30023, y: -192.1}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5965783475037607200
@@ -1034,7 +1034,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5965783475165343831}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -11.2}
+  m_LocalPosition: {x: 0, y: 0, z: -2.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5965783475275605195}
@@ -1042,7 +1042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -371.3, y: -187.09998}
+  m_AnchoredPosition: {x: -371.30002, y: -192.1}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5965783475165343833
@@ -1289,13 +1289,13 @@ GameObject:
   - component: {fileID: 5965783475149010174}
   - component: {fileID: 5965783475149010145}
   - component: {fileID: 5965783475149010171}
-  - component: {fileID: 5965783475149010172}
   - component: {fileID: 2471848442248792169}
   - component: {fileID: 9137541658301086728}
   - component: {fileID: 8896705283620682134}
+  - component: {fileID: 1963089635}
   m_Layer: 0
   m_Name: demobon_Str2
-  m_TagString: Untagged
+  m_TagString: EnemyBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1307,7 +1307,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6048523239779700075}
-  m_LocalRotation: {x: -0, y: 0.71728545, z: -0, w: 0.6967795}
+  m_LocalRotation: {x: 0, y: 0.7172877, z: 0, w: 0.69677716}
   m_LocalPosition: {x: -17.7, y: 0, z: 0.3}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children:
@@ -1503,38 +1503,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5965783475149010172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6048523239779700075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6ac27355d0c624294bc5af2b135bf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  strLength: 11
-  listnum: 9
-  enemyTMP:
-  - {fileID: 5965783475165343834}
-  - {fileID: 5965783475037607201}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  strFlag: 0
-  flag: 0000000000000000000000
-  blueMaterial: {fileID: 2100000, guid: a411dff8d2c362f40b63f82268a6665a, type: 2}
-  redMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
-  DMGClip: {fileID: 8300000, guid: 03582dc03cc39a34ea74379e1c6de9c2, type: 3}
-  FadePanel: {fileID: 0}
 --- !u!114 &2471848442248792169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,18 +1563,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strLength: 2
-  listnum: 2
-  enemyMoyaTMP: []
+  MobstrLength: 0
+  listnum: 12
+  enemyMoyaTMP:
+  - {fileID: 6582321097525147719}
+  - {fileID: 4713528126058214457}
   enemyTMP:
   - {fileID: 5965783475165343834}
   - {fileID: 5965783475037607201}
-  strFlag: 0
-  flag: 
-  blueMaterial: {fileID: 0}
-  redMaterial: {fileID: 0}
-  moyaMaterial: {fileID: 0}
-  DMGClip: {fileID: 0}
+  MobStrKatakana: 
+  MobStrHiragana: 
+  MobEnemyObject: []
+  MobDestroybool: 0
+  flag: 0000
+  blueMaterial: {fileID: 2100000, guid: a411dff8d2c362f40b63f82268a6665a, type: 2}
+  redMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
   FadePanel: {fileID: 0}
+--- !u!114 &1963089635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6048523239779700075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03db79605cec254497ee110ae837859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6345479723589690565
 GameObject:
   m_ObjectHideFlags: 0

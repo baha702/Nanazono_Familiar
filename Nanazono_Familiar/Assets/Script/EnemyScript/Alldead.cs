@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Alldead : MonoBehaviour
 {
-    private GameObject demobon_Str2;
-    private Animator animator;
+    private Animator animator;  
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +15,27 @@ public class Alldead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindWithTag("EnemyBoss") == null)
-            demobon_Str2.gameObject.SetActive(false);
-        animator.SetTrigger("Dead");
-        Destroy(this.gameObject);
+       
+    }
+
+    public void dead()
+    {
+        GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemysN = GameObject.FindGameObjectsWithTag("EnemyN");
+        GameObject[] enemysT = GameObject.FindGameObjectsWithTag("EnemyT");
+        Debug.Log("死んでるよ");
+        Debug.Log(enemys.Length);
+        for (int i = 0; i < enemys.Length; i++)
+        {
+            enemys[i].gameObject.GetComponent<Animator>().SetTrigger("Dead");              
+        }
+        for (int i = 0; i < enemysN.Length; i++)
+        {
+            enemysN[i].gameObject.GetComponent<Animator>().SetTrigger("Dead");
+        }
+        for (int i = 0; i < enemysT.Length; i++)
+        {
+            enemysT[i].gameObject.GetComponent<Animator>().SetTrigger("Dead");
+        }
     }
 }
