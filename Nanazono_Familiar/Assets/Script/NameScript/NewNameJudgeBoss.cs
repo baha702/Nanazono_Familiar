@@ -91,10 +91,10 @@ public class NewNameJudgeBoss : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         fadeController.isFadeOut = true;
 
-        /*for (int i = 0; i < strLength; i++)
+        for (int i = 0; i < strLength; i++)
         {
-            enemyTMP[i].fontSharedMaterial = redMaterial;
-        }*/
+            enemyMoyaTMP[i].GetComponent<TextMeshProUGUI>().enabled = false;
+        }
 
 
         atombool = false;
@@ -130,7 +130,9 @@ public class NewNameJudgeBoss : MonoBehaviour
                 {
 
                     enemyTMP[i].text = string.Format(ar[i]);
+                    enemyMoyaTMP[i].GetComponent<TextMeshProUGUI>().enabled = false;
                     enemyTMP[i].fontSharedMaterial = blueMaterial;
+
 
                     CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
                     if (atomSrc != null)

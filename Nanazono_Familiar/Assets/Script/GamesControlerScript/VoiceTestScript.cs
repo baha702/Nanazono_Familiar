@@ -22,14 +22,15 @@ public class VoiceTestScript : MonoBehaviour
     public float bulletSpeed;
     [SerializeField]
     public float KotodamaPosY, KotodamaPosZ, KotodamaPosX;
-
+    public GameObject FadePanel;
+    FadeController fade;
 
     void Start()
     {
 
         dictationRecognizer = new DictationRecognizer();
         testText = "test";
-        
+        fade = FadePanel.GetComponent<FadeController>();
 
         animVoiceInput = GameObject.Find("VoiceInput").gameObject.GetComponent<Animator>();
         animReticle = GameObject.Find("Reticle").gameObject.GetComponent<Animator>();
@@ -67,31 +68,37 @@ public class VoiceTestScript : MonoBehaviour
 
             if (inputText != testText)
             {
-                    KotodamaPos(inputText);
+                /*KotodamaPos(inputText);
 
-                    textObject = FlyingText.GetObjects(inputText, CameraPos, Quaternion.identity);//FlyingTextを生成
-                    textObject.name = inputText;
-                    textObject.transform.Rotate(CameraAngleX, CameraAngleY + angle, 0);//PlayerControllerのY.rotateを参照
-                    Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
-                    Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
+                textObject = FlyingText.GetObjects(inputText, CameraPos, Quaternion.identity);//FlyingTextを生成
+                textObject.name = inputText;
+                textObject.transform.Rotate(CameraAngleX, CameraAngleY + angle, 0);//PlayerControllerのY.rotateを参照
+                Rigidbody rigidbody = textObject.AddComponent<Rigidbody>();
+                Rigidbody[] rigidbodies = textObject.GetComponentsInChildren<Rigidbody>();
 
-                    foreach (var TextChild in rigidbodies)
-                    {
-                        TextChild.useGravity = false;
-                        TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
-                        TextChild.tag = "flyingText";
-                    }
+                foreach (var TextChild in rigidbodies)
+                {
+                    TextChild.useGravity = false;
+                    TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
+                    TextChild.tag = "flyingText";
+                }
 
 
-                    inputText = testText;
-                    CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
-                    if (atomSrc != null)
-                    {
-                        atomSrc.Play(9);
+                inputText = testText;
+                CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+                if (atomSrc != null)
+                {
+                    atomSrc.Play(9);
 
-                    }
+                }*/
 
-                   
+                if (inputText == "スタート" || inputText == "すたーと")
+                {
+
+                    fade.isFadeOut = true;
+                    Invoke(nameof(FadeWait), 5.0f);
+                    Debug.Log("ゲームスタート");
+                }
 
             }
             inputText = testText;
@@ -125,7 +132,11 @@ public class VoiceTestScript : MonoBehaviour
             CameraPos.z -= KotodamaPosZ;
         }
     }
-    
+    public void FadeWait()
+    {
+        fade.isFadeOut = true;
+        SceneManager.LoadScene("Tutorial");
+    }
 
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
