@@ -1075,6 +1075,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 550502407695449838, guid: 08ca55305483b3a4db525a31cf3f6a02, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 11fee63accd2efa40a513200145188b9, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ca55305483b3a4db525a31cf3f6a02, type: 3}
       propertyPath: m_Name
       value: demobon_spone (2)
@@ -1971,7 +1975,7 @@ PrefabInstance:
     - target: {fileID: 550502407695449838, guid: 08ca55305483b3a4db525a31cf3f6a02, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2373cdb384532c5408bd87736beac4ce, type: 2}
+      objectReference: {fileID: 2100000, guid: 11fee63accd2efa40a513200145188b9, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ca55305483b3a4db525a31cf3f6a02, type: 3}
       propertyPath: m_Name
       value: demobon_spone
@@ -2634,6 +2638,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 550502407695449838, guid: 08ca55305483b3a4db525a31cf3f6a02, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 11fee63accd2efa40a513200145188b9, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ca55305483b3a4db525a31cf3f6a02, type: 3}
       propertyPath: m_Name
       value: demobon_spone (3)
@@ -2708,6 +2716,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 30.000023
       objectReference: {fileID: 0}
+    - target: {fileID: 550502407695449838, guid: 08ca55305483b3a4db525a31cf3f6a02, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 11fee63accd2efa40a513200145188b9, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ca55305483b3a4db525a31cf3f6a02, type: 3}
       propertyPath: m_Name
       value: demobon_spone (1)
