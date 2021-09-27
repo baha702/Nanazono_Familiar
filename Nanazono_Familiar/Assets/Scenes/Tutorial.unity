@@ -2896,6 +2896,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: obakko_Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 5819075350890228776, guid: 9fa2e7288b4a18745b5d8fe2dd829cb7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
+    - target: {fileID: 5819075350890228776, guid: 9fa2e7288b4a18745b5d8fe2dd829cb7, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2040014438871423111, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
+    - target: {fileID: 6179212437011980260, guid: 9fa2e7288b4a18745b5d8fe2dd829cb7, type: 3}
+      propertyPath: blueMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: d96f4615a5ac2a34e8c0163e558ecce7, type: 2}
+    - target: {fileID: 6179212437011980260, guid: 9fa2e7288b4a18745b5d8fe2dd829cb7, type: 3}
+      propertyPath: redMaterial
+      value: 
+      objectReference: {fileID: 2040014438871423111, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
+    - target: {fileID: 8943627312212417029, guid: 9fa2e7288b4a18745b5d8fe2dd829cb7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
+    - target: {fileID: 8943627312212417029, guid: 9fa2e7288b4a18745b5d8fe2dd829cb7, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2040014438871423111, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fa2e7288b4a18745b5d8fe2dd829cb7, type: 3}
 --- !u!1001 &7818001288765746604

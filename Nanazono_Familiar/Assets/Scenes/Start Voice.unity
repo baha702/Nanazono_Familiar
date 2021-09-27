@@ -305,7 +305,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputText: 
   testText: 
-  FadePanel: {fileID: 0}
   textObject: {fileID: 0}
   CameraObject: {fileID: 0}
   CameraPos: {x: 0, y: 0, z: 0}
@@ -314,6 +313,7 @@ MonoBehaviour:
   KotodamaPosY: 0
   KotodamaPosZ: 0
   KotodamaPosX: 0
+  FadePanel: {fileID: 0}
 --- !u!1 &242903354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1283,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputText: 
   testText: 
-  FadePanel: {fileID: 381472283}
   textObject: {fileID: 0}
   CameraObject: {fileID: 1497578832}
   CameraPos: {x: 0, y: 0, z: 0}
@@ -1292,6 +1291,7 @@ MonoBehaviour:
   KotodamaPosY: 0
   KotodamaPosZ: 0
   KotodamaPosX: 0
+  FadePanel: {fileID: 381472283}
 --- !u!114 &1043658420
 MonoBehaviour:
   m_ObjectHideFlags: 0
