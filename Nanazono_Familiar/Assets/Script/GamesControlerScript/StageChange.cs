@@ -203,25 +203,25 @@ public class StageChange : MonoBehaviour
         if (CameraAngle == 270 && LeftButtonObject.activeSelf)
         {
             text.fontSize = 65;
-            text.text = "１日目";
+            text.text = "ステージ１";
         }
         //ステージ２へシーン切り替え
         if (360 == CameraAngle || CameraAngle == 0)
         {
             text.fontSize = 65;
-            text.text = "２日目";
+            text.text = "ステージ２";
         }
         //ステージ３へシーン切り替え
         if (CameraAngle == 90)
         {
             text.fontSize = 65;
-            text.text = "３日目";
+            text.text = "ステージ３";
         }
         //ステージ４へシーン切り替え
         if (CameraAngle == 180)
         {
             text.fontSize = 65;
-            text.text = "４日目";
+            text.text = "ステージ４";
             
         }
         if (!RightButtonObject.activeSelf)
@@ -245,25 +245,25 @@ public class StageChange : MonoBehaviour
         if (CameraAngle == 270 || LeftButtonObject.activeSelf)
         {
             text.fontSize = 65;
-            text.text = "１日目";
+            text.text = "ステージ１";
         }
         //ステージ２へシーン切り替え
         if (360 == CameraAngle || CameraAngle == 0)
         {
             text.fontSize = 65;
-            text.text = "２日目";
+            text.text = "ステージ２";
         }
         //ステージ３へシーン切り替え
         if (CameraAngle == 90)
         {
             text.fontSize = 65;
-            text.text = "３日目";
+            text.text = "ステージ３";
         }
         //ステージ４へシーン切り替え
         if (CameraAngle == 180)
         {
             text.fontSize = 65;
-            text.text = "４日目";
+            text.text = "ステージ４";
             RightButtonObject.SetActive(false);
         }
         Debug.Log("カメラ角度＝" + CameraAngle);
