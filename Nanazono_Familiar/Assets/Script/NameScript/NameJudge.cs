@@ -130,7 +130,7 @@ public class NameJudge : MonoBehaviour
 
             if (GameObject.FindWithTag("flyingText"))
             {
-                if (hitObjectName == ar[i] )
+                if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
                 {
                     enemyTMP[i].text = string.Format(ar[i]);
                     enemyTMP[i].fontSharedMaterial = blueMaterial;
@@ -152,28 +152,7 @@ public class NameJudge : MonoBehaviour
                             
                     }
                 }
-                if ( hitObjectName == ar2[i])
-                {
-                    enemyTMP[i].text = string.Format(ar[i]);
-                    enemyTMP[i].fontSharedMaterial = blueMaterial;
-
-                    CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
-                    if (atomSrc != null)
-                    {
-                        atomSrc.Play();
-
-                    }
-
-                    audio.PlayOneShot(DMGClip, 1.0f);
-                    if (flag[i] == false)
-                    {
-                        animator.SetTrigger("Damage");
-                        this.gameObject.GetComponent<EnemyMoveAI>().speed = enemyspeed;
-                        strFlag++;
-                        flag[i] = true;
-
-                    }
-                }
+               
                 /*if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
                 {
                     enemyTMP[i].text = string.Format(ar[i]);

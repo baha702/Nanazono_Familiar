@@ -129,7 +129,7 @@ public class NameJudgeZonbou : MonoBehaviour
 
             if (GameObject.FindWithTag("flyingText"))
             {
-                if (collision.gameObject.name == ar[i] || collision.gameObject.name == ar2[i])
+                if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
                 {
                     enemyTMP[i].text = string.Format(ar[i]);
                     enemyTMP[i].fontSharedMaterial = blueMaterial;
