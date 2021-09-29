@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class StartVoice : MonoBehaviour
 {
+    string fileName = "tutorial.clear";
     public GameObject FadePanel;
     FadeController fade;
     Rigidbody rb;
@@ -28,6 +30,15 @@ public class StartVoice : MonoBehaviour
     public void FadeWait()
     {
         fade.isFadeOut = true;
-        SceneManager.LoadScene("Tutorial");
+        if (File.Exists(fileName) == false)
+        {
+            SceneManager.LoadScene("Tutorial");
+            Debug.Log("チュートリアルをクリアしてないよ");
+        }
+        else
+        {
+            SceneManager.LoadScene("StageChoice");
+            Debug.Log("クリア済み！");
+        }
     }
 }
