@@ -24,14 +24,14 @@ public class BossAtack : MonoBehaviour
     private bool stopAppear;
     private Animator animator;
     public int num;
-    public bool debugbool;
+    public bool debugbool,stage4bool;
     Entity_NameList es = null;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        bulletSpeed = 5.0f;
+        
  
         kotodamaScript = PlayerObject.GetComponent<KotodamariScript>();
         FlyingText flyingtext = PlayerObject.GetComponent<FlyingText>();
@@ -57,9 +57,16 @@ public class BossAtack : MonoBehaviour
             if (elapsedTime > appearNextTime && !stopAppear)
             {
                 elapsedTime = 0f;
-                num = Random.Range(1, 9);
+                num = Random.Range(1, 7);
                 EnemyNameList(num);
-                kotodamaScript.BossKotodama(inputText, EnemyPos,bulletSpeed,BossAngle);
+                if (!stage4bool)
+                {
+                    kotodamaScript.BossKotodama(inputText, EnemyPos, bulletSpeed, BossAngle);
+                }
+                if (stage4bool)
+                {
+                    kotodamaScript.BossKotodama2(inputText, EnemyPos, bulletSpeed, BossAngle);
+                }
 
             }
             //　経過時間を足す

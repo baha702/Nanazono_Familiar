@@ -1788,7 +1788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4847511715130400488, guid: d95681ecc4d68ec45bbacb515fb70276, type: 3}
       propertyPath: appearNextTime
-      value: 19
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 4847511715130400488, guid: d95681ecc4d68ec45bbacb515fb70276, type: 3}
       propertyPath: stopHugeApr
@@ -4078,7 +4078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: hugeappearTIme
-      value: 80
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: stopHugeApr
@@ -5613,7 +5613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: appearNextTime
-      value: 49
+      value: 98
       objectReference: {fileID: 0}
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: hugeappearTIme
@@ -5816,7 +5816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1639442954, guid: 7255fd94b5168a84cb1d167e0472395a, type: 3}
       propertyPath: appearNextTime
-      value: 33
+      value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 1639442954, guid: 7255fd94b5168a84cb1d167e0472395a, type: 3}
       propertyPath: hugeappearTIme
@@ -9660,7 +9660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: appearNextTime
-      value: 59
+      value: 118
       objectReference: {fileID: 0}
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: hugeappearTIme
@@ -10983,6 +10983,7 @@ MonoBehaviour:
   appearNextTime: 70
   num: 0
   debugbool: 1
+  stage4bool: 0
 --- !u!114 &946604060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11578,7 +11579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: appearNextTime
-      value: 29
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: hugeappearTIme
@@ -13348,7 +13349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: appearNextTime
-      value: 39
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: 4924233278619305154, guid: 10a0ec78d4666334e83c0b05fe9fcce7, type: 3}
       propertyPath: hugeappearTIme
@@ -15993,6 +15994,26 @@ PrefabInstance:
       propertyPath: PlayerObject
       value: 
       objectReference: {fileID: 129127277}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: bulletSpeed
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: stage4bool
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: KotodamaPosZ
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: KotodamaPosX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: BossAngle
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 5965783475037607231, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
       propertyPath: m_LocalPosition.z
       value: -2

@@ -49,7 +49,7 @@ public class VoiceTestScript : MonoBehaviour
             {
                 //ディクテーションを開始
                 dictationRecognizer.Start();
-                Debug.Log("音声認識開始");
+                //Debug.Log("音声認識開始");
 
                 animVoiceInput.SetBool("MouseHold", true);
             }
@@ -69,7 +69,7 @@ public class VoiceTestScript : MonoBehaviour
 
             if (inputText != testText)
             {
-                /*KotodamaPos(inputText);
+                KotodamaPos(inputText);
 
                 textObject = FlyingText.GetObjects(inputText, CameraPos, Quaternion.identity);//FlyingTextを生成
                 textObject.name = inputText;
@@ -83,7 +83,7 @@ public class VoiceTestScript : MonoBehaviour
                     TextChild.AddForce(textObject.transform.forward * bulletSpeed, ForceMode.Impulse);
                     TextChild.tag = "flyingText";
                 }
-
+                Destroy(textObject, 10.0f);
 
                 inputText = testText;
                 CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
@@ -91,15 +91,15 @@ public class VoiceTestScript : MonoBehaviour
                 {
                     atomSrc.Play(9);
 
-                }*/
+                }
 
-                if (inputText == "スタート" || inputText == "すたーと")
+               /* if (inputText == "スタート" || inputText == "すたーと")
                 {
 
                     fade.isFadeOut = true;
                     Invoke(nameof(FadeWait), 5.0f);
                     Debug.Log("ゲームスタート");
-                }
+                }*/
 
             }
             inputText = testText;
@@ -109,7 +109,7 @@ public class VoiceTestScript : MonoBehaviour
         {
             if (dictationRecognizer.Status != SpeechSystemStatus.Stopped)
             {
-                Debug.Log("音声認識終了");
+               // Debug.Log("音声認識終了");
                 dictationRecognizer.Stop();
                 animVoiceInput.SetBool("MouseHold", false);
                 
@@ -154,7 +154,7 @@ public class VoiceTestScript : MonoBehaviour
         animReticle.SetBool("VoiceInput", true);
         //音声認識アニメーション終了
         animReticle.SetBool("VoiceInput", false);
-        Debug.Log("認識した音声：" + text);
+        //Debug.Log("認識した音声：" + text);
         inputText = text;
     }
 

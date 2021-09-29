@@ -68,7 +68,7 @@ public class KotodamariScript: MonoBehaviour
                 {
                     //ディクテーションを開始
                     dictationRecognizer.Start();
-                    Debug.Log("音声認識開始");
+                    //Debug.Log("音声認識開始");
                     //ホールドアニメーション再生
                     animVoiceInput = GameObject.Find("VoiceInput").gameObject.GetComponent<Animator>();
                     animVoiceInput.SetBool("MouseHold", true);
@@ -119,7 +119,7 @@ public class KotodamariScript: MonoBehaviour
             {
                 if (dictationRecognizer.Status != SpeechSystemStatus.Stopped)
                 {
-                    Debug.Log("音声認識終了");
+                    //Debug.Log("音声認識終了");
                     dictationRecognizer.Stop();
                     animVoiceInput.SetBool("MouseHold", false);
                     /*if (Time.timeScale == SlowTime)
@@ -196,6 +196,27 @@ public class KotodamariScript: MonoBehaviour
             TextChild.AddForce(enemytext.transform.forward * bulletnum, ForceMode.Impulse);
             TextChild.tag = "EnemyText";
             
+            //TextChild.gameObject.AddComponent<EnemyflyingText>();
+        }
+        enemytext.tag = "EnemyText";
+        //enemytext.AddComponent<EnemyflyingText>();
+        Destroy(enemytext, 10.0f);
+    }
+    public void BossKotodama2(string str1, Vector3 pos1, float bulletnum, float Angle)
+    {
+        //enemytext = FlyingText.GetObjects(str1, pos1, Quaternion.identity);//FlyingTextを生成
+        enemytext = FlyingText.GetObjects(str1, redMaterial, null, 10.0f, 2.0f, 5, pos1, Quaternion.identity);//FlyingTextを生成
+        enemytext.name = "EnemyText";
+        Rigidbody rigidbody = enemytext.AddComponent<Rigidbody>();
+        Rigidbody[] rigidbodies = enemytext.GetComponentsInChildren<Rigidbody>();
+        enemytext.transform.Rotate(-12, Angle, 0);//PlayerControllerのY.rotateを参照
+        foreach (var TextChild in rigidbodies)
+        {
+
+            TextChild.useGravity = false;
+            TextChild.AddForce(enemytext.transform.forward * bulletnum, ForceMode.Impulse);
+            TextChild.tag = "EnemyText";
+
             //TextChild.gameObject.AddComponent<EnemyflyingText>();
         }
         enemytext.tag = "EnemyText";
