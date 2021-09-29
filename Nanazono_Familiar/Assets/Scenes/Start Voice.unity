@@ -1432,7 +1432,7 @@ MonoBehaviour:
   _volume: 0.3
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
-  need_to_player_update_all: 1
+  need_to_player_update_all: 0
 --- !u!114 &1043658421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,6 +1472,19 @@ MonoBehaviour:
   m_addRigidbodies: 0
   m_physicsMaterial: {fileID: 0}
   m_smoothingAngle: 50
+--- !u!114 &1043658422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043658418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa4086ca44aabe4fbdbd35971a4dd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisSceneName: Start Voice
 --- !u!224 &1043658423 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1361408336029533435, guid: 06bb9ce562afe4e4cab339f246627103, type: 3}
