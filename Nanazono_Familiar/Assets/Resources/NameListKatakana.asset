@@ -1,0 +1,497 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833b6c1f04a065447b45053d12f3647f, type: 3}
+  m_Name: NameListKatakana
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: Katakana
+    list:
+    - kake2: "\u30ED,\u30A4"
+      kake3: "\u30AA,\u30E8"
+      kake4: "\u30A2,\u30EB"
+      kake5: "\u30EB,\u30BB"
+      kake6: "\u30E8,\u30CF,\u30F3"
+      yominikui3: "\u30D2,\u30E8"
+      yominikui4: "\u30EA,\u30EA,\u30A2,\u30CA"
+      yominikui5: "\u30EF,\u30E0"
+    - kake2: "\u30A4,\u30D6"
+      kake3: "\u30E4,\u30A4"
+      kake4: "\u30DF,\u30AB"
+      kake5: "\u30C6,\u30C0"
+      kake6: "\u30B0,\u30EC,\u30FC"
+      yominikui3: "\u30E9,\u30F3"
+      yominikui4: "\u30B8,\u30E3,\u30C3,\u30AF"
+      yominikui5: "\u30CD,\u30EA,\u30E9"
+    - kake2: "\u30CB,\u30B3"
+      kake3: "\u30EB,\u30FC,\u30C9"
+      kake4: "\u30C6,\u30B9"
+      kake5: "\u30AB,\u30E0"
+      kake6: "\u30A8,\u30EA,\u30F3"
+      yominikui3: "\u30E6,\u30FC,\u30CF"
+      yominikui4: "\u30D4,\u30A8,\u30FC,\u30EB"
+      yominikui5: "\u30E0,\u30D9,\u30A2"
+    - kake2: "\u30EC,\u30AA"
+      kake3: "\u30AD,\u30C3,\u30AB"
+      kake4: "\u30C0,\u30F3"
+      kake5: "\u30B7,\u30BB,\u30CA"
+      kake6: "\u30B9,\u30C6,\u30E9"
+      yominikui3: "\u30B9,\u30BF,\u30FC"
+      yominikui4: "\u30EC,\u30AF,\u30B5,\u30B9"
+      yominikui5: "\u30B9,\u30CE,\u30CA"
+    - kake2: "\u30D9,\u30E9"
+      kake3: "\u30E4,\u30B3,\u30D6"
+      kake4: "\u30B5,\u30E0"
+      kake5: "\u30DE,\u30C0,\u30DE"
+      kake6: "\u30A2,\u30EB,\u30D5"
+      yominikui3: "\u30A2,\u30EB,\u30CC"
+      yominikui4: "\u30E1,\u30EA,\u30C3,\u30B5"
+      yominikui5: "\u30C4,\u30C3,\u30C6"
+    - kake2: 
+      kake3: "\u30AB,\u30EB,\u30ED"
+      kake4: 
+      kake5: "\u30B3,\u30C3,\u30C8"
+      kake6: 
+      yominikui3: "\u30AB,\u30E2,\u30E6"
+      yominikui4: 
+      yominikui5: "\u30EF,\u30B5,\u30EB"
+    - kake2: 
+      kake3: "\u30EB,\u30A4"
+      kake4: 
+      kake5: "\u30C0,\u30B7,\u30A2,\u30C8"
+      kake6: 
+      yominikui3: "\u30CE,\u30CD,\u30D2"
+      yominikui4: 
+      yominikui5: "\u30EC,\u30B8,\u30EC"
+    - kake2: 
+      kake3: "\u30CA,\u30B3"
+      kake4: 
+      kake5: "\u30C6,\u30AE,\u30B5,\u30D5"
+      kake6: 
+      yominikui3: "\u30E0,\u30FC,\u30B5"
+      yominikui4: 
+      yominikui5: "\u30DD,\u30C3,\u30B3"
+    - kake2: 
+      kake3: "\u30EB,\u30FC,\u30C9"
+      kake4: 
+      kake5: "\u30EA,\u30D1"
+      kake6: 
+      yominikui3: "\u30DB,\u30E9,\u30B1"
+      yominikui4: 
+      yominikui5: "\u30CE,\u30FC,\u30B5"
+    - kake2: 
+      kake3: "\u30AF,\u30EC,\u30E4"
+      kake4: 
+      kake5: "\u30EB,\u30BB"
+      kake6: 
+      yominikui3: "\u30DB,\u30B0"
+      yominikui4: 
+      yominikui5: "\u30CB,\u30EB,\u30B9"
+    - kake2: 
+      kake3: "\u30E9,\u30EB,\u30AF"
+      kake4: 
+      kake5: "\u30AB,\u30E0"
+      kake6: 
+      yominikui3: "\u30E1,\u30E9"
+      yominikui4: 
+      yominikui5: "\u30D9,\u30FC,\u30E9"
+    - kake2: 
+      kake3: "\u30E4,\u30B3,\u30D6"
+      kake4: 
+      kake5: "\u30C0,\u30EA,\u30B5"
+      kake6: 
+      yominikui3: "\u30DE,\u30E0"
+      yominikui4: 
+      yominikui5: "\u30CD,\u30A6,\u30EB"
+    - kake2: 
+      kake3: "\u30D8,\u30CA"
+      kake4: 
+      kake5: "\u30BF,\u30EA,\u30E0"
+      kake6: 
+      yominikui3: "\u30EA,\u30B5"
+      yominikui4: 
+      yominikui5: "\u30BF,\u30AF"
+    - kake2: 
+      kake3: "\u30CA,\u30B3"
+      kake4: 
+      kake5: "\u30BB,\u30DF,\u30A2"
+      kake6: 
+      yominikui3: "\u30C6,\u30EC,\u30CD"
+      yominikui4: 
+      yominikui5: "\u30E8,\u30ED,\u30DD"
+    - kake2: 
+      kake3: "\u30BB,\u30FC,\u30E8"
+      kake4: 
+      kake5: "\u30E9,\u30F3,\u30B6,\u30CB"
+      kake6: 
+      yominikui3: "\u30E0,\u30FC,\u30B5"
+      yominikui4: 
+      yominikui5: "\u30B8,\u30EA,\u30FC"
+    - kake2: 
+      kake3: "\u30ED,\u30CB\u30FC"
+      kake4: 
+      kake5: "\u30B7,\u30A2,\u30BD,\u30A6"
+      kake6: 
+      yominikui3: "\u30A8,\u30B9,\u30BF"
+      yominikui4: 
+      yominikui5: "\u30AD,\u30E3,\u30ED"
+    - kake2: 
+      kake3: "\u30AB,\u30EB,\u30ED"
+      kake4: 
+      kake5: "\u30C6,\u30C0"
+      kake6: 
+      yominikui3: "\u30DB,\u30E9,\u30B1"
+      yominikui4: 
+      yominikui5: "\u30DD,\u30C3,\u30B3"
+    - kake2: 
+      kake3: "\u30EB,\u30FC,\u30D9"
+      kake4: 
+      kake5: "\u30DE,\u30C0,\u30DE"
+      kake6: 
+      yominikui3: "\u30C6,\u30CD,\u30A2"
+      yominikui4: 
+      yominikui5: "\u30A6,\u30AB,\u30B5"
+    - kake2: 
+      kake3: "\u30E4,\u30A4"
+      kake4: 
+      kake5: "\u30BF,\u30EA,\u30E0"
+      kake6: 
+      yominikui3: "\u30EC,\u30AB"
+      yominikui4: 
+      yominikui5: "\u30CE,\u30FC,\u30B5"
+    - kake2: 
+      kake3: "\u30AA,\u30E8"
+      kake4: 
+      kake5: "\u30AB,\u30B7,\u30B9"
+      kake6: 
+      yominikui3: "\u30DE,\u30E0"
+      yominikui4: 
+      yominikui5: "\u30CD,\u30EA,\u30E9"
+    - kake2: 
+      kake3: "\u30E8,\u30E9"
+      kake4: 
+      kake5: "\u30A2,\u30DF,\u30B5"
+      kake6: 
+      yominikui3: "\u30A2,\u30E2"
+      yominikui4: 
+      yominikui5: "\u30C6,\u30BF,\u30BF"
+    - kake2: 
+      kake3: "\u30AF,\u30EC,\u30E4"
+      kake4: 
+      kake5: "\u30D1,\u30F3,\u30AB"
+      kake6: 
+      yominikui3: "\u30A8,\u30B9,\u30BF"
+      yominikui4: 
+      yominikui5: "\u30AD,\u30E0,\u30CB"
+    - kake2: 
+      kake3: "\u30ED,\u30CB,\u30FC"
+      kake4: 
+      kake5: "\u30B7,\u30BB,\u30CA"
+      kake6: 
+      yominikui3: "\u30B3,\u30AE,\u30E9"
+      yominikui4: 
+      yominikui5: "\u30E2,\u30B3,\u30C4"
+    - kake2: 
+      kake3: "\u30E9,\u30EB,\u30AF"
+      kake4: 
+      kake5: "\u30E9,\u30F3,\u30B6,\u30CB"
+      kake6: 
+      yominikui3: "\u30DE,\u30EC,\u30EA"
+      yominikui4: 
+      yominikui5: "\u30DE,\u30C8,\u30DB"
+    - kake2: 
+      kake3: "\u30EB,\u30A4"
+      kake4: 
+      kake5: "\u30EA,\u30D1"
+      kake6: 
+      yominikui3: "\u30E9,\u30F3,\u30B1"
+      yominikui4: 
+      yominikui5: "\u30DE,\u30D4"
+    - kake2: 
+      kake3: "\u30E8,\u30E9"
+      kake4: 
+      kake5: "\u30AC,\u30DC"
+      kake6: 
+      yominikui3: "\u30B1,\u30CA,\u30AF"
+      yominikui4: 
+      yominikui5: "\u30AB,\u30E9"
+    - kake2: 
+      kake3: "\u30D8,\u30CA"
+      kake4: 
+      kake5: "\u30C0,\u30EA,\u30B5"
+      kake6: 
+      yominikui3: "\u30B9,\u30BF,\u30FC"
+      yominikui4: 
+      yominikui5: "\u30BF,\u30AF"
+    - kake2: 
+      kake3: "\u30AD,\u30C3,\u30AB"
+      kake4: 
+      kake5: "\u30D1,\u30F3,\u30AB"
+      kake6: 
+      yominikui3: "\u30EA,\u30B5"
+      yominikui4: 
+      yominikui5: "\u30AF,\u30A4,\u30EB"
+    - kake2: 
+      kake3: "\u30BB,\u30FC,\u30E8"
+      kake4: 
+      kake5: "\u30E0,\u30B9,\u30AC"
+      kake6: 
+      yominikui3: "\u30CE,\u30CD,\u30D2"
+      yominikui4: 
+      yominikui5: "\u30E0,\u30D9,\u30A2"
+    - kake2: 
+      kake3: "\u30EB,\u30FC,\u30D9"
+      kake4: 
+      kake5: "\u30AB,\u30B7,\u30B9"
+      kake6: 
+      yominikui3: "\u30E1,\u30CA,\u30D5"
+      yominikui4: 
+      yominikui5: "\u30A8,\u30B3,\u30DB"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: "\u30DE,\u30CA,\u30B9"
+      kake6: 
+      yominikui3: "\u30CC,\u30B9,\u30CC"
+      yominikui4: 
+      yominikui5: "\u30D9,\u30FC,\u30E9"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: "\u30C6,\u30AE,\u30B5,\u30D5"
+      kake6: 
+      yominikui3: "\u30A2,\u30EB,\u30CC"
+      yominikui4: 
+      yominikui5: "\u30AD,\u30E3,\u30ED"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: "\u30AC,\u30DC"
+      kake6: 
+      yominikui3: "\u30C6,\u30EC,\u30CD"
+      yominikui4: 
+      yominikui5: "\u30C1,\u30EA,\u30AF"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: "\u30A2,\u30DF,\u30B5"
+      kake6: 
+      yominikui3: "\u30B3,\u30AE,\u30E9"
+      yominikui4: 
+      yominikui5: "\u30E8,\u30ED,\u30DD"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: "\u30E0,\u30B9,\u30AC"
+      kake6: 
+      yominikui3: "\u30DE,\u30EC,\u30EA"
+      yominikui4: 
+      yominikui5: "\u30DE,\u30C8,\u30DB"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: "\u30BB,\u30DF,\u30A2"
+      kake6: 
+      yominikui3: "\u30CB,\u30B3,\u30AE"
+      yominikui4: 
+      yominikui5: "\u30A4,\u30B3,\u30C6"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: "\u30B3,\u30C3,\u30C8"
+      kake6: 
+      yominikui3: "\u30EC,\u30AB"
+      yominikui4: 
+      yominikui5: "\u30DE,\u30D4"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: "\u30DE,\u30CA,\u30B9"
+      kake6: 
+      yominikui3: "\u30E1,\u30E9"
+      yominikui4: 
+      yominikui5: "\u30AB,\u30E9"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: "\u30B7,\u30A2,\u30BD,\u30A6"
+      kake6: 
+      yominikui3: "\u30A2,\u30E2"
+      yominikui4: 
+      yominikui5: "\u30EC,\u30B8,\u30EC"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: "\u30C0,\u30B7,\u30A2,\u30C8"
+      kake6: 
+      yominikui3: "\u30CC,\u30B9,\u30CC"
+      yominikui4: 
+      yominikui5: "\u30CF,\u30ED,\u30C1"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: "\u30B1,\u30CA,\u30AF"
+      yominikui4: 
+      yominikui5: "\u30AD,\u30E0,\u30CB"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: "\u30D2,\u30E8,\u30EB"
+      yominikui4: 
+      yominikui5: "\u30CB,\u30EB,\u30B9"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: "\u30E1,\u30CA,\u30D5"
+      yominikui4: 
+      yominikui5: "\u30CD,\u30A6,\u30EB"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: "\u30AB,\u30E2,\u30E6"
+      yominikui4: 
+      yominikui5: "\u30CF,\u30B3,\u30AF"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: "\u30D2,\u30E8,\u30CE"
+      yominikui4: 
+      yominikui5: "\u30A6,\u30AB,\u30B5"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30A4,\u30B3,\u30C6"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30B8,\u30EA,\u30FC"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30A8,\u30B3,\u30DB"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30AF,\u30E1"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30EF,\u30E0"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30B3,\u30AE,\u30E9"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30AF,\u30A4,\u30EB"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30C6,\u30BF,\u30BF"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30EF,\u30B5,\u30EB"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30E2,\u30B3,\u30C4"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30C1,\u30EA,\u30AF"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30C4,\u30C3,\u30C6"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30B9,\u30CE,\u30CA"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30CF,\u30B3,\u30AF"
+    - kake2: 
+      kake3: 
+      kake4: 
+      kake5: 
+      kake6: 
+      yominikui3: 
+      yominikui4: 
+      yominikui5: "\u30CF,\u30ED,\u30C1"

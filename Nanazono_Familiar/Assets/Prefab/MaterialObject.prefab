@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6b614c0d4ee4a4dabd2bb9632f2fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
-  speed: -0.001
+  mat: {fileID: 2040014438871423111, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
+  speed: -0.0005
