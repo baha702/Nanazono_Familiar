@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows.Speech;   //Windowsの音声認識で使用
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class VoiceTestScript : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class VoiceTestScript : MonoBehaviour
     public string testText;
     Animator animVoiceInput;
     Animator animReticle;
-    
+    string fileName = "tutorial.clear";
     public GameObject textObject;
     public GameObject CameraObject;
     bool isOnce = true;
@@ -135,15 +136,15 @@ public class VoiceTestScript : MonoBehaviour
     public void FadeWait()
     {
         fade.isFadeOut = true;
-        if (isOnce)
+        if (File.Exists(fileName) == false)
         {
-            //処理内容
-            isOnce = false;
             SceneManager.LoadScene("Tutorial");
+            Debug.Log("チュートリアルをクリアしてないよ");
         }
         else
         {
             SceneManager.LoadScene("StageChoice");
+            Debug.Log("クリア済み！");
         }
     }
 

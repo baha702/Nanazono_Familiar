@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class TutorialTextWriter : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class TutorialTextWriter : MonoBehaviour
     MenuController menuController;
     PlayerHPBar2 hpbar;
     FadeController fadeController;
-
+    string fileName = "tutorial.clear";
     public GameObject ImgObject,ImgObject2;
     public GameObject nextbutton,nextbutton2;
     public GameObject EnemyObject,EnemyObject2;
@@ -152,7 +153,8 @@ public class TutorialTextWriter : MonoBehaviour
 
 
         }
-        
+        File.Create(fileName);
+        Debug.Log("クリア！");
         fadeController.isFadeOut = true;
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene("StageChoice");
