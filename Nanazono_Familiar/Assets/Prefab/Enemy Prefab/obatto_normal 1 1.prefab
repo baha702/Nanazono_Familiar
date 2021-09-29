@@ -885,7 +885,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -1159489527453358230, guid: e1ebba7433c932e4db0b4f71751467d8, type: 3}
+  m_Mesh: {fileID: 2381890483179193753, guid: a52ef93c2c984504c948a37ffd065a9d, type: 3}
   m_Bones:
   - {fileID: 5430982892020055055}
   - {fileID: 4691453580604508717}
@@ -1253,8 +1253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strLength: 4
-  listnum: 7
-  listnum2: 0
   enemyTMP:
   - {fileID: 1374098118671259752}
   - {fileID: 3234433334283212715}
@@ -1293,7 +1291,7 @@ Animator:
   m_GameObject: {fileID: 8144951608426680073}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ac402ca4259e7f4438ebd0202b7e2056, type: 2}
+  m_Controller: {fileID: 9100000, guid: afadf9c40ff98ba498255eb6fdbe32ff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
