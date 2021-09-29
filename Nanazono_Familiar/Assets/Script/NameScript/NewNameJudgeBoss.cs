@@ -34,7 +34,7 @@ public class NewNameJudgeBoss : MonoBehaviour
     private bool iscalledOnce;
     public bool MobDestroybool;
     public bool[] flag;
-    public Material blueMaterial, redMaterial;
+    public Material blueMaterial, redMaterial,bluemoyaMaterial,moyaMaterial;
 
     private Animator animator;
     private bool atombool;
@@ -157,6 +157,7 @@ public class NewNameJudgeBoss : MonoBehaviour
         Debug.Log(hitObjectName);
         var ar = strKatakana.Split(',');
         var ar2 = strHiragana.Split(',');
+        
         if (GameObject.FindWithTag("flyingText"))
         {
             if (hitObjectName == ar[0] + ar[1] || hitObjectName == ar2[0] + ar2[1])
@@ -282,7 +283,10 @@ public class NewNameJudgeBoss : MonoBehaviour
         Debug.Log("NameColorChange");
         var ar = strKatakana.Split(',');
         var ar2 = strHiragana.Split(',');
-        
+        Debug.Log("strKatakana" + strKatakana);
+        Debug.Log("strHiragana" + strHiragana);
+        Debug.Log("MobKatakana" + MobStrKatakana);
+        Debug.Log("MobHirgana" + MobStrHiragana);
         for (int i = 0; i < strLength; i++)
         {
             if (MobStrKatakana.Contains(ar[i]) || MobStrHiragana.Contains(ar2[i]))//Mob敵の名前とボスの名前の合否を判断
@@ -290,11 +294,12 @@ public class NewNameJudgeBoss : MonoBehaviour
                 
                 if (Namenum < 6)
                 {
-                    Color color = new Color(67.0f, 255.0f, 234.0f, 255.0f);
-                    //青くする
-                    enemyMoyaTMP[i].color = color;
+                    Debug.Log("青くする");
+                   // Color color = new Color(67.0f, 255.0f, 234.0f, 255.0f);
+                    
+                    enemyMoyaTMP[i].fontSharedMaterial = bluemoyaMaterial;
                     yield return new WaitForSeconds(waitnum);
-                    enemyMoyaTMP[i].color = Color.white;
+                    enemyMoyaTMP[i].fontSharedMaterial = moyaMaterial;
                     
                 }
                 if (Namenum >= 6)

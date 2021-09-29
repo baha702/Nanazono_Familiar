@@ -13916,6 +13916,14 @@ PrefabInstance:
       propertyPath: stagenum
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8896705283620682134, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: bluemoyaMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: bce167f850f6dd842a47a3a1c86724a2, type: 2}
+    - target: {fileID: 8896705283620682134, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: moyaMaterial
+      value: 
+      objectReference: {fileID: 5774086840694181470, guid: 0120d2b1e86adb640adf714153262e13, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
 --- !u!224 &1296861202 stripped
