@@ -57,7 +57,7 @@ public class BossAtack : MonoBehaviour
             if (elapsedTime > appearNextTime && !stopAppear)
             {
                 elapsedTime = 0f;
-                num = Random.Range(0, 8);
+                num = Random.Range(1, 9);
                 EnemyNameList(num);
                 kotodamaScript.BossKotodama(inputText, EnemyPos,bulletSpeed,BossAngle);
 
@@ -71,13 +71,8 @@ public class BossAtack : MonoBehaviour
     public void EnemyNameList(int number)
     {
         animator.SetTrigger("Shout");
-        es = Resources.Load("NameList") as Entity_NameList;
 
-        int num = Random.Range(0, 37);
-        inputText = es.sheets[0].list[num].boss13;
-        Debug.Log(inputText);
-
-        /*switch (number)
+        switch (number)
         {
             case 1:
                 inputText = "コワイ";
@@ -104,6 +99,6 @@ public class BossAtack : MonoBehaviour
                 inputText = "エナクイタキ";
                 break;
            
-        }*/
+        }
     }
 }

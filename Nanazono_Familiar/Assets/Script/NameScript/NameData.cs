@@ -5,81 +5,120 @@ using System.IO;
 
 public class NameData : MonoBehaviour
 {
+    public string inputKatakanaBoss;
+    public string inputHiraganaBoss;
     public string inputKatakana;
     public string inputHiragana;
+    public int strLength;
     Entity_NameList es;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void nameLists(int number)
     {
-        es = Resources.Load("NameList") as Entity_NameList;
+        //Stage01
         switch (number)
         {
             case 1:
-                int num = Random.Range(0, 10);
-                inputKatakana = es.sheets[0].list[num].kake2;
-                inputHiragana = es.sheets[1].list[num].kake2;
-                break; 
+                inputHiraganaBoss = "ロ,イ";
+                inputHiraganaBoss = "ろ,い";
+                if (strLength==2)
+                {
+                    int zakonum = Random.Range(0,2);
+                    switch (zakonum)
+                    {
+                        case 0:
+                            inputKatakana = "オ,ヨ";
+                            inputHiragana = "お,よ";
+                            break;
+                        case 1:
+                            inputKatakana = "ヤ,イ";
+                            inputHiragana = "や,い";
+                            break;
+                    }
+                }
+                if (strLength == 3)
+                {
+                    int zakonum = Random.Range(0, 5);
+                    switch (zakonum)
+                    {
+                        case 0:
+                            inputKatakana = "ル,ー,ド";
+                            inputHiragana = "る,ー,ど";
+                            break;
+                        case 1:
+                            inputKatakana = "キ,ッ,カ";
+                            inputHiragana = "き,っ,か";
+                            break;
+                        case 2:
+                            inputKatakana = "ヤ,コ,ブ";
+                            inputHiragana = "や,こ,ぶ";
+                            break;
+                        case 3:
+                            inputKatakana = "カ,ル,ロ";
+                            inputHiragana = "か,る,ろ";
+                            break;
+                       
+                    }
+                }
+
+                break;
             case 2:
-                int num2 = Random.Range(0, 62);
-                inputKatakana = es.sheets[0].list[num2].kake3;
-                inputHiragana = es.sheets[1].list[num2].kake3;
+                inputHiraganaBoss = "イ,ブ";
+                inputHiraganaBoss = "い,ぶ";
+                if (strLength == 2)
+                {
+                    int zakonum = Random.Range(0, 2);
+                    switch (zakonum)
+                    {
+                        case 0:
+                            inputKatakana = "ル,イ";
+                            inputHiragana = "る,い";
+                            break;
+                        case 1:
+                            inputKatakana = "ナ,コ";
+                            inputHiragana = "な,こ";
+                            break;
+                    }
+                }
+                if (strLength == 3)
+                {
+                    int zakonum = Random.Range(0, 5);
+                    switch (zakonum)
+                    {
+                        case 0:
+                            inputKatakana = "ル,ー,ド";
+                            inputHiragana = "る,ー,ど";
+                            break;
+                        case 1:
+                            inputKatakana = "ク,レ,ヤ";
+                            inputHiragana = "く,れ,や";
+                            break;
+                        case 2:
+                            inputKatakana = "ヤ,コ,ブ";
+                            inputHiragana = "や,こ,ぶ";
+                            break;
+                        case 3:
+                            inputKatakana = "ラ,ル,ク";
+                            inputHiragana = "ら,る,く";
+                            break;
+
+                    }
+                }
                 break;
             case 3:
-                int num3 = Random.Range(0, 82);
-                inputKatakana = es.sheets[0].list[num3].kake4;
-                inputHiragana = es.sheets[1].list[num3].kake4;
+                inputHiraganaBoss = "ニ,コ";
+                inputHiraganaBoss = "に,こ";
                 break;
             case 4:
-                int num4 = Random.Range(0, 41);
-                inputKatakana = es.sheets[0].list[num4].kake5;
-                inputHiragana = es.sheets[1].list[num4].kake5;
+                inputHiraganaBoss = "レ,オ";
+                inputHiraganaBoss = "れ,お";
                 break;
             case 5:
-                int num5 = Random.Range(0, 6);
-                inputKatakana = es.sheets[0].list[num5].kake6;
-                inputHiragana = es.sheets[1].list[num5].kake6;
+                inputHiraganaBoss = "ベ,ラ";
+                inputHiraganaBoss = "べ,ら";
                 break;
-            case 6:
-                int num6 = Random.Range(0, 20);
-                inputKatakana = es.sheets[0].list[num6].yominikui3;
-                inputHiragana = es.sheets[1].list[num6].yominikui3;
-                break;
-            case 7:
-                int num7 = Random.Range(0, 19);
-                inputKatakana = es.sheets[0].list[num7].yominikui4;
-                inputHiragana = es.sheets[1].list[num7].yominikui4;
-                break;
-            case 8:
-                int num8 = Random.Range(0, 6);
-                inputKatakana = es.sheets[0].list[num8].yominikui5;
-                inputHiragana = es.sheets[1].list[num8].yominikui5;
-                break;
-            case 9:
-                int num9 = Random.Range(0, 9);
-                inputKatakana = es.sheets[0].list[num9].boss11;
-                inputHiragana = es.sheets[1].list[num9].boss11;
-                break;
-            case 10:
-                int num10 = Random.Range(0, 4);
-                inputKatakana = es.sheets[0].list[num10].boss12;
-                inputHiragana = es.sheets[1].list[num10].boss12;
-                break;
-            case 11:
-                int num11 = Random.Range(0, 2);
-                inputKatakana = es.sheets[0].list[num11].boss13;
-                inputHiragana = es.sheets[1].list[num11].boss13;
-                break;
+
         }
     }
 }

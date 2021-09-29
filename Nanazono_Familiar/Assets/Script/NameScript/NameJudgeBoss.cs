@@ -38,7 +38,7 @@ public class NameJudgeBoss : MonoBehaviour
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
         fadeController = FadePanel.GetComponent<FadeController>();
-        NameList(listnum);
+        //NameList(listnum);
         strKatakana = inputKatakana;
         var ar = strKatakana.Split(',');
         strHiragana = inputHiragana;
@@ -147,7 +147,7 @@ public class NameJudgeBoss : MonoBehaviour
 
         }
     }
-    public void NameList(int number)
+   /* public void NameList(int number)
     {
         es = Resources.Load("NameList") as Entity_NameList;
         ex = Resources.Load("NameList_Hiragana") as Entity_Sheet1;
@@ -211,5 +211,5 @@ public class NameJudgeBoss : MonoBehaviour
                 inputHiragana = ex.sheets[0].list[num11].Hira_boss13;
                 break;
         }
-    }
+    }*/
 }

@@ -605,8 +605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strLength: 2
-  listnum: 12
-  listnum2: 1
   enemyTMP:
   - {fileID: 360704461236653458}
   - {fileID: 3017092201416293311}

@@ -7,21 +7,24 @@ using System.IO;
 public class NameJudgeZonbou : MonoBehaviour
 {
     public int strLength;
-    public int listnum;
+    //public int listnum; 
     [SerializeField] TextMeshProUGUI[] enemyTMP;
     string inputKatakana;
     string inputHiragana;
     string strKatakana;
     string strHiragana;
-
+    
     Entity_NameList es = null;
     Entity_Sheet1 ex = null;
+
+    Entity_Katakana Kata = null;
+    Entity_Hiragana Hira = null;
 
     private Animator animator;
     private int strFlag;
     private bool iscalledOnce;
     public bool[] flag;
-    public Material blueMaterial, redMaterial;
+    public Material blueMaterial,redMaterial;
     float enemyMoveAI;
     public float enemyspeed = 0;
 
@@ -29,13 +32,23 @@ public class NameJudgeZonbou : MonoBehaviour
     public AudioClip DMGClip;
 
     private bool atombool;
+    GameObject EnemyBoss;
+    NewNameJudgeBoss newNameJudgeBoss;
 
+    
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+       
+        EnemyBoss = GameObject.FindGameObjectWithTag("EnemyBoss");
+        newNameJudgeBoss = EnemyBoss.GetComponent<NewNameJudgeBoss>();
+        NameList(newNameJudgeBoss.listnum);
+        newNameJudgeBoss.MobStrKatakana = inputKatakana;
+        newNameJudgeBoss.MobStrHiragana = inputKatakana;
+        newNameJudgeBoss.MobstrLength = strLength;
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
-        NameList(listnum);
+        
         strKatakana = inputKatakana;
         var ar = strKatakana.Split(',');
         strHiragana = inputHiragana;
@@ -44,7 +57,6 @@ public class NameJudgeZonbou : MonoBehaviour
 
             NameSet(ar[i], enemyTMP[i]);
         }
-
     }
 
     // Update is called once per frame
@@ -59,7 +71,7 @@ public class NameJudgeZonbou : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        NameRepeat();
+        NameRepeat(collision);
     }
 
 
@@ -92,10 +104,13 @@ public class NameJudgeZonbou : MonoBehaviour
 
         atombool = false;
 
+        newNameJudgeBoss.MobDestroybool = true;
+
         Destroy(this.gameObject);
 
         //コルーチンを終了
         yield break;
+
     }
     private void NameSet(string str, TextMeshProUGUI TMPstr)
     {
@@ -103,7 +118,7 @@ public class NameJudgeZonbou : MonoBehaviour
     }
 
 
-    public void NameRepeat()
+    public void NameRepeat(Collision collision)
     {
 
         var ar = strKatakana.Split(',');
@@ -112,99 +127,365 @@ public class NameJudgeZonbou : MonoBehaviour
         for (int i = 0; i < strLength; i++)
         {
 
-            if (GameObject.Find("FlyingText") != null)
+            if (GameObject.FindWithTag("flyingText"))
             {
-                if (GameObject.FindWithTag("flyingText"))
+                if (collision.gameObject.name == ar[i] || collision.gameObject.name == ar2[i])
                 {
-                    if (GameObject.Find(ar[i]) != null || GameObject.Find(ar2[i]) != null)
+                    enemyTMP[i].text = string.Format(ar[i]);
+                    enemyTMP[i].fontSharedMaterial = blueMaterial;
+
+                    CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
+                    if (atomSrc != null)
                     {
-                        enemyTMP[i].text = string.Format(ar[i]);
-                        enemyTMP[i].fontSharedMaterial = blueMaterial;
+                        atomSrc.Play();
 
-                        CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
-                        if (atomSrc != null)
-                        {
-                            atomSrc.Play();
+                    }
 
-                        }
+                    audio.PlayOneShot(DMGClip, 1.0f);
+                    if (flag[i] == false)
+                    {
+                        animator.SetTrigger("Damage");
+                        this.gameObject.GetComponent<EnemyMoveAI>().speed = enemyspeed;
+                        strFlag++;
+                        flag[i] = true;
 
-                        audio.PlayOneShot(DMGClip, 1.0f);
-                        if (flag[i] == false)
-                        {
-                            animator.SetTrigger("Damage");
-                            this.gameObject.GetComponent<EnemyMoveAI>().speed = enemyspeed;
-                            strFlag++;
-                            flag[i] = true;
-                            Debug.Log(strFlag);
-                        }
                     }
                 }
             }
+
 
         }
     }
     public void NameList(int number)
     {
-        es = Resources.Load("NameList") as Entity_NameList;
-        ex = Resources.Load("NameList_Hiragana") as Entity_Sheet1;
+
+        Kata = Resources.Load("NameListKatakana") as Entity_Katakana;
+        Hira = Resources.Load("NameListHiragana") as Entity_Hiragana;
 
         switch (number)
         {
             case 1:
-                int num = Random.Range(0, 10);
-                inputKatakana = es.sheets[0].list[num].kake2;
-                inputHiragana = ex.sheets[0].list[num].Hira_kake2;
+                switch (newNameJudgeBoss.randomunum)
+                {
+                    case 0:
+                        int num01 = 0;
+                        if (strLength == 2)
+                        {
+                            num01 = Random.Range(0, 2);
+                        }
+                        if (strLength == 3)
+                        {
+                            num01 = Random.Range(2, 6);
+                        }
+
+                        inputKatakana = Kata.sheets[0].list[num01].kake3;
+                        inputHiragana = Hira.sheets[0].list[num01].Hira_kake3;
+                        break;
+                    case 1:
+                        int num02 = 0;
+                        if (strLength == 2)
+                        {
+                            num02 = Random.Range(6, 8);
+                        }
+                        if (strLength == 3)
+                        {
+                            num02 = Random.Range(8, 12);
+                        }
+                        inputKatakana = Kata.sheets[0].list[num02].kake3;
+                        inputHiragana = Hira.sheets[0].list[num02].Hira_kake3;
+
+                        break;
+                    case 2:
+                        int num03 = 0;
+                        if (strLength == 2)
+                        {
+                            num03 = Random.Range(12, 14);
+                        }
+                        if (strLength == 3)
+                        {
+                            num03 = Random.Range(14, 18);
+                        }
+                        inputKatakana = Kata.sheets[0].list[num03].kake3;
+                        inputHiragana = Hira.sheets[0].list[num03].Hira_kake3;
+
+                        break;
+                    case 3:
+                        int num04 = 0;
+                        if (strLength == 2)
+                        {
+                            num04 = Random.Range(18, 21);
+                        }
+                        if (strLength == 3)
+                        {
+                            num04 = Random.Range(21, 24);
+                        }
+                        inputKatakana = Kata.sheets[0].list[num04].kake3;
+                        inputHiragana = Hira.sheets[0].list[num04].Hira_kake3;
+
+                        break;
+                    case 4:
+                        int num05 = 0;
+                        if (strLength == 2)
+                        {
+                            num05 = Random.Range(24, 27);
+                        }
+                        if (strLength == 3)
+                        {
+                            num05 = Random.Range(27, 30);
+                        }
+                        inputKatakana = Kata.sheets[0].list[num05].kake3;
+                        inputHiragana = Hira.sheets[0].list[num05].Hira_kake3;
+
+                        break;
+                }
+
                 break;
+
             case 2:
-                int num2 = Random.Range(0, 62);
-                inputKatakana = es.sheets[0].list[num2].kake3;
-                inputHiragana = ex.sheets[0].list[num2].Hira_kake3;
+
+                switch (newNameJudgeBoss.randomunum)
+                {
+                    case 0:
+                        int num01 = 0;
+                        if (strLength == 2)
+                        {
+                            num01 = Random.Range(0, 3);
+                        }
+                        if (strLength == 3)
+                        {
+                            num01 = Random.Range(3, 6);
+                        }
+                        if (strLength == 4)
+                        {
+                            num01 = Random.Range(6, 8);
+                        }
+                        inputKatakana = Kata.sheets[0].list[num01].kake5;
+                        inputHiragana = Hira.sheets[0].list[num01].Hira_kake5;
+
+                        break;
+                    case 1:
+                        int num02 = 0;
+                        if (strLength == 2)
+                        {
+                            num02 = Random.Range(8, 11);
+                        }
+                        if (strLength == 3)
+                        {
+                            num02 = Random.Range(11, 14);
+                        }
+                        if (strLength == 4)
+                        {
+                            num02 = Random.Range(14, 16);
+                        }
+                        inputKatakana = Kata.sheets[0].list[num02].kake5;
+                        inputHiragana = Hira.sheets[0].list[num02].Hira_kake5;
+                        break;
+                    case 2:
+                        int num03 = 0;
+                        if (strLength == 2)
+                        {
+                            num03 = 16;
+                        }
+                        if (strLength == 3)
+                        {
+                            num03 = Random.Range(17, 23);
+                        }
+                        if (strLength == 4)
+                        {
+                            num03 = 23;
+                        }
+                        inputKatakana = Kata.sheets[0].list[num03].kake5;
+                        inputHiragana = Hira.sheets[0].list[num03].Hira_kake5;
+                        break;
+                    case 3:
+                        int num04 = 0;
+                        if (strLength == 2)
+                        {
+                            num04 = Random.Range(24, 26);
+                        }
+                        if (strLength == 3)
+                        {
+                            num04 = Random.Range(26, 31);
+                        }
+                        if (strLength == 4)
+                        {
+                            num04 = 31;
+                        }
+                        inputKatakana = Kata.sheets[0].list[num04].kake5;
+                        inputHiragana = Hira.sheets[0].list[num04].Hira_kake5;
+                        break;
+                    case 4:
+                        int num05 = 0;
+                        if (strLength == 2)
+                        {
+                            num05 = 32;
+                        }
+                        if (strLength == 3)
+                        {
+                            num05 = Random.Range(33, 38);
+                        }
+                        if (strLength == 4)
+                        {
+                            num04 = Random.Range(38, 40);
+                        }
+                        inputKatakana = Kata.sheets[0].list[num05].kake5;
+                        inputHiragana = Hira.sheets[0].list[num05].Hira_kake5;
+                        break;
+                }
                 break;
             case 3:
-                int num3 = Random.Range(0, 82);
-                inputKatakana = es.sheets[0].list[num3].kake4;
-                inputHiragana = ex.sheets[0].list[num3].Hira_kake4;
+                switch (newNameJudgeBoss.randomunum)
+                {
+                    case 0:
+                        int num01 = 0;
+                        if (strLength == 2)
+                        {
+                            num01 = Random.Range(0, 2);
+                        }
+                        if (strLength == 3)
+                        {
+                            num01 = Random.Range(2, 9);
+                        }
+                        inputKatakana = Kata.sheets[0].list[num01].yominikui3;
+                        inputHiragana = Hira.sheets[0].list[num01].Hira_yominikui3;
+
+                        break;
+                    case 1:
+                        int num02 = 0;
+                        if (strLength == 2)
+                        {
+                            num02 = Random.Range(9, 13);
+                        }
+                        if (strLength == 3)
+                        {
+                            num02 = Random.Range(13, 18);
+                        }
+
+                        inputKatakana = Kata.sheets[0].list[num02].yominikui3;
+                        inputHiragana = Hira.sheets[0].list[num02].Hira_yominikui3;
+                        break;
+                    case 2:
+                        int num03 = 0;
+                        if (strLength == 2)
+                        {
+                            num03 = Random.Range(18, 21);
+                        }
+                        if (strLength == 3)
+                        {
+                            num03 = Random.Range(21, 27);
+                        }
+                        inputKatakana = Kata.sheets[0].list[num03].yominikui3;
+                        inputHiragana = Hira.sheets[0].list[num03].Hira_yominikui3;
+
+                        break;
+                    case 3:
+                        int num04 = 0;
+                        if (strLength == 2)
+                        {
+                            num04 = 27;
+                        }
+                        if (strLength == 3)
+                        {
+                            num04 = Random.Range(28, 36);
+                        }
+
+                        inputKatakana = Kata.sheets[0].list[num04].yominikui3;
+                        inputHiragana = Hira.sheets[0].list[num04].Hira_yominikui3;
+                        break;
+                    case 4:
+                        int num05 = 0;
+                        if (strLength == 2)
+                        {
+                            num05 = Random.Range(36, 39);
+                        }
+                        if (strLength == 3)
+                        {
+                            num05 = Random.Range(39, 45);
+                        }
+
+                        inputKatakana = Kata.sheets[0].list[num05].yominikui3;
+                        inputHiragana = Hira.sheets[0].list[num05].Hira_yominikui3;
+                        break;
+                }
+
                 break;
             case 4:
-                int num4 = Random.Range(0, 41);
-                inputKatakana = es.sheets[0].list[num4].kake5;
-                inputHiragana = ex.sheets[0].list[num4].Hira_kake5;
+                switch (newNameJudgeBoss.randomunum)
+                {
+                    case 0:
+                        int num01 = 0;
+                        if (strLength == 2)
+                        {
+                            num01 = 0;
+                        }
+                        if (strLength == 3)
+                        {
+                            num01 = Random.Range(1, 12);
+                        }
+                        inputKatakana = Kata.sheets[0].list[num01].yominikui5;
+                        inputHiragana = Hira.sheets[0].list[num01].Hira_yominikui5;
+
+                        break;
+                    case 1:
+                        int num02 = 0;
+                        if (strLength == 2)
+                        {
+                            num02 = 12;
+                        }
+                        if (strLength == 3)
+                        {
+                            num02 = Random.Range(13, 24);
+                        }
+
+                        inputKatakana = Kata.sheets[0].list[num02].yominikui5;
+                        inputHiragana = Hira.sheets[0].list[num02].Hira_yominikui5;
+                        break;
+                    case 2:
+                        int num03 = 0;
+                        if (strLength == 2)
+                        {
+                            num03 = Random.Range(24, 27);
+                        }
+                        if (strLength == 3)
+                        {
+                            num03 = Random.Range(27, 36);
+                        }
+
+                        inputKatakana = Kata.sheets[0].list[num03].yominikui5;
+                        inputHiragana = Hira.sheets[0].list[num03].Hira_yominikui5;
+                        break;
+                    case 3:
+                        int num04 = 0;
+                        if (strLength == 2)
+                        {
+                            num04 = Random.Range(36, 38);
+                        }
+                        if (strLength == 3)
+                        {
+                            num04 = Random.Range(38, 48);
+                        }
+
+                        inputKatakana = Kata.sheets[0].list[num04].yominikui5;
+                        inputHiragana = Hira.sheets[0].list[num04].Hira_yominikui5;
+                        break;
+                    case 4:
+                        int num05 = 0;
+                        if (strLength == 2)
+                        {
+                            num05 = Random.Range(48, 50);
+                        }
+                        if (strLength == 3)
+                        {
+                            num05 = Random.Range(50, 60);
+                        }
+
+                        inputKatakana = Kata.sheets[0].list[num05].yominikui5;
+                        inputHiragana = Hira.sheets[0].list[num05].Hira_yominikui5;
+                        break;
+                }
+
                 break;
-            case 5:
-                int num5 = Random.Range(0, 6);
-                inputKatakana = es.sheets[0].list[num5].kake6;
-                inputHiragana = ex.sheets[0].list[num5].Hira_kake6;
-                break;
-            case 6:
-                int num6 = Random.Range(0, 20);
-                inputKatakana = es.sheets[0].list[num6].yominikui3;
-                inputHiragana = ex.sheets[0].list[num6].Hira_yominikui3;
-                break;
-            case 7:
-                int num7 = Random.Range(0, 19);
-                inputKatakana = es.sheets[0].list[num7].yominikui4;
-                inputHiragana = ex.sheets[0].list[num7].Hira_yominikui4;
-                break;
-            case 8:
-                int num8 = Random.Range(0, 6);
-                inputKatakana = es.sheets[0].list[num8].yominikui5;
-                inputHiragana = ex.sheets[0].list[num8].Hira_yominikui5;
-                break;
-            case 9:
-                int num9 = Random.Range(0, 9);
-                inputKatakana = es.sheets[0].list[num9].boss11;
-                inputHiragana = ex.sheets[0].list[num9].Hira_boss11;
-                break;
-            case 10:
-                int num10 = Random.Range(0, 4);
-                inputKatakana = es.sheets[0].list[num10].boss12;
-                inputHiragana = ex.sheets[0].list[num10].Hira_boss12;
-                break;
-            case 11:
-                int num11 = Random.Range(0, 2);
-                inputKatakana = es.sheets[0].list[num11].boss13;
-                inputHiragana = ex.sheets[0].list[num11].Hira_boss13;
-                break;
+
         }
     }
 }

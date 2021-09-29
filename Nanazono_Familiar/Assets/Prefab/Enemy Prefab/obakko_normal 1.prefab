@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 1627917619017094794}
   - component: {fileID: 4526419848533094711}
   m_Layer: 5
-  m_Name: "TMP \u30E0"
+  m_Name: "TMP \u30A2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -574,8 +574,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strLength: 3
-  listnum: 12
-  listnum2: 2
   enemyTMP:
   - {fileID: 8435898080666640243}
   - {fileID: 6471095486213581150}
