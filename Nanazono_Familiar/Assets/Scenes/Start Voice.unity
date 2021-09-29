@@ -1409,7 +1409,7 @@ MonoBehaviour:
   KotodamaPosY: 0
   KotodamaPosZ: 0
   KotodamaPosX: 0
-  FadePanel: {fileID: 381472283}
+  FadePanel: {fileID: 2101492567}
 --- !u!114 &1043658420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3108,6 +3108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59928ced29b1fd4db289557b998f1bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2101492567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7972524062673689894, guid: 61fe4179f7e11fa48bb3006553cbdd61, type: 3}
+  m_PrefabInstance: {fileID: 381472282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &586292290934356116
 PrefabInstance:
   m_ObjectHideFlags: 0

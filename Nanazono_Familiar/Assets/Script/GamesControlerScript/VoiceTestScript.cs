@@ -15,7 +15,7 @@ public class VoiceTestScript : MonoBehaviour
     
     public GameObject textObject;
     public GameObject CameraObject;
-   
+    bool isOnce = true;
     private float CameraAngleX, CameraAngleY;
     public Vector3 CameraPos;
     public float angle;
@@ -135,7 +135,16 @@ public class VoiceTestScript : MonoBehaviour
     public void FadeWait()
     {
         fade.isFadeOut = true;
-        SceneManager.LoadScene("Tutorial");
+        if (isOnce)
+        {
+            //処理内容
+            isOnce = false;
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            SceneManager.LoadScene("StageChoice");
+        }
     }
 
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
