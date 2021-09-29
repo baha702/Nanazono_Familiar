@@ -5,16 +5,23 @@ using UnityEngine;
 public class DemobonSporne1 : MonoBehaviour
 {
     private Animator animator;
+    public GameObject reticle;
+    StageChange stagechange;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        stagechange = reticle.GetComponent<StageChange>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (stagechange.demobonsporn)
+        {
+            animator = GetComponent<Animator>();
             animator.SetTrigger("Sporn");
+        }
     }
+
+    
 }

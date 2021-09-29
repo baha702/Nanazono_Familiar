@@ -227,6 +227,7 @@ public class KotodamariScript: MonoBehaviour
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
     {
+        animVoiceInput = GameObject.Find("VoiceInput").gameObject.GetComponent<Animator>();
         //音声認識アニメーション終了
         animReticle.SetBool("VoiceInput", false);
         if (efectbool)

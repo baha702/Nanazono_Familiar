@@ -22,7 +22,7 @@ public class StageChange : MonoBehaviour
     public string testText;
     Animator animVoiceInput;
     Animator animReticle;
-
+    public bool demobonsporn;
     void Start()
     {
         CameraAngle = CameraObject.transform.localEulerAngles.y;
@@ -94,13 +94,16 @@ public class StageChange : MonoBehaviour
             {
                 animReticle.SetBool("VoiceInput", false);
             }
+          
             //チュートリアルシーン切り替え
             if (CameraAngle == 270 && !LeftButtonObject.activeSelf)
             {
                 if (inputText == "スタート" || inputText == "Start")
                 {
+                    
                     CRIPlay();
-                    WhiteFadePanel.SetActive(true);
+                    StartCoroutine("waittime");
+                    
                     Invoke(nameof(Scenewait00), 4.0f);
                     Debug.Log("チュートリアルスタート");
                 }
@@ -111,10 +114,10 @@ public class StageChange : MonoBehaviour
                 
                     if (inputText == "スタート" || inputText == "Start")
                     {
-
+                    
                     CRIPlay();
-
-                    fadeController.isFadeOut = true;
+                    StartCoroutine("waittime");
+                    
                     Invoke(nameof(Scenewait01), 4.0f);
                         Debug.Log("ステージ１スタート");
                     }
@@ -125,8 +128,10 @@ public class StageChange : MonoBehaviour
                     
                     if (inputText == "スタート" || inputText == "Start")
                     {
+                   
                     CRIPlay();
-                    fadeController.isFadeOut = true;
+                    StartCoroutine("waittime");
+                  
                     Invoke(nameof(Scenewait02), 4.0f);
                         
                          Debug.Log("ステージ２スタート");
@@ -138,9 +143,10 @@ public class StageChange : MonoBehaviour
                     
                     if (inputText == "スタート" || inputText == "Start")
                     {
-
+                    
                     CRIPlay();
-                    fadeController.isFadeOut = true;
+                    StartCoroutine("waittime");
+                   
                     Invoke(nameof(Scenewait03), 4.0f);
                     Debug.Log("ステージ２スタート");
                     }
@@ -151,8 +157,10 @@ public class StageChange : MonoBehaviour
                    
                     if (inputText == "スタート" || inputText == "Start")
                     {
+                    
                     CRIPlay();
-                    fadeController.isFadeOut = true;
+                    StartCoroutine("waittime");
+                   
                     Invoke(nameof(Scenewait04), 4.0f);
                     Debug.Log("ステージ２スタート");
                     }
@@ -181,6 +189,21 @@ public class StageChange : MonoBehaviour
 
     }
 
+    IEnumerator waittime()
+    {
+
+        demobonsporn = true;
+        yield return new WaitForSeconds(2.0f);
+        if (CameraAngle == 270 && !LeftButtonObject.activeSelf)
+        {
+            WhiteFadePanel.SetActive(true);
+        }
+        else
+        {
+            fadeController.isFadeOut = true;
+        }
+          
+    }
    
     public void LeftButton()
     {
