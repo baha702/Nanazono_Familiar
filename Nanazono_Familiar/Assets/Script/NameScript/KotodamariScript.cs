@@ -215,7 +215,7 @@ public class KotodamariScript: MonoBehaviour
             //爆発エフェクト再生
             //ExprodeEffect.gameObject.SetActive(true);
         }
-        Debug.Log("認識した音声：" + text);
+        //Debug.Log("認識した音声：" + text);
         inputText = text;
     }
 
