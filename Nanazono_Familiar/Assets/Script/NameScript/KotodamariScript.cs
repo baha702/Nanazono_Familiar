@@ -202,6 +202,27 @@ public class KotodamariScript: MonoBehaviour
         //enemytext.AddComponent<EnemyflyingText>();
         Destroy(enemytext, 10.0f);
     }
+    public void BossKotodama2(string str1, Vector3 pos1, float bulletnum, float Angle)
+    {
+        //enemytext = FlyingText.GetObjects(str1, pos1, Quaternion.identity);//FlyingTextを生成
+        enemytext = FlyingText.GetObjects(str1, redMaterial, null, 10.0f, 2.0f, 5, pos1, Quaternion.identity);//FlyingTextを生成
+        enemytext.name = "EnemyText";
+        Rigidbody rigidbody = enemytext.AddComponent<Rigidbody>();
+        Rigidbody[] rigidbodies = enemytext.GetComponentsInChildren<Rigidbody>();
+        enemytext.transform.Rotate(-12, Angle, 0);//PlayerControllerのY.rotateを参照
+        foreach (var TextChild in rigidbodies)
+        {
+
+            TextChild.useGravity = false;
+            TextChild.AddForce(enemytext.transform.forward * bulletnum, ForceMode.Impulse);
+            TextChild.tag = "EnemyText";
+
+            //TextChild.gameObject.AddComponent<EnemyflyingText>();
+        }
+        enemytext.tag = "EnemyText";
+        //enemytext.AddComponent<EnemyflyingText>();
+        Destroy(enemytext, 10.0f);
+    }
 
     //DictationResult：音声が特定の認識精度で認識されたときに発生するイベント
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)

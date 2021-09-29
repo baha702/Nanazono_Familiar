@@ -10076,6 +10076,7 @@ MonoBehaviour:
   appearNextTime: 70
   num: 0
   debugbool: 1
+  stage4bool: 0
 --- !u!114 &946604060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13820,6 +13821,30 @@ PrefabInstance:
       propertyPath: PlayerObject
       value: 
       objectReference: {fileID: 129127277}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: appearNextTime
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: BossAngle
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: KotodamaPosZ
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: KotodamaPosX
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: KotodamaPosY
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471848442248792169, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
+      propertyPath: bulletSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5965783475037607231, guid: c26e645f0cacfeb419c635c53993d154, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.18

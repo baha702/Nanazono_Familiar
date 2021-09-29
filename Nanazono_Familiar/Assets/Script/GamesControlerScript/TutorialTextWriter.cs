@@ -17,6 +17,7 @@ public class TutorialTextWriter : MonoBehaviour
     public GameObject MenuUIObject;
     public GameObject FadePanel;
     public GameObject Apple;
+    public GameObject HoleImage;
     KotodamariScript kotodama;
     PlayerController Playercamera;
     MenuController menuController;
@@ -109,10 +110,10 @@ public class TutorialTextWriter : MonoBehaviour
     {
         uitext.DrawText("ここは……怪物の出る墓地だ。");
         yield return StartCoroutine("Skip");
-
+        HoleImage.SetActive(true);
         uitext.DrawText("……でも、落とし穴から出られない。");
         yield return StartCoroutine("Skip");
-
+        HoleImage.SetActive(false);
         uitext.DrawText("うわっ、おばけだ！");
         yield return StartCoroutine("Skip");
 

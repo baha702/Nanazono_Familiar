@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2475515633350027520
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31,7 +31,7 @@ RectTransform:
   m_Children:
   - {fileID: 1851816939538062758}
   m_Father: {fileID: 2155453841222952559}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180.636, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -190,16 +190,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729370581467345813}
-  m_LocalRotation: {x: -0, y: -0.00000005960463, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00006011724}
+  m_LocalRotation: {x: -0, y: 0.9999846, z: -0, w: -0.0055466853}
+  m_LocalPosition: {x: 0, y: 0, z: -54.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1851816939538062758}
-  m_RootOrder: 0
+  m_Father: {fileID: 2155453841222952559}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.7000017, y: 0.10003662}
+  m_AnchoredPosition: {x: -361.13007, y: -169.38998}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5436998637814803476
@@ -232,8 +232,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30A2"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
-  m_sharedMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
+  m_sharedMaterial: {fileID: 2040014438871423111, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -327,10 +327,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: 0.00000005960463, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.000121831894}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 929798298132128402}
-  - {fileID: 8923835145943189809}
-  - {fileID: 6696739255482548951}
+  m_Children: []
   m_Father: {fileID: 2475515633350027520}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -675,16 +672,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4500017609460385375}
-  m_LocalRotation: {x: -0, y: -0.00000005960463, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00009106397}
+  m_LocalRotation: {x: -0, y: 0.9999846, z: -0, w: -0.0055466853}
+  m_LocalPosition: {x: 0, y: 0, z: -54.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1851816939538062758}
-  m_RootOrder: 2
+  m_Father: {fileID: 2155453841222952559}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.100036, y: 0.19996643}
+  m_AnchoredPosition: {x: -364.91998, y: -169.29007}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1771569779101818208
@@ -717,8 +714,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30ED"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
-  m_sharedMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
+  m_sharedMaterial: {fileID: 2040014438871423111, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -954,17 +951,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7da6c7117f651f44afecb6a0fa86a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strLength: 5
-  listnum: 8
+  strLength: 3
   enemyTMP:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  flag: 0000000000
-  blueMaterial: {fileID: 2100000, guid: a411dff8d2c362f40b63f82268a6665a, type: 2}
-  redMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  - {fileID: 6133687864668712350}
+  - {fileID: 2707198745762807272}
+  - {fileID: 5955740692828544803}
+  flag: 000000
+  blueMaterial: {fileID: 2100000, guid: d96f4615a5ac2a34e8c0163e558ecce7, type: 2}
+  redMaterial: {fileID: 2040014438871423111, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
   enemyspeed: 0
   DMGClip: {fileID: 0}
 --- !u!95 &-4084944711727787011
@@ -1104,16 +1098,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7775459559056925025}
-  m_LocalRotation: {x: -0, y: -0.00000005960463, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00009087324}
+  m_LocalRotation: {x: -0, y: 0.9999846, z: -0, w: -0.0055466853}
+  m_LocalPosition: {x: 0, y: 0, z: -54.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1851816939538062758}
+  m_Father: {fileID: 2155453841222952559}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.7000358, y: 0}
+  m_AnchoredPosition: {x: -363, y: -169.49002}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3494506498839875490
@@ -1146,8 +1140,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30E0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
-  m_sharedMaterial: {fileID: -7136505476283351251, guid: fc8904b50a80f6947819207a18ad8a81, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
+  m_sharedMaterial: {fileID: 2040014438871423111, guid: af90505d7f4738f44a3b8e1c72d0df36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1341,6 +1335,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 2.7503507}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
+  - {fileID: 6696739255482548951}
+  - {fileID: 8923835145943189809}
+  - {fileID: 929798298132128402}
   - {fileID: 2475515633350027520}
   m_Father: {fileID: 6583966187980284142}
   m_RootOrder: 2

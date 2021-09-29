@@ -68,7 +68,7 @@ public class VoiceTestScript : MonoBehaviour
 
             if (inputText != testText)
             {
-                /*KotodamaPos(inputText);
+                KotodamaPos(inputText);
 
                 textObject = FlyingText.GetObjects(inputText, CameraPos, Quaternion.identity);//FlyingTextを生成
                 textObject.name = inputText;
@@ -83,22 +83,22 @@ public class VoiceTestScript : MonoBehaviour
                     TextChild.tag = "flyingText";
                 }
 
-
+                Destroy(textObject, 10.0f);
                 inputText = testText;
                 CriAtomSource atomSrc = gameObject.GetComponent<CriAtomSource>();
                 if (atomSrc != null)
                 {
                     atomSrc.Play(9);
 
-                }*/
+                }
 
-                if (inputText == "スタート" || inputText == "すたーと")
+                /*if (inputText == "スタート" || inputText == "すたーと")
                 {
 
                     fade.isFadeOut = true;
                     Invoke(nameof(FadeWait), 5.0f);
                     Debug.Log("ゲームスタート");
-                }
+                }*/
 
             }
             inputText = testText;
