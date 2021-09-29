@@ -326,7 +326,7 @@ public class NameJudgeZonbou : MonoBehaviour
                         }
                         if (strLength == 4)
                         {
-                            num04 = Random.Range(38, 40);
+                            num05 = Random.Range(38, 40);
                         }
                         inputKatakana = Kata.sheets[0].list[num05].kake5;
                         inputHiragana = Hira.sheets[0].list[num05].Hira_kake5;
