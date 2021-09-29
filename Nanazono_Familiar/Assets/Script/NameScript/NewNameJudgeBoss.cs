@@ -132,7 +132,7 @@ public class NewNameJudgeBoss : MonoBehaviour
                 SceneManager.LoadScene("Stage04");
                 break;
             case 4:
-                SceneManager.LoadScene("GameClear");
+                SceneManager.LoadScene("Endroll");
                 break;
         }
         //SceneManager.LoadScene("GameClear");

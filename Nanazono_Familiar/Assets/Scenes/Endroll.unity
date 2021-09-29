@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 743328284}
   - component: {fileID: 743328287}
   - component: {fileID: 743328286}
-  - component: {fileID: 743328285}
+  - component: {fileID: 743328288}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -161,21 +161,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2920, y: -728}
   m_SizeDelta: {x: 800, y: 34}
   m_Pivot: {x: 4, y: 0.5}
---- !u!114 &743328285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743328283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61d8d181224d217498119ed650e6eb8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textScrollSpeed: 70
-  limitPosition: 1750
-  isStopEndRoll: 0
 --- !u!114 &743328286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +204,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743328283}
   m_CullTransparentMesh: 0
+--- !u!114 &743328288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743328283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d8d181224d217498119ed650e6eb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textScrollSpeed: 70
+  limitPosition: 1720
 --- !u!1 &878591157
 GameObject:
   m_ObjectHideFlags: 0
