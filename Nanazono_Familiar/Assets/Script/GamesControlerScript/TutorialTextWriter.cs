@@ -107,41 +107,16 @@ public class TutorialTextWriter : MonoBehaviour
     // 文章を表示させるコルーチン
     IEnumerator Cotest()
     {
-        uitext.DrawText("……。");
+        uitext.DrawText("ここは……怪物の出る墓地だ。");
         yield return StartCoroutine("Skip");
 
-        uitext.DrawText("……眩しい。");
+        uitext.DrawText("……でも、落とし穴から出られない。");
         yield return StartCoroutine("Skip");
 
-        uitext.DrawText("?");
+        uitext.DrawText("うわっ、おばけだ！");
         yield return StartCoroutine("Skip");
 
-        uitext.DrawText("ここは、墓地……？");
-        yield return StartCoroutine("Skip");
 
-        uitext.DrawText("そうだ昨日の夜、「夜の墓地に日を昇らせないようにする怪物が出る」っていう噂を確かめにここに来たんだ。");
-        yield return StartCoroutine("Skip");
-
-        uitext.DrawText("それで、深い穴に落ちて気を失ってたのか。");
-        yield return StartCoroutine("Skip");
-
-        uitext.DrawText("不思議なのは、墓地のあちこちに4冊ほど本が置かれてたことくらいだったし、もう昼で日は昇ってるし、やっぱりあれはただの噂だったのか。");
-        yield return StartCoroutine("Skip");
-
-        uitext.DrawText("それにしても、どうやってこの穴から抜け出そう……。そもそも、どうしてこんな深い穴があるんだろう。");
-        yield return StartCoroutine("Skip");
-
-        uitext.DrawText("――ん？");
-        yield return StartCoroutine("Skip");
-
-        uitext.DrawText("なんだろう、あの生き物。おばけ？");
-        yield return StartCoroutine("Skip");
-
-        uitext.DrawText("頭の上に名前が書いてある。");
-        yield return StartCoroutine("Skip");
-
-        uitext.DrawText("?");
-        yield return StartCoroutine("Skip");
 
         ImgObject.SetActive(true);
         nextbutton.SetActive(true);
@@ -167,13 +142,12 @@ public class TutorialTextWriter : MonoBehaviour
             TalkText.SetActive(true);
             Exptext.SetActive(false);
 
-            uitext.DrawText("名前を呼んだらなんか倒しちゃった。");
+         
+
+            uitext.DrawText("おばけはどこかに行ったか。");
             yield return StartCoroutine("Skip");
 
-            uitext.DrawText("……。");
-            yield return StartCoroutine("Skip");
-
-            uitext.DrawText("自分一人じゃこの穴から出られないし、助けを待つしかないか……。");
+            uitext.DrawText("……助けを待つしかないみたい。");
             yield return StartCoroutine("Skip");
 
 

@@ -2418,7 +2418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7344321735013459228, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: m_defaultColor.g
-      value: 0.7921569
+      value: 0.91764706
       objectReference: {fileID: 0}
     - target: {fileID: 7344321735013459231, guid: 611cc4d2c6b92064c824881425502d46, type: 3}
       propertyPath: redMaterial
