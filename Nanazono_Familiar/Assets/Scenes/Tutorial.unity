@@ -3086,6 +3086,18 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1861985101}
+    - target: {fileID: 6007104002144082457, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 97958eb956ce59544badf0c4e5d8e3aa, type: 3}
+    - target: {fileID: 6532513745682276331, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b03b2c029a1432746a36d11a5e2900da, type: 3}
+    - target: {fileID: 7374696491378079330, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5a0d0c7ff8a9824b815e1c7602d30cc, type: 3}
     - target: {fileID: 8947826599627525048, guid: 0aef7eff6dea8f7429901b646da5b62d, type: 3}
       propertyPath: m_Name
       value: MenuUI Button
