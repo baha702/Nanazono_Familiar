@@ -73,7 +73,7 @@ public class StageChange : MonoBehaviour
             {
                 //ディクテーションを開始
                 dictationRecognizer.Start();
-                Debug.Log("音声認識開始");
+                //Debug.Log("音声認識開始");
 
                 animVoiceInput.SetBool("MouseHold", true);
             }
@@ -176,7 +176,7 @@ public class StageChange : MonoBehaviour
         {
             if (dictationRecognizer.Status != SpeechSystemStatus.Stopped)
             {
-                Debug.Log("音声認識終了");
+                //Debug.Log("音声認識終了");
                 dictationRecognizer.Stop();
                 animVoiceInput.SetBool("MouseHold", false);
 
@@ -325,7 +325,7 @@ public class StageChange : MonoBehaviour
         animReticle.SetBool("VoiceInput", true);
         //音声認識アニメーション終了
         ///animReticle.SetBool("VoiceInput", false);
-        Debug.Log("認識した音声：" + text);
+        //Debug.Log("認識した音声：" + text);
         inputText = text;
     }
 

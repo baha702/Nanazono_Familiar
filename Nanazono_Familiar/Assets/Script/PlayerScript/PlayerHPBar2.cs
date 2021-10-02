@@ -117,7 +117,7 @@ public class PlayerHPBar2 : MonoBehaviour
     void SceneLoaded(Scene nextScene, LoadSceneMode mode)
     {
         hp = 5;
-        Debug.Log("ロードシーン");
+        //Debug.Log("ロードシーン");
 
     }
 }
