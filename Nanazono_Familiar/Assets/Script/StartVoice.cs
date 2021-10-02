@@ -24,7 +24,7 @@ public class StartVoice : MonoBehaviour
             rb.AddForce(this.gameObject.transform.forward * 10.0f, ForceMode.Impulse);
             fade.isFadeOut = true;
             Invoke(nameof(FadeWait), 5.0f);
-            Debug.Log("ゲームスタート");
+            //Debug.Log("ゲームスタート");
         }
     }
     public void FadeWait()

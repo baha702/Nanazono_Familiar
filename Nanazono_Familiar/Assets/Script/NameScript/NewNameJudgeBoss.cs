@@ -154,7 +154,7 @@ public class NewNameJudgeBoss : MonoBehaviour
     public void NameRepeat(Collision collision)
     {
         string hitObjectName = collision.gameObject.transform.root.name;
-        Debug.Log(hitObjectName);
+        //Debug.Log(hitObjectName);
         var ar = strKatakana.Split(',');
         var ar2 = strHiragana.Split(',');
         
@@ -196,7 +196,7 @@ public class NewNameJudgeBoss : MonoBehaviour
     public void NameRepeat03(Collision collision)
     {
         string hitObjectName = collision.gameObject.transform.root.name;
-        Debug.Log(hitObjectName);
+        //Debug.Log(hitObjectName);
         var ar = strKatakana.Split(',');
         var ar2 = strHiragana.Split(',');
         if (GameObject.FindWithTag("flyingText"))
@@ -238,7 +238,7 @@ public class NewNameJudgeBoss : MonoBehaviour
     public void NameRepeat04(Collision collision)
     {
         string hitObjectName = collision.gameObject.transform.root.name;
-        Debug.Log(hitObjectName);
+        //Debug.Log(hitObjectName);
         var ar = strKatakana.Split(',');
         var ar2 = strHiragana.Split(',');
         if (GameObject.FindWithTag("flyingText"))
@@ -280,13 +280,10 @@ public class NewNameJudgeBoss : MonoBehaviour
     private IEnumerator NameColorChange()
     {
         MobDestroybool = false;
-        Debug.Log("NameColorChange");
+        //Debug.Log("NameColorChange");
         var ar = strKatakana.Split(',');
         var ar2 = strHiragana.Split(',');
-        Debug.Log("strKatakana" + strKatakana);
-        Debug.Log("strHiragana" + strHiragana);
-        Debug.Log("MobKatakana" + MobStrKatakana);
-        Debug.Log("MobHirgana" + MobStrHiragana);
+        
         for (int i = 0; i < strLength; i++)
         {
             if (MobStrKatakana.Contains(ar[i]) || MobStrHiragana.Contains(ar2[i]))//Mob敵の名前とボスの名前の合否を判断

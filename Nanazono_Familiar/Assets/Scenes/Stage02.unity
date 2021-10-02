@@ -21684,7 +21684,7 @@ PrefabInstance:
     - target: {fileID: 3952932204117681008, guid: c8b9041840315234cb150308b3f810ab, type: 3}
       propertyPath: Apple
       value: 
-      objectReference: {fileID: 1598598457}
+      objectReference: {fileID: 8291577637571230269, guid: e91525b6e6a9baa478501c393cb2af3b, type: 3}
     - target: {fileID: 4186882231466464807, guid: c8b9041840315234cb150308b3f810ab, type: 3}
       propertyPath: m_Name
       value: AppleTree
